@@ -8,6 +8,12 @@
 
 import UIKit
 
-class VendorCollectionViewCell: UICollectionViewCell {
+class VendorCollectionViewCell: BaseCollectionViewCell {
+    
+    override func setupViews() {
+        super.setupViews()
+        
+        self.backgroundColor = .black
+    }
     
 }

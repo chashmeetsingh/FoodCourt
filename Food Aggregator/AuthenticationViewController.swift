@@ -12,9 +12,10 @@ class AuthenticationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func buttonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "homeScreen", sender: self)
+    }
 }
 
