@@ -44,12 +44,39 @@ class ExpandedCell: BaseTableViewCell {
         super.setupViews()
         
         addSubview(titleLabel)
-        addConstraintsWithFormat(format: "H:|[v0]|", views: titleLabel)
+        addSubview(minusButton)
+        addSubview(plusButton)
+        addSubview(amountLabel)
+        
         addConstraintsWithFormat(format: "V:|[v0]|", views: titleLabel)
+        addConstraintsWithFormat(format: "V:|-8-[v0]-8-|", views: minusButton)
+        addConstraintsWithFormat(format: "V:|-8-[v0]-8-|", views: plusButton)
+        addConstraintsWithFormat(format: "V:|-8-[v0]-8-|", views: amountLabel)
+        
+        addConstraintsWithFormat(format: "H:|-4-[v0]-4-[v1(28)]-4-[v2(28)]-4-[v3(28)]-4-|", views: titleLabel, minusButton, amountLabel, plusButton)
+        
     }
     
     let titleLabel: UILabel = {
         let label = UILabel()
+        return label
+    }()
+    
+    let minusButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .red
+        return button
+    }()
+    
+    let plusButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .green
+        return button
+    }()
+    
+    let amountLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .black
         return label
     }()
     
@@ -96,16 +123,19 @@ extension FoodJointMenuViewController: ExpandableDelegate {
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, didSelectRowAt indexPath: IndexPath) {
         //        print("didSelectRow:\(indexPath)")
+//        expandableTableView.closeAll()
     }
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, didSelectExpandedRowAt indexPath: IndexPath) {
         //        print("didSelectExpandedRowAt:\(indexPath)")
+//        expandableTableView.closeAll()
     }
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCell: UITableViewCell, didSelectExpandedRowAt indexPath: IndexPath) {
-        if let cell = expandedCell as? ExpandedCell {
-            print("\(cell.titleLabel.text ?? "")")
-        }
+//        if let cell = expandedCell as? ExpandedCell {
+//            print("\(cell.titleLabel.text ?? "")")
+//        }
+//        expandableTableView.closeAll()
     }
     
     func expandableTableView(_ expandableTableView: ExpandableTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
