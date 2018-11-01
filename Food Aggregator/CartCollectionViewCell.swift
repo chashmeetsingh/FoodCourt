@@ -1,0 +1,70 @@
+//
+//  CartCollectionViewCell.swift
+//  Food Aggregator
+//
+//  Created by Chashmeet on 30/10/18.
+//  Copyright © 2018 Chashmeet Singh. All rights reserved.
+//
+
+import UIKit
+
+class CartCollectionViewCell: BaseCollectionViewCell {
+    
+    let divider: UIView = {
+        let view = UIView()
+        view.backgroundColor = .gray
+        view.backgroundColor = hexStringToUIColor(hex: "#E0E0E0")
+        return view
+    }()
+    
+    let itemName: UILabel = {
+        let label = UILabel()
+        label.text = "Paneer Butter Masala"
+        label.textColor = .black
+//        label.backgroundColor = .red
+        return label
+    }()
+    
+    let amountLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.text = "$5.00"
+//        label.backgroundColor = .green
+        label.font = UIFont.systemFont(ofSize: 14)
+        return label
+    }()
+    
+    let stepper: GMStepper = {
+        let stepper = GMStepper()
+        stepper.labelFont = UIFont.systemFont(ofSize: 16)
+        stepper.autorepeat = false
+        return stepper
+    }()
+    
+    let totalAmountLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.text = "$5.00"
+//        label.backgroundColor = .yellow
+        return label
+    }()
+    
+    override func setupViews() {
+        super.setupViews()
+        
+        addSubview(divider)
+        addConstraintsWithFormat(format: "H:|[v0]|", views: divider)
+        addConstraintsWithFormat(format: "V:[v0(1)]|", views: divider)
+        
+        addSubview(itemName)
+        addSubview(amountLabel)
+        addSubview(stepper)
+        addSubview(totalAmountLabel)
+        addConstraintsWithFormat(format: "H:|-8-[v0]-8-[v1(100)]-8-|", views: itemName, stepper)
+        addConstraintsWithFormat(format: "H:|-8-[v0]", views: amountLabel)
+        addConstraintsWithFormat(format: "H:[v0]-8-|", views: totalAmountLabel)
+        addConstraintsWithFormat(format: "V:|-14-[v0(22)][v1(20)]", views: itemName, amountLabel)
+        addConstraintsWithFormat(format: "V:|-14-[v0(22)]-8-[v1]", views: stepper, totalAmountLabel)
+    }
+    
+}

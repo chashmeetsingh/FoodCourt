@@ -30,10 +30,16 @@ class HomeViewController: UIViewController {
         collectionView.register(FoodChainCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(toDo))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cart"), style: .plain, target: self, action: #selector(openCart))
     }
     
     @objc func toDo() {
         print("called")
+    }
+    
+    @objc func openCart() {
+        let vc = CartViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }
