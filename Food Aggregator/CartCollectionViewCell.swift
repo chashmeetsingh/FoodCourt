@@ -13,7 +13,7 @@ class CartCollectionViewCell: BaseCollectionViewCell {
     let divider: UIView = {
         let view = UIView()
         view.backgroundColor = .gray
-        view.backgroundColor = hexStringToUIColor(hex: "#E0E0E0")
+        view.backgroundColor = UIColor(hex: "#E0E0E0")
         return view
     }()
     

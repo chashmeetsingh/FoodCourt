@@ -1,20 +1,24 @@
 PODS:
+  - BBBadgeBarButtonItem (1.2)
   - ExpandableCell (1.2.4)
   - KYDrawerController (2.1.0)
 
 DEPENDENCIES:
+  - BBBadgeBarButtonItem
   - ExpandableCell (= 1.2.4)
   - KYDrawerController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - BBBadgeBarButtonItem
     - ExpandableCell
     - KYDrawerController
 
 SPEC CHECKSUMS:
+  BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
   ExpandableCell: 09235bd29b11ca958c4205aba75ddc3494a4e5a1
   KYDrawerController: baad0e63b09c0cb564bd48f0f7f70f45d9176ebc
 
-PODFILE CHECKSUM: a8a05de6fcb30d230a997455e8d1de4de63561a9
+PODFILE CHECKSUM: 1c29437a5cfc73c58090886b1c3986b43c6d7402
 
 COCOAPODS: 1.5.3

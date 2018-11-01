@@ -57,19 +57,19 @@ class FinalPriceView: UICollectionReusableView {
     
     let divider: UIView = {
         let view = UIView()
-        view.backgroundColor = hexStringToUIColor(hex: "#E0E0E0")
+        view.backgroundColor = UIColor(hex: "#E0E0E0")
         return view
     }()
     
     let divider1: UIView = {
         let view = UIView()
-        view.backgroundColor = hexStringToUIColor(hex: "#E0E0E0")
+        view.backgroundColor = UIColor(hex: "#E0E0E0")
         return view
     }()
     
     let checkoutButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = hexStringToUIColor(hex: "#00C853")
+        button.backgroundColor = UIColor(hex: "#00C853")
         button.setTitle("Confirm Order", for: .normal)
         return button
     }()

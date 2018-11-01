@@ -33,7 +33,7 @@ class HeaderView: UICollectionReusableView {
     
     let divider: UIView = {
         let view = UIView()
-        view.backgroundColor = hexStringToUIColor(hex: "#E0E0E0")
+        view.backgroundColor = UIColor(hex: "#E0E0E0")
         return view
     }()
     

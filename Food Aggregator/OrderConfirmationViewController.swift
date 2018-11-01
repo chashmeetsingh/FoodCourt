@@ -21,7 +21,7 @@ class OrderConfirmationViewController: UIViewController {
     
     let orderLabel: UILabel = {
         let label = UILabel()
-        label.textColor = hexStringToUIColor(hex: "#757575")
+        label.textColor = UIColor(hex: "#757575")
         label.font = UIFont.systemFont(ofSize: 22)
         label.text = "#31431"
         label.textAlignment = .center
@@ -39,7 +39,7 @@ class OrderConfirmationViewController: UIViewController {
     
     let orderPickupTimeLabel: UILabel = {
         let label = UILabel()
-        label.textColor = hexStringToUIColor(hex: "#757575")
+        label.textColor = UIColor(hex: "#757575")
         label.font = UIFont.systemFont(ofSize: 22)
         label.text = "25 minutes"
         label.textAlignment = .center
@@ -50,7 +50,7 @@ class OrderConfirmationViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Your Orders", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = hexStringToUIColor(hex: "#00E676")
+        button.backgroundColor = UIColor(hex: "#00E676")
         button.addTarget(self, action: #selector(yourOrdersButtonTapped), for: .touchUpInside)
         return button
     }()

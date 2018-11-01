@@ -8,6 +8,7 @@
 
 import UIKit
 import KYDrawerController
+import BBBadgeBarButtonItem
 
 class HomeViewController: UIViewController, KYDrawerControllerDelegate {
     
@@ -32,7 +33,14 @@ class HomeViewController: UIViewController, KYDrawerControllerDelegate {
         collectionView.register(FoodChainCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(toDo))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "cart"), style: .plain, target: self, action: #selector(openCart))
+        
+        let cartButton = UIButton()
+        cartButton.setImage(UIImage(named: "cart"), for: .normal)
+        cartButton.addTarget(self, action: #selector(openCart), for: .touchUpInside)
+        let item = BBBadgeBarButtonItem(customUIButton: cartButton)
+        item!.badgeValue = "5"
+        self.navigationItem.rightBarButtonItem = item
+        
     }
     
     @objc func toDo() {
