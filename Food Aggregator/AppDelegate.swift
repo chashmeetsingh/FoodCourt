@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var cartItems = ["", "", "", "",""]
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         UINavigationBar.appearance().barTintColor = UIColor(red: 46.0/255.0, green: 14.0/255.0, blue: 74.0/255.0, alpha: 1.0)
@@ -24,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         UINavigationBar.appearance().isTranslucent = false
         
-        UIApplication.shared.statusBarStyle = .lightContent
+//        UIApplication.shared.statusBarStyle = .lightContent
         
         return true
     }

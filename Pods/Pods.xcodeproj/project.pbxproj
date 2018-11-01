@@ -8,22 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		0A71D48263F005AAD887437D3B8987D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E404AA6957590324067E330E0EC533 /* UIKit.framework */; };
-		186B68343B66812840CE31277ABE1BCB /* ExpandableCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA213CF5B91DE343E0DE65393A01F5C8 /* ExpandableCell-dummy.m */; };
-		6D13EE905D35E251D9DBF98D7D895A81 /* ExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510D4B1282BBD7BBF157C09D66BDD1A /* ExpandableTableView.swift */; };
-		759226CDB31A5EFB494DC93FA86594CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
-		A90F3D9E6567239455D1BB479FA470C3 /* ExpandableCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B28EAB25D2A5FC251E05215277EB41EF /* ExpandableCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AFD146968C6254170397A6BB8D0D6845 /* ExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C963499656E72C790DFB7A6CC5796976 /* ExpandableCell.swift */; };
-		B30A519B28A9A0A98CA562536A8D7A42 /* ExpandableProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDC68151001238CE11CBB8470839080 /* ExpandableProcessor.swift */; };
+		186B68343B66812840CE31277ABE1BCB /* ExpandableCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C37973EA6DC613EC17B1166BC27D87 /* ExpandableCell-dummy.m */; };
+		25A53EE0E63F3F4E549812D5800A1DD3 /* KYDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E498C75B305DE410B4D734559C1341 /* KYDrawerController.swift */; };
+		38A45028C441F1553872657E51B994F9 /* Pods-Food Aggregator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32010A239805F301625FFB5564887276 /* Pods-Food Aggregator-dummy.m */; };
+		3BA3BE78138BD487C1671B912369AC07 /* Pods-Food Aggregator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B01DF90D0DAF50C0200EF319DA18916A /* Pods-Food Aggregator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A9BD23004C25288C03E2528F9323503 /* KYDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8749E81D97778925DA6D74FAA5CDF5A /* KYDrawerController-dummy.m */; };
+		5FE0D4534F54AFC37EED7F5EC36AE8D6 /* KYEmbedDrawerControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE429721DF378D211426B775829D5942 /* KYEmbedDrawerControllerSegue.swift */; };
+		6542E8E254FBAE3C8F2D2FCAB1355740 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
+		6D13EE905D35E251D9DBF98D7D895A81 /* ExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B25D1873716D6E27135289303C174D2 /* ExpandableTableView.swift */; };
+		98D5A05DEA239950FE22010EC6E3A8F4 /* KYEmbedMainControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EFD8A837669B85AD59354E766A0475 /* KYEmbedMainControllerSegue.swift */; };
+		A90F3D9E6567239455D1BB479FA470C3 /* ExpandableCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 05B8F400A883A0C04A7ACFD7A1B2B450 /* ExpandableCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD8197E0D0DC262254CD54E24F60E259 /* KYDrawerController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EECECDF39FF5681D3560FC3969FA70A /* KYDrawerController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFD146968C6254170397A6BB8D0D6845 /* ExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F363CA37C6B7B1D342053F00C99A7 /* ExpandableCell.swift */; };
+		B30A519B28A9A0A98CA562536A8D7A42 /* ExpandableProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F3C5C36DEB9D16D1F8618469AD1A8E /* ExpandableProcessor.swift */; };
 		BBC64FA5EDB8BAB3AE6F41167339424B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
-		C041D2CD42D00245262CA5DF3F628DA9 /* Pods-Food Aggregator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32010A239805F301625FFB5564887276 /* Pods-Food Aggregator-dummy.m */; };
-		C7330B4C7C867542B777B06EA1088A03 /* ExpandableStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA3848BBCD7EC4DDA5A7B2E3E526FE3 /* ExpandableStyle.swift */; };
-		CD31FE214332559B082D2D51F2B7DF76 /* Pods-Food Aggregator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B01DF90D0DAF50C0200EF319DA18916A /* Pods-Food Aggregator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E054A9DAF05AFFE43AF3DB65005C8620 /* ExpandableCell.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BED278FE5D637C7094A7936B9D846A /* ExpandableCell.xcassets */; };
-		F013DEE28C25A2A3D8AFB01D6E3BE37B /* ExpandableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE884054C722F9C7CD04F65109B3EDAF /* ExpandableDelegate.swift */; };
+		C7330B4C7C867542B777B06EA1088A03 /* ExpandableStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54C8EDD8FEB5E1A818E77EFD04BDB19 /* ExpandableStyle.swift */; };
+		E054A9DAF05AFFE43AF3DB65005C8620 /* ExpandableCell.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3902134B351BB50B4B0A28891F5256ED /* ExpandableCell.xcassets */; };
+		E6152EC80A201644EAC0FA9F9FBAB049 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
+		F013DEE28C25A2A3D8AFB01D6E3BE37B /* ExpandableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70522D64296D7291E965D9E5CC5C0F9 /* ExpandableDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B06C91F5B433A996ED23EE208AE49E8E /* PBXContainerItemProxy */ = {
+		AADC520A366223D2746ACBCA87660C98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6838B950623C5FCFD2C6072B596E056D;
+			remoteInfo = KYDrawerController;
+		};
+		C513ABBDA0B6E34789C988C3291CB571 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -33,33 +46,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1BDC68151001238CE11CBB8470839080 /* ExpandableProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableProcessor.swift; path = ExpandableCell/ExpandableProcessor.swift; sourceTree = "<group>"; };
+		05B8F400A883A0C04A7ACFD7A1B2B450 /* ExpandableCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ExpandableCell-umbrella.h"; sourceTree = "<group>"; };
+		16ABB38E059D879750A006C019A838E1 /* ExpandableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ExpandableCell.framework; path = ExpandableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D213B6665F037A85D8A98E32CFBA5A9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F91B033BE245D06C1FF07EDCFDE2D2D /* Pods-Food Aggregator-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Food Aggregator-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1FADF74889701F452E6B4469FEAF157F /* Pods_Food_Aggregator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Food_Aggregator.framework; path = "Pods-Food Aggregator.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		32010A239805F301625FFB5564887276 /* Pods-Food Aggregator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Food Aggregator-dummy.m"; sourceTree = "<group>"; };
-		32B2E09D7EB42E068D6E9A0EF0C88E7D /* ExpandableCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ExpandableCell-prefix.pch"; sourceTree = "<group>"; };
-		37FB8F6F1D129906252F07D761CC1FB2 /* Pods_Food_Aggregator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Food_Aggregator.framework; path = "Pods-Food Aggregator.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3902134B351BB50B4B0A28891F5256ED /* ExpandableCell.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = ExpandableCell.xcassets; path = ExpandableCell/ExpandableCell.xcassets; sourceTree = "<group>"; };
+		45D8DAAB302A5B96BD51E81AD8B5F14B /* KYDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYDrawerController-prefix.pch"; sourceTree = "<group>"; };
+		48F3C5C36DEB9D16D1F8618469AD1A8E /* ExpandableProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableProcessor.swift; path = ExpandableCell/ExpandableProcessor.swift; sourceTree = "<group>"; };
+		4B25D1873716D6E27135289303C174D2 /* ExpandableTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableTableView.swift; path = ExpandableCell/ExpandableTableView.swift; sourceTree = "<group>"; };
+		4E4D9966DEB41DDC9121BF17B5A58CA6 /* KYDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KYDrawerController.xcconfig; sourceTree = "<group>"; };
+		4EECECDF39FF5681D3560FC3969FA70A /* KYDrawerController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYDrawerController-umbrella.h"; sourceTree = "<group>"; };
 		4FB920D10295874E2F4C854AD5916F46 /* Pods-Food Aggregator-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Food Aggregator-resources.sh"; sourceTree = "<group>"; };
-		500BC571DF4CAA80C4E61AF92D4EE417 /* ExpandableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ExpandableCell.framework; path = ExpandableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CA3848BBCD7EC4DDA5A7B2E3E526FE3 /* ExpandableStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableStyle.swift; path = ExpandableCell/ExpandableStyle.swift; sourceTree = "<group>"; };
-		72BED278FE5D637C7094A7936B9D846A /* ExpandableCell.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = ExpandableCell.xcassets; path = ExpandableCell/ExpandableCell.xcassets; sourceTree = "<group>"; };
+		5395A0FB55283999CB1022628D512790 /* ExpandableCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ExpandableCell.xcconfig; sourceTree = "<group>"; };
 		74E404AA6957590324067E330E0EC533 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		7510D4B1282BBD7BBF157C09D66BDD1A /* ExpandableTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableTableView.swift; path = ExpandableCell/ExpandableTableView.swift; sourceTree = "<group>"; };
-		7899340136272FDB2581929B6E1EF607 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78EFD8A837669B85AD59354E766A0475 /* KYEmbedMainControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYEmbedMainControllerSegue.swift; path = KYDrawerController/Classes/KYEmbedMainControllerSegue.swift; sourceTree = "<group>"; };
 		7AA36A77B0F7C32DC25CD930029047BB /* Pods-Food Aggregator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Food Aggregator.release.xcconfig"; sourceTree = "<group>"; };
 		83750D4F7FE4F409799BB0BD333E5465 /* Pods-Food Aggregator-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Food Aggregator-frameworks.sh"; sourceTree = "<group>"; };
-		931F35D8121814D6E83CB24997725F31 /* ExpandableCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ExpandableCell.xcconfig; sourceTree = "<group>"; };
+		880B0432C6F0AC3C7FDECD9EEB722E29 /* ExpandableCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ExpandableCell-prefix.pch"; sourceTree = "<group>"; };
+		89C37973EA6DC613EC17B1166BC27D87 /* ExpandableCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ExpandableCell-dummy.m"; sourceTree = "<group>"; };
+		8CFEA50B736732C3EE6FFE3FE4E36831 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95302DD95773160C436947F0E0AEFE42 /* ExpandableCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ExpandableCell.modulemap; sourceTree = "<group>"; };
+		A54C8EDD8FEB5E1A818E77EFD04BDB19 /* ExpandableStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableStyle.swift; path = ExpandableCell/ExpandableStyle.swift; sourceTree = "<group>"; };
 		B01DF90D0DAF50C0200EF319DA18916A /* Pods-Food Aggregator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Food Aggregator-umbrella.h"; sourceTree = "<group>"; };
-		B28EAB25D2A5FC251E05215277EB41EF /* ExpandableCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ExpandableCell-umbrella.h"; sourceTree = "<group>"; };
-		BA213CF5B91DE343E0DE65393A01F5C8 /* ExpandableCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ExpandableCell-dummy.m"; sourceTree = "<group>"; };
+		B70522D64296D7291E965D9E5CC5C0F9 /* ExpandableDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableDelegate.swift; path = ExpandableCell/ExpandableDelegate.swift; sourceTree = "<group>"; };
+		BC89FD993379F0829FB8CFF18EF018B9 /* ExpandableCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ExpandableCell.modulemap; sourceTree = "<group>"; };
 		BDDF995D7A85996FC5134B03904EA6F9 /* Pods-Food Aggregator-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Food Aggregator-acknowledgements.plist"; sourceTree = "<group>"; };
 		C52CB87C37D389A52894B3BBBF3CA277 /* Pods-Food Aggregator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Food Aggregator.modulemap"; sourceTree = "<group>"; };
-		C963499656E72C790DFB7A6CC5796976 /* ExpandableCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableCell.swift; path = ExpandableCell/ExpandableCell.swift; sourceTree = "<group>"; };
-		CE884054C722F9C7CD04F65109B3EDAF /* ExpandableDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableDelegate.swift; path = ExpandableCell/ExpandableDelegate.swift; sourceTree = "<group>"; };
+		C65F363CA37C6B7B1D342053F00C99A7 /* ExpandableCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableCell.swift; path = ExpandableCell/ExpandableCell.swift; sourceTree = "<group>"; };
+		CE429721DF378D211426B775829D5942 /* KYEmbedDrawerControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYEmbedDrawerControllerSegue.swift; path = KYDrawerController/Classes/KYEmbedDrawerControllerSegue.swift; sourceTree = "<group>"; };
+		E15D57D7339EF53CB083C4C7C2D70A69 /* KYDrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KYDrawerController.framework; path = KYDrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7AABB7A4BB718E96D39551EECEBD63E /* KYDrawerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KYDrawerController.modulemap; sourceTree = "<group>"; };
+		E8749E81D97778925DA6D74FAA5CDF5A /* KYDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KYDrawerController-dummy.m"; sourceTree = "<group>"; };
 		F31CF8AECF0BC3F9720772703FA55BE3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4DD4758A431C4FCFEC1AEB2F917FBF1 /* Pods-Food Aggregator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Food Aggregator.debug.xcconfig"; sourceTree = "<group>"; };
+		F5E498C75B305DE410B4D734559C1341 /* KYDrawerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYDrawerController.swift; path = KYDrawerController/Classes/KYDrawerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,31 +95,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A664EB0EC4EDA43A6FD2D8293A6D4515 /* Frameworks */ = {
+		57BEC51FC139018129E2223C68FCE5ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				759226CDB31A5EFB494DC93FA86594CE /* Foundation.framework in Frameworks */,
+				6542E8E254FBAE3C8F2D2FCAB1355740 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E672CA89FB9A964AAB53EBCB613348D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6152EC80A201644EAC0FA9F9FBAB049 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01EBAAFCB21675333C931E46690C50F9 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				95302DD95773160C436947F0E0AEFE42 /* ExpandableCell.modulemap */,
-				931F35D8121814D6E83CB24997725F31 /* ExpandableCell.xcconfig */,
-				BA213CF5B91DE343E0DE65393A01F5C8 /* ExpandableCell-dummy.m */,
-				32B2E09D7EB42E068D6E9A0EF0C88E7D /* ExpandableCell-prefix.pch */,
-				B28EAB25D2A5FC251E05215277EB41EF /* ExpandableCell-umbrella.h */,
-				7899340136272FDB2581929B6E1EF607 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ExpandableCell";
-			sourceTree = "<group>";
-		};
 		06CDD10DE71306278CF89108B3036DFD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +121,42 @@
 				74E404AA6957590324067E330E0EC533 /* UIKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		1E46E47D0ECEC57DE06B615D55B27014 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC89FD993379F0829FB8CFF18EF018B9 /* ExpandableCell.modulemap */,
+				5395A0FB55283999CB1022628D512790 /* ExpandableCell.xcconfig */,
+				89C37973EA6DC613EC17B1166BC27D87 /* ExpandableCell-dummy.m */,
+				880B0432C6F0AC3C7FDECD9EEB722E29 /* ExpandableCell-prefix.pch */,
+				05B8F400A883A0C04A7ACFD7A1B2B450 /* ExpandableCell-umbrella.h */,
+				8CFEA50B736732C3EE6FFE3FE4E36831 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ExpandableCell";
+			sourceTree = "<group>";
+		};
+		1FBD4F5CADC9B4CCCEAE36853B857D79 /* KYDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				F5E498C75B305DE410B4D734559C1341 /* KYDrawerController.swift */,
+				CE429721DF378D211426B775829D5942 /* KYEmbedDrawerControllerSegue.swift */,
+				78EFD8A837669B85AD59354E766A0475 /* KYEmbedMainControllerSegue.swift */,
+				9714697EC0E994124062110F60101260 /* Support Files */,
+			);
+			name = KYDrawerController;
+			path = KYDrawerController;
+			sourceTree = "<group>";
+		};
+		37E9B328DC6AEE982413C0489D55D7E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16ABB38E059D879750A006C019A838E1 /* ExpandableCell.framework */,
+				E15D57D7339EF53CB083C4C7C2D70A69 /* KYDrawerController.framework */,
+				1FADF74889701F452E6B4469FEAF157F /* Pods_Food_Aggregator.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		3AE508D8215312E7AB9F78E36A497F2E /* Targets Support Files */ = {
@@ -140,16 +193,24 @@
 			path = "Target Support Files/Pods-Food Aggregator";
 			sourceTree = "<group>";
 		};
-		7A9CD1E7FD677EBA52373439AF3951EF /* ExpandableCell */ = {
+		5CD5630D0E0B261128D24A8218C1E8C8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C963499656E72C790DFB7A6CC5796976 /* ExpandableCell.swift */,
-				CE884054C722F9C7CD04F65109B3EDAF /* ExpandableDelegate.swift */,
-				1BDC68151001238CE11CBB8470839080 /* ExpandableProcessor.swift */,
-				6CA3848BBCD7EC4DDA5A7B2E3E526FE3 /* ExpandableStyle.swift */,
-				7510D4B1282BBD7BBF157C09D66BDD1A /* ExpandableTableView.swift */,
-				EF8A46D74AE42D2D7EF40230C395EB2A /* Resources */,
-				01EBAAFCB21675333C931E46690C50F9 /* Support Files */,
+				3902134B351BB50B4B0A28891F5256ED /* ExpandableCell.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		655D8527050258A92ABADEB4B8EFD42C /* ExpandableCell */ = {
+			isa = PBXGroup;
+			children = (
+				C65F363CA37C6B7B1D342053F00C99A7 /* ExpandableCell.swift */,
+				B70522D64296D7291E965D9E5CC5C0F9 /* ExpandableDelegate.swift */,
+				48F3C5C36DEB9D16D1F8618469AD1A8E /* ExpandableProcessor.swift */,
+				A54C8EDD8FEB5E1A818E77EFD04BDB19 /* ExpandableStyle.swift */,
+				4B25D1873716D6E27135289303C174D2 /* ExpandableTableView.swift */,
+				5CD5630D0E0B261128D24A8218C1E8C8 /* Resources */,
+				1E46E47D0ECEC57DE06B615D55B27014 /* Support Files */,
 			);
 			name = ExpandableCell;
 			path = ExpandableCell;
@@ -160,35 +221,33 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				7E1FC42A0713196C4A378ED89D9C86BD /* Pods */,
-				AF39C4BAB45EF7788F897B1FB85775C9 /* Products */,
+				8963933DBFA2690072E059BC36B4E0E6 /* Pods */,
+				37E9B328DC6AEE982413C0489D55D7E5 /* Products */,
 				3AE508D8215312E7AB9F78E36A497F2E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7E1FC42A0713196C4A378ED89D9C86BD /* Pods */ = {
+		8963933DBFA2690072E059BC36B4E0E6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7A9CD1E7FD677EBA52373439AF3951EF /* ExpandableCell */,
+				655D8527050258A92ABADEB4B8EFD42C /* ExpandableCell */,
+				1FBD4F5CADC9B4CCCEAE36853B857D79 /* KYDrawerController */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		AF39C4BAB45EF7788F897B1FB85775C9 /* Products */ = {
+		9714697EC0E994124062110F60101260 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				500BC571DF4CAA80C4E61AF92D4EE417 /* ExpandableCell.framework */,
-				37FB8F6F1D129906252F07D761CC1FB2 /* Pods_Food_Aggregator.framework */,
+				1D213B6665F037A85D8A98E32CFBA5A9 /* Info.plist */,
+				E7AABB7A4BB718E96D39551EECEBD63E /* KYDrawerController.modulemap */,
+				4E4D9966DEB41DDC9121BF17B5A58CA6 /* KYDrawerController.xcconfig */,
+				E8749E81D97778925DA6D74FAA5CDF5A /* KYDrawerController-dummy.m */,
+				45D8DAAB302A5B96BD51E81AD8B5F14B /* KYDrawerController-prefix.pch */,
+				4EECECDF39FF5681D3560FC3969FA70A /* KYDrawerController-umbrella.h */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		EF8A46D74AE42D2D7EF40230C395EB2A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				72BED278FE5D637C7094A7936B9D846A /* ExpandableCell.xcassets */,
-			);
-			name = Resources;
+			name = "Support Files";
+			path = "../Target Support Files/KYDrawerController";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,11 +261,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F5ECC02C1BD7EAE9F2D4F7864ECEC49F /* Headers */ = {
+		A4CAE9633F3991350FC9AA738FC66C87 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD31FE214332559B082D2D51F2B7DF76 /* Pods-Food Aggregator-umbrella.h in Headers */,
+				AD8197E0D0DC262254CD54E24F60E259 /* KYDrawerController-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF3324696B078DBDB05FC42A5AE148F5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA3BE78138BD487C1671B912369AC07 /* Pods-Food Aggregator-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,26 +295,45 @@
 			);
 			name = ExpandableCell;
 			productName = ExpandableCell;
-			productReference = 500BC571DF4CAA80C4E61AF92D4EE417 /* ExpandableCell.framework */;
+			productReference = 16ABB38E059D879750A006C019A838E1 /* ExpandableCell.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		960FC8F246D04BB79343298F04E159C1 /* Pods-Food Aggregator */ = {
+		1978D215153F10D7CE094A6E8BD85AB3 /* Pods-Food Aggregator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D49702F70D9A9B6FAEA036B588A6335E /* Build configuration list for PBXNativeTarget "Pods-Food Aggregator" */;
+			buildConfigurationList = 8CB504EC8B534B5D7D4374EBFD610AC5 /* Build configuration list for PBXNativeTarget "Pods-Food Aggregator" */;
 			buildPhases = (
-				F5ECC02C1BD7EAE9F2D4F7864ECEC49F /* Headers */,
-				C7977E3FB13D63C606A08BD1EEAAB674 /* Sources */,
-				A664EB0EC4EDA43A6FD2D8293A6D4515 /* Frameworks */,
-				9F659F1CD7CA2E7BA953815043B5C377 /* Resources */,
+				FF3324696B078DBDB05FC42A5AE148F5 /* Headers */,
+				0E3FC3BBFF13F5A59F7FE92882D958FF /* Sources */,
+				57BEC51FC139018129E2223C68FCE5ED /* Frameworks */,
+				7F28F594224F4DBC50BB52FC40D3B2D2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				03D1FC2DCB48BFE66D3FA8343E1DF9CF /* PBXTargetDependency */,
+				03A2FA278BE3986824E5FA511C7EF161 /* PBXTargetDependency */,
+				499A05E058FE3495BD554A7FA26C3D56 /* PBXTargetDependency */,
 			);
 			name = "Pods-Food Aggregator";
 			productName = "Pods-Food Aggregator";
-			productReference = 37FB8F6F1D129906252F07D761CC1FB2 /* Pods_Food_Aggregator.framework */;
+			productReference = 1FADF74889701F452E6B4469FEAF157F /* Pods_Food_Aggregator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6838B950623C5FCFD2C6072B596E056D /* KYDrawerController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCEE77F61ACBE2DBBB10C61E64E68871 /* Build configuration list for PBXNativeTarget "KYDrawerController" */;
+			buildPhases = (
+				A4CAE9633F3991350FC9AA738FC66C87 /* Headers */,
+				90EEFA9D8E3C826057CF2177FE1FD4EA /* Sources */,
+				E672CA89FB9A964AAB53EBCB613348D4 /* Frameworks */,
+				E3811504026C201E3480F44F7D1C6836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KYDrawerController;
+			productName = KYDrawerController;
+			productReference = E15D57D7339EF53CB083C4C7C2D70A69 /* KYDrawerController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -267,18 +353,19 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = AF39C4BAB45EF7788F897B1FB85775C9 /* Products */;
+			productRefGroup = 37E9B328DC6AEE982413C0489D55D7E5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				1469564F8BA49C7623488CD229E5288A /* ExpandableCell */,
-				960FC8F246D04BB79343298F04E159C1 /* Pods-Food Aggregator */,
+				6838B950623C5FCFD2C6072B596E056D /* KYDrawerController */,
+				1978D215153F10D7CE094A6E8BD85AB3 /* Pods-Food Aggregator */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9F659F1CD7CA2E7BA953815043B5C377 /* Resources */ = {
+		7F28F594224F4DBC50BB52FC40D3B2D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -293,14 +380,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E3811504026C201E3480F44F7D1C6836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C7977E3FB13D63C606A08BD1EEAAB674 /* Sources */ = {
+		0E3FC3BBFF13F5A59F7FE92882D958FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C041D2CD42D00245262CA5DF3F628DA9 /* Pods-Food Aggregator-dummy.m in Sources */,
+				38A45028C441F1553872657E51B994F9 /* Pods-Food Aggregator-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90EEFA9D8E3C826057CF2177FE1FD4EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A9BD23004C25288C03E2528F9323503 /* KYDrawerController-dummy.m in Sources */,
+				25A53EE0E63F3F4E549812D5800A1DD3 /* KYDrawerController.swift in Sources */,
+				5FE0D4534F54AFC37EED7F5EC36AE8D6 /* KYEmbedDrawerControllerSegue.swift in Sources */,
+				98D5A05DEA239950FE22010EC6E3A8F4 /* KYEmbedMainControllerSegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,18 +425,62 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		03D1FC2DCB48BFE66D3FA8343E1DF9CF /* PBXTargetDependency */ = {
+		03A2FA278BE3986824E5FA511C7EF161 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ExpandableCell;
 			target = 1469564F8BA49C7623488CD229E5288A /* ExpandableCell */;
-			targetProxy = B06C91F5B433A996ED23EE208AE49E8E /* PBXContainerItemProxy */;
+			targetProxy = C513ABBDA0B6E34789C988C3291CB571 /* PBXContainerItemProxy */;
+		};
+		499A05E058FE3495BD554A7FA26C3D56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KYDrawerController;
+			target = 6838B950623C5FCFD2C6072B596E056D /* KYDrawerController */;
+			targetProxy = AADC520A366223D2746ACBCA87660C98 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		50113D041BF10129289733C23ED439A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4DD4758A431C4FCFEC1AEB2F917FBF1 /* Pods-Food Aggregator.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Food Aggregator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		8A5DAF3FDD4D6E7170C53940FF689DF8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 931F35D8121814D6E83CB24997725F31 /* ExpandableCell.xcconfig */;
+			baseConfigurationReference = 5395A0FB55283999CB1022628D512790 /* ExpandableCell.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -427,6 +576,81 @@
 			};
 			name = Release;
 		};
+		BA0E93028296466DD18A56BBC5D585BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E4D9966DEB41DDC9121BF17B5A58CA6 /* KYDrawerController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/KYDrawerController/KYDrawerController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KYDrawerController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/KYDrawerController/KYDrawerController.modulemap";
+				PRODUCT_MODULE_NAME = KYDrawerController;
+				PRODUCT_NAME = KYDrawerController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CB314E9F436CB06EAD21F6E0D9C62328 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AA36A77B0F7C32DC25CD930029047BB /* Pods-Food Aggregator.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Food Aggregator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		E19471FE7E209D0818DAFB22D649A6E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -495,7 +719,7 @@
 		};
 		E247D2E069E27762A2C188F042AD6EB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 931F35D8121814D6E83CB24997725F31 /* ExpandableCell.xcconfig */;
+			baseConfigurationReference = 5395A0FB55283999CB1022628D512790 /* ExpandableCell.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -528,12 +752,10 @@
 			};
 			name = Debug;
 		};
-		F73DF52E5BCDBF868510169DE4D7710B /* Debug */ = {
+		F38D1D75620C4B2261182B0699E1C45B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4DD4758A431C4FCFEC1AEB2F917FBF1 /* Pods-Food Aggregator.debug.xcconfig */;
+			baseConfigurationReference = 4E4D9966DEB41DDC9121BF17B5A58CA6 /* KYDrawerController.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -543,67 +765,27 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Food Aggregator/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/KYDrawerController/KYDrawerController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KYDrawerController/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/KYDrawerController/KYDrawerController.modulemap";
+				PRODUCT_MODULE_NAME = KYDrawerController;
+				PRODUCT_NAME = KYDrawerController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		FC567E5F39093CADD3843603E397E3F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AA36A77B0F7C32DC25CD930029047BB /* Pods-Food Aggregator.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Food Aggregator/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -626,11 +808,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D49702F70D9A9B6FAEA036B588A6335E /* Build configuration list for PBXNativeTarget "Pods-Food Aggregator" */ = {
+		8CB504EC8B534B5D7D4374EBFD610AC5 /* Build configuration list for PBXNativeTarget "Pods-Food Aggregator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F73DF52E5BCDBF868510169DE4D7710B /* Debug */,
-				FC567E5F39093CADD3843603E397E3F1 /* Release */,
+				50113D041BF10129289733C23ED439A3 /* Debug */,
+				CB314E9F436CB06EAD21F6E0D9C62328 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCEE77F61ACBE2DBBB10C61E64E68871 /* Build configuration list for PBXNativeTarget "KYDrawerController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F38D1D75620C4B2261182B0699E1C45B /* Debug */,
+				BA0E93028296466DD18A56BBC5D585BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

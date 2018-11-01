@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B109D754218AA681009035B0 /* DrawerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109D753218AA681009035B0 /* DrawerCell.swift */; };
 		B19E76BD2189156300B7E6F1 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E76BC2189156300B7E6F1 /* HeaderView.swift */; };
 		B19E76BF2189162500B7E6F1 /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E76BE2189162500B7E6F1 /* CartCollectionViewCell.swift */; };
 		B19E76C121892D0C00B7E6F1 /* FinalPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E76C021892D0C00B7E6F1 /* FinalPriceView.swift */; };
@@ -28,12 +29,14 @@
 		B1E569FE2189486600C4B5B3 /* GMStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E569FD2189486600C4B5B3 /* GMStepper.swift */; };
 		B1E56A002189640800C4B5B3 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E569FF2189640800C4B5B3 /* OrderConfirmationViewController.swift */; };
 		B1E56A02218A9AA200C4B5B3 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E56A01218A9AA200C4B5B3 /* OrdersViewController.swift */; };
+		B1E56A04218A9E4000C4B5B3 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E56A03218A9E4000C4B5B3 /* DrawerViewController.swift */; };
 		F751013DA44CD8083B116A27 /* Pods_Food_Aggregator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59ADAEC1EAF00BED6FF7E730 /* Pods_Food_Aggregator.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		59ADAEC1EAF00BED6FF7E730 /* Pods_Food_Aggregator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Aggregator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A20080A819988240ED7CC87 /* Pods-Food Aggregator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Aggregator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator.debug.xcconfig"; sourceTree = "<group>"; };
+		B109D753218AA681009035B0 /* DrawerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerCell.swift; sourceTree = "<group>"; };
 		B19E76BC2189156300B7E6F1 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		B19E76BE2189162500B7E6F1 /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
 		B19E76C021892D0C00B7E6F1 /* FinalPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPriceView.swift; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 		B1E569FD2189486600C4B5B3 /* GMStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMStepper.swift; sourceTree = "<group>"; };
 		B1E569FF2189640800C4B5B3 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 		B1E56A01218A9AA200C4B5B3 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		B1E56A03218A9E4000C4B5B3 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		EF0334ED2AD4150CC5393B7C /* Pods-Food Aggregator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Aggregator.release.xcconfig"; path = "Pods/Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +127,8 @@
 				B1E569FD2189486600C4B5B3 /* GMStepper.swift */,
 				B1E569FF2189640800C4B5B3 /* OrderConfirmationViewController.swift */,
 				B1E56A01218A9AA200C4B5B3 /* OrdersViewController.swift */,
+				B1E56A03218A9E4000C4B5B3 /* DrawerViewController.swift */,
+				B109D753218AA681009035B0 /* DrawerCell.swift */,
 			);
 			path = "Food Aggregator";
 			sourceTree = "<group>";
@@ -237,12 +243,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ExpandableCell/ExpandableCell.framework",
+				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -258,7 +266,9 @@
 			files = (
 				B1A344E521714021005B1A81 /* Extension.swift in Sources */,
 				B1E569FE2189486600C4B5B3 /* GMStepper.swift in Sources */,
+				B1E56A04218A9E4000C4B5B3 /* DrawerViewController.swift in Sources */,
 				B1A344F121715143005B1A81 /* VendorCollectionViewCell.swift in Sources */,
+				B109D754218AA681009035B0 /* DrawerCell.swift in Sources */,
 				B1A344EB21714440005B1A81 /* FoodChainCollectionViewCell.swift in Sources */,
 				B1A344D621713D81005B1A81 /* Food_Aggregator.xcdatamodeld in Sources */,
 				B1B077EF2187431E00A6AA67 /* CartViewController.swift in Sources */,

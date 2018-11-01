@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import KYDrawerController
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, KYDrawerControllerDelegate {
     
     var collectionView: UICollectionView!
+    var drawerOpen = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +36,9 @@ class HomeViewController: UIViewController {
     }
     
     @objc func toDo() {
-        print("called")
+        if let drawerController = navigationController?.parent as? KYDrawerController {
+            drawerController.setDrawerState(.opened, animated: true)
+        }
     }
     
     @objc func openCart() {
