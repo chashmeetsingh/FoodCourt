@@ -7,6 +7,6 @@ target 'Food Aggregator' do
 
   # Pods for Food Aggregator
   pod 'ExpandableCell', '1.2.4'
-  pod 'KYDrawerController'
+  pod 'MMDrawerController'
   pod 'BBBadgeBarButtonItem'
 end

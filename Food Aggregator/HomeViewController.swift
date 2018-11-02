@@ -7,13 +7,19 @@
 //
 
 import UIKit
-import KYDrawerController
+import MMDrawerController
 import BBBadgeBarButtonItem
 
-class HomeViewController: UIViewController, KYDrawerControllerDelegate {
+class HomeViewController: UIViewController {
     
     var collectionView: UICollectionView!
     var drawerOpen = false
+    
+    var appDelegate: AppDelegate {
+        get {
+            return UIApplication.shared.delegate as! AppDelegate
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +38,7 @@ class HomeViewController: UIViewController, KYDrawerControllerDelegate {
         collectionView.dataSource = self
         collectionView.register(FoodChainCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(toDo))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(openDrawer))
         
         let cartButton = UIButton()
         cartButton.setImage(UIImage(named: "cart"), for: .normal)
@@ -43,10 +49,13 @@ class HomeViewController: UIViewController, KYDrawerControllerDelegate {
         
     }
     
-    @objc func toDo() {
-        if let drawerController = navigationController?.parent as? KYDrawerController {
-            drawerController.setDrawerState(.opened, animated: true)
+    @objc func openDrawer() {
+        if drawerOpen {
+            appDelegate.centerContainer?.closeDrawer(animated: true, completion: nil)
+        } else {
+            appDelegate.centerContainer?.open(.left, animated: true, completion: nil)
         }
+        drawerOpen = !drawerOpen
     }
     
     @objc func openCart() {

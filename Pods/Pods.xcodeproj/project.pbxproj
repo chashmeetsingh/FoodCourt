@@ -7,48 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A71D48263F005AAD887437D3B8987D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E404AA6957590324067E330E0EC533 /* UIKit.framework */; };
-		13BC361C00F71A38EAD9FB8895005D22 /* BBBadgeBarButtonItem-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63125BE80BE9CD2B39846DBEB81AF102 /* BBBadgeBarButtonItem-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		186B68343B66812840CE31277ABE1BCB /* ExpandableCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CA32B47555BE860B96D9665089A50F11 /* ExpandableCell-dummy.m */; };
-		25A53EE0E63F3F4E549812D5800A1DD3 /* KYDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365DF2E4E297B7682E1057DD23F2C06B /* KYDrawerController.swift */; };
-		4A9BD23004C25288C03E2528F9323503 /* KYDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32BD81ADF243682FD19EE8CCA30B67F5 /* KYDrawerController-dummy.m */; };
-		5FE0D4534F54AFC37EED7F5EC36AE8D6 /* KYEmbedDrawerControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED81A19CA80C4FC3130FBE2AA30776A /* KYEmbedDrawerControllerSegue.swift */; };
-		6D13EE905D35E251D9DBF98D7D895A81 /* ExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A71DDEC8B2750EA675E494CC68B83D /* ExpandableTableView.swift */; };
-		7FC56ABD960155877AE733E258F83DAB /* Pods-Food Aggregator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B01DF90D0DAF50C0200EF319DA18916A /* Pods-Food Aggregator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		89A399C86533A167782D3995BE031CDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
-		8EAF9107F23780E662B89CA04E1F055A /* BBBadgeBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 18F6748A1A7DA81E3B061F19CF959218 /* BBBadgeBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		98D5A05DEA239950FE22010EC6E3A8F4 /* KYEmbedMainControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AB96DAC4BAC1FA3CD54D86AE40B2FC /* KYEmbedMainControllerSegue.swift */; };
-		A0350E5D03F4756F4C0B77E4EF3712CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
-		A6CECF76CF837D6628C41B7DEDD619B7 /* BBBadgeBarButtonItem-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C60FBECA64CA2E5454C725467BDD711E /* BBBadgeBarButtonItem-dummy.m */; };
-		A90F3D9E6567239455D1BB479FA470C3 /* ExpandableCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5195A0831FAC9F20EBEB0191734AD6F9 /* ExpandableCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AD8197E0D0DC262254CD54E24F60E259 /* KYDrawerController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C34AEC945FA3B084906A14CCD0D28A76 /* KYDrawerController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AFD146968C6254170397A6BB8D0D6845 /* ExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF39DB4DE70210055FB267D1C0935F8 /* ExpandableCell.swift */; };
-		B30A519B28A9A0A98CA562536A8D7A42 /* ExpandableProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F81BEAB7371E55670DB07F0EADB419 /* ExpandableProcessor.swift */; };
-		BBC64FA5EDB8BAB3AE6F41167339424B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
-		C126AF4FFE6F641A41B3DA6F18010F95 /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D10E35ABAFD3C59821047626639DCE57 /* BBBadgeBarButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C7330B4C7C867542B777B06EA1088A03 /* ExpandableStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022D7498F296392B86AC2D9A4A6B4C43 /* ExpandableStyle.swift */; };
-		E054A9DAF05AFFE43AF3DB65005C8620 /* ExpandableCell.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C014AA2B68CEFB3D03AB856480E7356 /* ExpandableCell.xcassets */; };
-		E11821C2F75DD8F92CBA32364B8FF2F7 /* Pods-Food Aggregator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32010A239805F301625FFB5564887276 /* Pods-Food Aggregator-dummy.m */; };
-		E6152EC80A201644EAC0FA9F9FBAB049 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
-		F013DEE28C25A2A3D8AFB01D6E3BE37B /* ExpandableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A55418E1FFBC585B1F8082C77AEFA2 /* ExpandableDelegate.swift */; };
+		0923C7C1EBF2443526884801C95A795F /* Pods-Food Aggregator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B01DF90D0DAF50C0200EF319DA18916A /* Pods-Food Aggregator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A71D48263F005AAD887437D3B8987D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A53654F6C69F2B1C06A517CAB5691730 /* UIKit.framework */; };
+		101EEBDCD69ED44CB8DED92A9EA27FFB /* MMDrawerBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = CF05E5FC0FC953AC4AA15CD4C427EEF9 /* MMDrawerBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		113E848640F4D289847E54C13D974AA6 /* MMDrawerVisualState.h in Headers */ = {isa = PBXBuildFile; fileRef = D5594F751C27C433330CC024C081178F /* MMDrawerVisualState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13BC361C00F71A38EAD9FB8895005D22 /* BBBadgeBarButtonItem-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D1E45EB9916CBE9B8215FC6F786D7001 /* BBBadgeBarButtonItem-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		186B68343B66812840CE31277ABE1BCB /* ExpandableCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 01536476CEDF4F0CEA4A0B2FD60537CE /* ExpandableCell-dummy.m */; };
+		453FB36E5FD879E21B61903632F579B9 /* MMDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C96701479FF5FFB81E6C66FAEABC90B7 /* MMDrawerController-dummy.m */; };
+		46EA26A34F739428BC4CA19085DD75DF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F55B96F9FD27342C0F09BBB7DEE1AE /* QuartzCore.framework */; };
+		6C66906D724CF49FF3FB4426E334D430 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD44A1E98CBF77D59F9BF27301EF7DF /* MMDrawerController.m */; };
+		6D13EE905D35E251D9DBF98D7D895A81 /* ExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125EAA8E34AA868E5A8E2CB58C0573C0 /* ExpandableTableView.swift */; };
+		790BF0606B6FC0037DD82C823A2AB0B3 /* Pods-Food Aggregator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 32010A239805F301625FFB5564887276 /* Pods-Food Aggregator-dummy.m */; };
+		7AF948E49940BFA8766641B98505E5A5 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CF15C75F95E013D84953D9920014B55 /* UIViewController+MMDrawerController.m */; };
+		89A399C86533A167782D3995BE031CDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8D8B915FF40EB401BFF7A6C07CC4BAC /* Foundation.framework */; };
+		8EAF9107F23780E662B89CA04E1F055A /* BBBadgeBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = F8282730EA6308D8D908CDE71B28DF8F /* BBBadgeBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9011CF137FE229A2FB81DB93D8264E22 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EFA04E092A2C0EE66E39EC756D6E38ED /* MMDrawerBarButtonItem.m */; };
+		9111F78267F03EAB7D60BBE4706E4409 /* MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FB664B80F03D54AC5411E63EF3837A1 /* MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		984302BD2C4F8C225FDC3EE420BE416B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8D8B915FF40EB401BFF7A6C07CC4BAC /* Foundation.framework */; };
+		9FBC49AF0619AE065C725783FBC8D4DE /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 510E8BF935A4192247A9D7D6C291236D /* MMDrawerVisualState.m */; };
+		A6CECF76CF837D6628C41B7DEDD619B7 /* BBBadgeBarButtonItem-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D40257AF6511B3F57D3BF7A4F20ADD8B /* BBBadgeBarButtonItem-dummy.m */; };
+		A90F3D9E6567239455D1BB479FA470C3 /* ExpandableCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FFFEB88AF467FF4C9EC6309AA94898A6 /* ExpandableCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACF2AD2D7A5F0B53A76C85843DF24B63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8D8B915FF40EB401BFF7A6C07CC4BAC /* Foundation.framework */; };
+		AE67852A9393729E6306673907C945B1 /* MMDrawerController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BE92887745C577313CED78F1DFCEBA1 /* MMDrawerController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AFD146968C6254170397A6BB8D0D6845 /* ExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC39F9897185EB18AC8BEA4E2907CF1B /* ExpandableCell.swift */; };
+		B30A519B28A9A0A98CA562536A8D7A42 /* ExpandableProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CFCA7113CB0E13F9CC2CD377EAD360 /* ExpandableProcessor.swift */; };
+		BBC64FA5EDB8BAB3AE6F41167339424B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8D8B915FF40EB401BFF7A6C07CC4BAC /* Foundation.framework */; };
+		C126AF4FFE6F641A41B3DA6F18010F95 /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C777745B72674572CC15DF6A32B21DB /* BBBadgeBarButtonItem.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C7330B4C7C867542B777B06EA1088A03 /* ExpandableStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF5EDE00B0CBF435E7047E3028A129D /* ExpandableStyle.swift */; };
+		D2FC19FA554EA1DF28116B8D98B11ECB /* MMDrawerController+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = 31EF780A5EA2CC696087AAB14519F74C /* MMDrawerController+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4BB1BE93388CE6D1B9E30A6E6C1A79A /* UIViewController+MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8314CEC3365231223AB97271BF12D47E /* UIViewController+MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E054A9DAF05AFFE43AF3DB65005C8620 /* ExpandableCell.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 537BE8388A9A6909F863F418F2577A2B /* ExpandableCell.xcassets */; };
+		F013DEE28C25A2A3D8AFB01D6E3BE37B /* ExpandableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BED3E949DF6700041450E474DEBCA1 /* ExpandableDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0B641A8D50803A16BC449885C61497B0 /* PBXContainerItemProxy */ = {
+		0155BC4AE44F658DF3E214798FBC2432 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6838B950623C5FCFD2C6072B596E056D;
-			remoteInfo = KYDrawerController;
+			remoteGlobalIDString = 579B84EBF73D638C0E8CC0C174A0E953;
+			remoteInfo = MMDrawerController;
 		};
-		72F9DFFF29F937D475734C334C249E63 /* PBXContainerItemProxy */ = {
+		3638DDC2E6EDD2CE56F73AFBBB5896CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C85BB5559C4F5CDE5F6B261B4EE0C54F;
 			remoteInfo = BBBadgeBarButtonItem;
 		};
-		B8DAA778C1633DB14CA61ACC81733761 /* PBXContainerItemProxy */ = {
+		42A79D699A5F7251E82013CB47B33876 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -58,52 +65,59 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		022D7498F296392B86AC2D9A4A6B4C43 /* ExpandableStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableStyle.swift; path = ExpandableCell/ExpandableStyle.swift; sourceTree = "<group>"; };
-		1682237696B397ECDCC932E97D1803E5 /* KYDrawerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KYDrawerController.modulemap; sourceTree = "<group>"; };
-		18F6748A1A7DA81E3B061F19CF959218 /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BBBadgeBarButtonItem.h; path = BBBadgeBarButtonItem/BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
+		01536476CEDF4F0CEA4A0B2FD60537CE /* ExpandableCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ExpandableCell-dummy.m"; sourceTree = "<group>"; };
+		02CFCA7113CB0E13F9CC2CD377EAD360 /* ExpandableProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableProcessor.swift; path = ExpandableCell/ExpandableProcessor.swift; sourceTree = "<group>"; };
+		057AE15D640DDD12966894FF03BE33EA /* MMDrawerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MMDrawerController.modulemap; sourceTree = "<group>"; };
+		0A1EE1F72CE2F9867521D1CCADDA4D41 /* BBBadgeBarButtonItem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BBBadgeBarButtonItem.framework; path = BBBadgeBarButtonItem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		102B09D88287C81DCAA728CA7D3746F8 /* MMDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-prefix.pch"; sourceTree = "<group>"; };
+		125EAA8E34AA868E5A8E2CB58C0573C0 /* ExpandableTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableTableView.swift; path = ExpandableCell/ExpandableTableView.swift; sourceTree = "<group>"; };
 		1F91B033BE245D06C1FF07EDCFDE2D2D /* Pods-Food Aggregator-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Food Aggregator-acknowledgements.markdown"; sourceTree = "<group>"; };
-		227BB52AFA2563C0AF722C86E4E56B27 /* Pods_Food_Aggregator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Food_Aggregator.framework; path = "Pods-Food Aggregator.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2535E4A4F438DF1D24DFAEB52DA7B0A2 /* KYDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYDrawerController-prefix.pch"; sourceTree = "<group>"; };
-		2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		2A2C51D1399BEDF0BBD1A014D4EC6393 /* BBBadgeBarButtonItem.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BBBadgeBarButtonItem.xcconfig; sourceTree = "<group>"; };
+		2FB664B80F03D54AC5411E63EF3837A1 /* MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
+		31EF780A5EA2CC696087AAB14519F74C /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
 		32010A239805F301625FFB5564887276 /* Pods-Food Aggregator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Food Aggregator-dummy.m"; sourceTree = "<group>"; };
-		3243352463C4C5915B07EB0C3ACF8F83 /* BBBadgeBarButtonItem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BBBadgeBarButtonItem.framework; path = BBBadgeBarButtonItem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		32BD81ADF243682FD19EE8CCA30B67F5 /* KYDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KYDrawerController-dummy.m"; sourceTree = "<group>"; };
-		33AB96DAC4BAC1FA3CD54D86AE40B2FC /* KYEmbedMainControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYEmbedMainControllerSegue.swift; path = KYDrawerController/Classes/KYEmbedMainControllerSegue.swift; sourceTree = "<group>"; };
-		34D301AC2080B18F2D50D85088DA502C /* ExpandableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ExpandableCell.framework; path = ExpandableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		365DF2E4E297B7682E1057DD23F2C06B /* KYDrawerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYDrawerController.swift; path = KYDrawerController/Classes/KYDrawerController.swift; sourceTree = "<group>"; };
-		45AEA06DE8797688A2F31F029EB1671B /* BBBadgeBarButtonItem.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BBBadgeBarButtonItem.xcconfig; sourceTree = "<group>"; };
-		4C014AA2B68CEFB3D03AB856480E7356 /* ExpandableCell.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = ExpandableCell.xcassets; path = ExpandableCell/ExpandableCell.xcassets; sourceTree = "<group>"; };
+		3BE92887745C577313CED78F1DFCEBA1 /* MMDrawerController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-umbrella.h"; sourceTree = "<group>"; };
 		4FB920D10295874E2F4C854AD5916F46 /* Pods-Food Aggregator-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Food Aggregator-resources.sh"; sourceTree = "<group>"; };
-		5195A0831FAC9F20EBEB0191734AD6F9 /* ExpandableCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ExpandableCell-umbrella.h"; sourceTree = "<group>"; };
-		63125BE80BE9CD2B39846DBEB81AF102 /* BBBadgeBarButtonItem-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BBBadgeBarButtonItem-umbrella.h"; sourceTree = "<group>"; };
-		67768BAE42DC28D19E577CB932FA3400 /* KYDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KYDrawerController.xcconfig; sourceTree = "<group>"; };
-		6C167E9ACECB17F5E7019B54D2E080F5 /* ExpandableCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ExpandableCell.modulemap; sourceTree = "<group>"; };
-		7280276BAAA86BEC8E96CCB0E77F0E68 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74E404AA6957590324067E330E0EC533 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		7821E264C018359A37950E0F38BB28C6 /* BBBadgeBarButtonItem.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BBBadgeBarButtonItem.modulemap; sourceTree = "<group>"; };
+		510E8BF935A4192247A9D7D6C291236D /* MMDrawerVisualState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
+		537BE8388A9A6909F863F418F2577A2B /* ExpandableCell.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = ExpandableCell.xcassets; path = ExpandableCell/ExpandableCell.xcassets; sourceTree = "<group>"; };
+		6587157BE2C98FF93E3E09EE02B8D6BC /* ExpandableCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ExpandableCell.modulemap; sourceTree = "<group>"; };
+		6DF5EDE00B0CBF435E7047E3028A129D /* ExpandableStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableStyle.swift; path = ExpandableCell/ExpandableStyle.swift; sourceTree = "<group>"; };
+		6FCAA0C077F1F5093B23D1B3C63433FA /* ExpandableCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ExpandableCell.framework; path = ExpandableCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA36A77B0F7C32DC25CD930029047BB /* Pods-Food Aggregator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Food Aggregator.release.xcconfig"; sourceTree = "<group>"; };
+		7AAD380821D1B3584F09800EDA7489EB /* MMDrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MMDrawerController.framework; path = MMDrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C4D3384EE335AA17F0F7C804350FA40 /* MMDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MMDrawerController.xcconfig; sourceTree = "<group>"; };
+		81BED3E949DF6700041450E474DEBCA1 /* ExpandableDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableDelegate.swift; path = ExpandableCell/ExpandableDelegate.swift; sourceTree = "<group>"; };
+		81DFD9DB15D5035C8DE1AA9BB5C4FDD4 /* Pods_Food_Aggregator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Food_Aggregator.framework; path = "Pods-Food Aggregator.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8314CEC3365231223AB97271BF12D47E /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
 		83750D4F7FE4F409799BB0BD333E5465 /* Pods-Food Aggregator-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Food Aggregator-frameworks.sh"; sourceTree = "<group>"; };
-		90BF14072DC8D797E900B6BD69A0C369 /* KYDrawerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KYDrawerController.framework; path = KYDrawerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83F55B96F9FD27342C0F09BBB7DEE1AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		8B4593C6483E101394DC43FD39701AA8 /* BBBadgeBarButtonItem.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BBBadgeBarButtonItem.modulemap; sourceTree = "<group>"; };
+		8C777745B72674572CC15DF6A32B21DB /* BBBadgeBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BBBadgeBarButtonItem.m; path = BBBadgeBarButtonItem/BBBadgeBarButtonItem.m; sourceTree = "<group>"; };
+		8CF15C75F95E013D84953D9920014B55 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		8D6A7748F493AC1A13BB346B2A9BD909 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9ED81A19CA80C4FC3130FBE2AA30776A /* KYEmbedDrawerControllerSegue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KYEmbedDrawerControllerSegue.swift; path = KYDrawerController/Classes/KYEmbedDrawerControllerSegue.swift; sourceTree = "<group>"; };
-		ABF39DB4DE70210055FB267D1C0935F8 /* ExpandableCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableCell.swift; path = ExpandableCell/ExpandableCell.swift; sourceTree = "<group>"; };
+		A53654F6C69F2B1C06A517CAB5691730 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		A694804E152713AD6686268ABE139224 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B01DF90D0DAF50C0200EF319DA18916A /* Pods-Food Aggregator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Food Aggregator-umbrella.h"; sourceTree = "<group>"; };
-		B4A55418E1FFBC585B1F8082C77AEFA2 /* ExpandableDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableDelegate.swift; path = ExpandableCell/ExpandableDelegate.swift; sourceTree = "<group>"; };
+		B8D8B915FF40EB401BFF7A6C07CC4BAC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		BCD44A1E98CBF77D59F9BF27301EF7DF /* MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
 		BDDF995D7A85996FC5134B03904EA6F9 /* Pods-Food Aggregator-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Food Aggregator-acknowledgements.plist"; sourceTree = "<group>"; };
-		C34AEC945FA3B084906A14CCD0D28A76 /* KYDrawerController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KYDrawerController-umbrella.h"; sourceTree = "<group>"; };
-		C39017F0F2667C531EDE1D82097638BB /* ExpandableCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ExpandableCell.xcconfig; sourceTree = "<group>"; };
+		C12CC02F9070DB773A76CF9478752E87 /* ExpandableCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ExpandableCell-prefix.pch"; sourceTree = "<group>"; };
 		C52CB87C37D389A52894B3BBBF3CA277 /* Pods-Food Aggregator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Food Aggregator.modulemap"; sourceTree = "<group>"; };
-		C60FBECA64CA2E5454C725467BDD711E /* BBBadgeBarButtonItem-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BBBadgeBarButtonItem-dummy.m"; sourceTree = "<group>"; };
-		C75917FCD6CBD815CE8546AE198D014A /* ExpandableCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ExpandableCell-prefix.pch"; sourceTree = "<group>"; };
-		CA32B47555BE860B96D9665089A50F11 /* ExpandableCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ExpandableCell-dummy.m"; sourceTree = "<group>"; };
-		CA9A2FB22C76D4A285749D9370E02708 /* BBBadgeBarButtonItem-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BBBadgeBarButtonItem-prefix.pch"; sourceTree = "<group>"; };
-		D10E35ABAFD3C59821047626639DCE57 /* BBBadgeBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BBBadgeBarButtonItem.m; path = BBBadgeBarButtonItem/BBBadgeBarButtonItem.m; sourceTree = "<group>"; };
-		E26E20C4057C4E60BE785620D14A461E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E5A71DDEC8B2750EA675E494CC68B83D /* ExpandableTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableTableView.swift; path = ExpandableCell/ExpandableTableView.swift; sourceTree = "<group>"; };
-		EFE1523A6A1C836A66BD553EEC40C5E2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C96701479FF5FFB81E6C66FAEABC90B7 /* MMDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController-dummy.m"; sourceTree = "<group>"; };
+		CD4C2D9A27C49B791CFDA51101CC842A /* BBBadgeBarButtonItem-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BBBadgeBarButtonItem-prefix.pch"; sourceTree = "<group>"; };
+		CF05E5FC0FC953AC4AA15CD4C427EEF9 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		D1E45EB9916CBE9B8215FC6F786D7001 /* BBBadgeBarButtonItem-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BBBadgeBarButtonItem-umbrella.h"; sourceTree = "<group>"; };
+		D40257AF6511B3F57D3BF7A4F20ADD8B /* BBBadgeBarButtonItem-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BBBadgeBarButtonItem-dummy.m"; sourceTree = "<group>"; };
+		D4AB4A87FE6161F66D29337837ABC60A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5594F751C27C433330CC024C081178F /* MMDrawerVisualState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
+		EFA04E092A2C0EE66E39EC756D6E38ED /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
 		F31CF8AECF0BC3F9720772703FA55BE3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4DD4758A431C4FCFEC1AEB2F917FBF1 /* Pods-Food Aggregator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Food Aggregator.debug.xcconfig"; sourceTree = "<group>"; };
-		F5F81BEAB7371E55670DB07F0EADB419 /* ExpandableProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableProcessor.swift; path = ExpandableCell/ExpandableProcessor.swift; sourceTree = "<group>"; };
+		F8282730EA6308D8D908CDE71B28DF8F /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BBBadgeBarButtonItem.h; path = BBBadgeBarButtonItem/BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
+		FC39F9897185EB18AC8BEA4E2907CF1B /* ExpandableCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpandableCell.swift; path = ExpandableCell/ExpandableCell.swift; sourceTree = "<group>"; };
+		FE543A444914ABF264A4C7B9DEF7D988 /* ExpandableCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ExpandableCell.xcconfig; sourceTree = "<group>"; };
+		FFFEB88AF467FF4C9EC6309AA94898A6 /* ExpandableCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ExpandableCell-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,59 +138,80 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94088BE86FF1695D023D49A072244143 /* Frameworks */ = {
+		DC275772BF9FDF9B0C0BE62AAFF31119 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0350E5D03F4756F4C0B77E4EF3712CB /* Foundation.framework in Frameworks */,
+				ACF2AD2D7A5F0B53A76C85843DF24B63 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E672CA89FB9A964AAB53EBCB613348D4 /* Frameworks */ = {
+		E3A33707D190495C8C9AF7C2A005EA67 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6152EC80A201644EAC0FA9F9FBAB049 /* Foundation.framework in Frameworks */,
+				984302BD2C4F8C225FDC3EE420BE416B /* Foundation.framework in Frameworks */,
+				46EA26A34F739428BC4CA19085DD75DF /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06CDD10DE71306278CF89108B3036DFD /* iOS */ = {
+		0CD4EFAF21050F5CE67A7E653286B14C /* MMDrawerController */ = {
 			isa = PBXGroup;
 			children = (
-				2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */,
-				74E404AA6957590324067E330E0EC533 /* UIKit.framework */,
+				483461F7C4AF892BF0BB70FB5F4A2E5D /* Core */,
+				A2AF97C775968633CB926BA6063178D8 /* MMDrawerBarButtonItem */,
+				B56C7EC1E79DAD3920EA3000CF64E839 /* MMDrawerVisualStates */,
+				3FD47705E6102694235786D6A00932A9 /* Subclass */,
+				D7BD8610D66B9B34D66BDEFE0C0A2EA4 /* Support Files */,
+			);
+			name = MMDrawerController;
+			path = MMDrawerController;
+			sourceTree = "<group>";
+		};
+		0D7A87A398F0D91F1E1B327DC5AD954E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				B8D8B915FF40EB401BFF7A6C07CC4BAC /* Foundation.framework */,
+				83F55B96F9FD27342C0F09BBB7DEE1AE /* QuartzCore.framework */,
+				A53654F6C69F2B1C06A517CAB5691730 /* UIKit.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		2D3F15662F260F8B8DDEE739D0E4493B /* KYDrawerController */ = {
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				365DF2E4E297B7682E1057DD23F2C06B /* KYDrawerController.swift */,
-				9ED81A19CA80C4FC3130FBE2AA30776A /* KYEmbedDrawerControllerSegue.swift */,
-				33AB96DAC4BAC1FA3CD54D86AE40B2FC /* KYEmbedMainControllerSegue.swift */,
-				85FC780022E1A04BFFD58C31AD7AB12B /* Support Files */,
+				0D7A87A398F0D91F1E1B327DC5AD954E /* iOS */,
 			);
-			name = KYDrawerController;
-			path = KYDrawerController;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3A56D8BD7F8547369277B8332329A61D /* ExpandableCell */ = {
+		1BAE1D9F7D387523BF7EDA484C81F689 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ABF39DB4DE70210055FB267D1C0935F8 /* ExpandableCell.swift */,
-				B4A55418E1FFBC585B1F8082C77AEFA2 /* ExpandableDelegate.swift */,
-				F5F81BEAB7371E55670DB07F0EADB419 /* ExpandableProcessor.swift */,
-				022D7498F296392B86AC2D9A4A6B4C43 /* ExpandableStyle.swift */,
-				E5A71DDEC8B2750EA675E494CC68B83D /* ExpandableTableView.swift */,
-				E9C43DD841DAA3509E77859F5102E4BE /* Resources */,
-				9450573E0746C7401D39EACCC6BAB17C /* Support Files */,
+				0A1EE1F72CE2F9867521D1CCADDA4D41 /* BBBadgeBarButtonItem.framework */,
+				6FCAA0C077F1F5093B23D1B3C63433FA /* ExpandableCell.framework */,
+				7AAD380821D1B3584F09800EDA7489EB /* MMDrawerController.framework */,
+				81DFD9DB15D5035C8DE1AA9BB5C4FDD4 /* Pods_Food_Aggregator.framework */,
 			);
-			name = ExpandableCell;
-			path = ExpandableCell;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2FBBF8670CF87247EDA16CD94A356D3E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6587157BE2C98FF93E3E09EE02B8D6BC /* ExpandableCell.modulemap */,
+				FE543A444914ABF264A4C7B9DEF7D988 /* ExpandableCell.xcconfig */,
+				01536476CEDF4F0CEA4A0B2FD60537CE /* ExpandableCell-dummy.m */,
+				C12CC02F9070DB773A76CF9478752E87 /* ExpandableCell-prefix.pch */,
+				FFFEB88AF467FF4C9EC6309AA94898A6 /* ExpandableCell-umbrella.h */,
+				8D6A7748F493AC1A13BB346B2A9BD909 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ExpandableCell";
 			sourceTree = "<group>";
 		};
 		3AE508D8215312E7AB9F78E36A497F2E /* Targets Support Files */ = {
@@ -187,12 +222,31 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+		3FD47705E6102694235786D6A00932A9 /* Subclass */ = {
 			isa = PBXGroup;
 			children = (
-				06CDD10DE71306278CF89108B3036DFD /* iOS */,
+				31EF780A5EA2CC696087AAB14519F74C /* MMDrawerController+Subclass.h */,
 			);
-			name = Frameworks;
+			name = Subclass;
+			sourceTree = "<group>";
+		};
+		410DBE8D94E21E3EA3A8C85F40C3B613 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				537BE8388A9A6909F863F418F2577A2B /* ExpandableCell.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		483461F7C4AF892BF0BB70FB5F4A2E5D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2FB664B80F03D54AC5411E63EF3837A1 /* MMDrawerController.h */,
+				BCD44A1E98CBF77D59F9BF27301EF7DF /* MMDrawerController.m */,
+				8314CEC3365231223AB97271BF12D47E /* UIViewController+MMDrawerController.h */,
+				8CF15C75F95E013D84953D9920014B55 /* UIViewController+MMDrawerController.m */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 		5067DB564D687CDC044C58F1995C7320 /* Pods-Food Aggregator */ = {
@@ -213,97 +267,97 @@
 			path = "Target Support Files/Pods-Food Aggregator";
 			sourceTree = "<group>";
 		};
-		7DB346D0F39D3F0E887471402A8071AB = {
+		6DA748F99DB58B7396C3F4D9A59AC479 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				F604522A42362C0A94B1BF9AFE0CB000 /* Pods */,
-				7E2D268A634BD6E4F688A2EBA9384867 /* Products */,
-				3AE508D8215312E7AB9F78E36A497F2E /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		7E2D268A634BD6E4F688A2EBA9384867 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3243352463C4C5915B07EB0C3ACF8F83 /* BBBadgeBarButtonItem.framework */,
-				34D301AC2080B18F2D50D85088DA502C /* ExpandableCell.framework */,
-				90BF14072DC8D797E900B6BD69A0C369 /* KYDrawerController.framework */,
-				227BB52AFA2563C0AF722C86E4E56B27 /* Pods_Food_Aggregator.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		85FC780022E1A04BFFD58C31AD7AB12B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				7280276BAAA86BEC8E96CCB0E77F0E68 /* Info.plist */,
-				1682237696B397ECDCC932E97D1803E5 /* KYDrawerController.modulemap */,
-				67768BAE42DC28D19E577CB932FA3400 /* KYDrawerController.xcconfig */,
-				32BD81ADF243682FD19EE8CCA30B67F5 /* KYDrawerController-dummy.m */,
-				2535E4A4F438DF1D24DFAEB52DA7B0A2 /* KYDrawerController-prefix.pch */,
-				C34AEC945FA3B084906A14CCD0D28A76 /* KYDrawerController-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/KYDrawerController";
-			sourceTree = "<group>";
-		};
-		90C18755C1F4005C2449904BE9C7C0C8 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				7821E264C018359A37950E0F38BB28C6 /* BBBadgeBarButtonItem.modulemap */,
-				45AEA06DE8797688A2F31F029EB1671B /* BBBadgeBarButtonItem.xcconfig */,
-				C60FBECA64CA2E5454C725467BDD711E /* BBBadgeBarButtonItem-dummy.m */,
-				CA9A2FB22C76D4A285749D9370E02708 /* BBBadgeBarButtonItem-prefix.pch */,
-				63125BE80BE9CD2B39846DBEB81AF102 /* BBBadgeBarButtonItem-umbrella.h */,
-				E26E20C4057C4E60BE785620D14A461E /* Info.plist */,
+				8B4593C6483E101394DC43FD39701AA8 /* BBBadgeBarButtonItem.modulemap */,
+				2A2C51D1399BEDF0BBD1A014D4EC6393 /* BBBadgeBarButtonItem.xcconfig */,
+				D40257AF6511B3F57D3BF7A4F20ADD8B /* BBBadgeBarButtonItem-dummy.m */,
+				CD4C2D9A27C49B791CFDA51101CC842A /* BBBadgeBarButtonItem-prefix.pch */,
+				D1E45EB9916CBE9B8215FC6F786D7001 /* BBBadgeBarButtonItem-umbrella.h */,
+				D4AB4A87FE6161F66D29337837ABC60A /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/BBBadgeBarButtonItem";
 			sourceTree = "<group>";
 		};
-		9450573E0746C7401D39EACCC6BAB17C /* Support Files */ = {
+		75CD43D0DAD31E7379E3372774E7AB43 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6C167E9ACECB17F5E7019B54D2E080F5 /* ExpandableCell.modulemap */,
-				C39017F0F2667C531EDE1D82097638BB /* ExpandableCell.xcconfig */,
-				CA32B47555BE860B96D9665089A50F11 /* ExpandableCell-dummy.m */,
-				C75917FCD6CBD815CE8546AE198D014A /* ExpandableCell-prefix.pch */,
-				5195A0831FAC9F20EBEB0191734AD6F9 /* ExpandableCell-umbrella.h */,
-				EFE1523A6A1C836A66BD553EEC40C5E2 /* Info.plist */,
+				94032BAD56956161FFEB385F5CE22815 /* BBBadgeBarButtonItem */,
+				CA67A689A57C9BD304D495EC8B4EEF03 /* ExpandableCell */,
+				0CD4EFAF21050F5CE67A7E653286B14C /* MMDrawerController */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/ExpandableCell";
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		A191A79A9D750D84446FDEB6D9355986 /* BBBadgeBarButtonItem */ = {
+		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				18F6748A1A7DA81E3B061F19CF959218 /* BBBadgeBarButtonItem.h */,
-				D10E35ABAFD3C59821047626639DCE57 /* BBBadgeBarButtonItem.m */,
-				90C18755C1F4005C2449904BE9C7C0C8 /* Support Files */,
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				75CD43D0DAD31E7379E3372774E7AB43 /* Pods */,
+				1BAE1D9F7D387523BF7EDA484C81F689 /* Products */,
+				3AE508D8215312E7AB9F78E36A497F2E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		94032BAD56956161FFEB385F5CE22815 /* BBBadgeBarButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				F8282730EA6308D8D908CDE71B28DF8F /* BBBadgeBarButtonItem.h */,
+				8C777745B72674572CC15DF6A32B21DB /* BBBadgeBarButtonItem.m */,
+				6DA748F99DB58B7396C3F4D9A59AC479 /* Support Files */,
 			);
 			name = BBBadgeBarButtonItem;
 			path = BBBadgeBarButtonItem;
 			sourceTree = "<group>";
 		};
-		E9C43DD841DAA3509E77859F5102E4BE /* Resources */ = {
+		A2AF97C775968633CB926BA6063178D8 /* MMDrawerBarButtonItem */ = {
 			isa = PBXGroup;
 			children = (
-				4C014AA2B68CEFB3D03AB856480E7356 /* ExpandableCell.xcassets */,
+				CF05E5FC0FC953AC4AA15CD4C427EEF9 /* MMDrawerBarButtonItem.h */,
+				EFA04E092A2C0EE66E39EC756D6E38ED /* MMDrawerBarButtonItem.m */,
 			);
-			name = Resources;
+			name = MMDrawerBarButtonItem;
 			sourceTree = "<group>";
 		};
-		F604522A42362C0A94B1BF9AFE0CB000 /* Pods */ = {
+		B56C7EC1E79DAD3920EA3000CF64E839 /* MMDrawerVisualStates */ = {
 			isa = PBXGroup;
 			children = (
-				A191A79A9D750D84446FDEB6D9355986 /* BBBadgeBarButtonItem */,
-				3A56D8BD7F8547369277B8332329A61D /* ExpandableCell */,
-				2D3F15662F260F8B8DDEE739D0E4493B /* KYDrawerController */,
+				D5594F751C27C433330CC024C081178F /* MMDrawerVisualState.h */,
+				510E8BF935A4192247A9D7D6C291236D /* MMDrawerVisualState.m */,
 			);
-			name = Pods;
+			name = MMDrawerVisualStates;
+			sourceTree = "<group>";
+		};
+		CA67A689A57C9BD304D495EC8B4EEF03 /* ExpandableCell */ = {
+			isa = PBXGroup;
+			children = (
+				FC39F9897185EB18AC8BEA4E2907CF1B /* ExpandableCell.swift */,
+				81BED3E949DF6700041450E474DEBCA1 /* ExpandableDelegate.swift */,
+				02CFCA7113CB0E13F9CC2CD377EAD360 /* ExpandableProcessor.swift */,
+				6DF5EDE00B0CBF435E7047E3028A129D /* ExpandableStyle.swift */,
+				125EAA8E34AA868E5A8E2CB58C0573C0 /* ExpandableTableView.swift */,
+				410DBE8D94E21E3EA3A8C85F40C3B613 /* Resources */,
+				2FBBF8670CF87247EDA16CD94A356D3E /* Support Files */,
+			);
+			name = ExpandableCell;
+			path = ExpandableCell;
+			sourceTree = "<group>";
+		};
+		D7BD8610D66B9B34D66BDEFE0C0A2EA4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A694804E152713AD6686268ABE139224 /* Info.plist */,
+				057AE15D640DDD12966894FF03BE33EA /* MMDrawerController.modulemap */,
+				7C4D3384EE335AA17F0F7C804350FA40 /* MMDrawerController.xcconfig */,
+				C96701479FF5FFB81E6C66FAEABC90B7 /* MMDrawerController-dummy.m */,
+				102B09D88287C81DCAA728CA7D3746F8 /* MMDrawerController-prefix.pch */,
+				3BE92887745C577313CED78F1DFCEBA1 /* MMDrawerController-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MMDrawerController";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,25 +380,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4CAE9633F3991350FC9AA738FC66C87 /* Headers */ = {
+		B2C07967BFB8F304D797C0B14FC629E2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD8197E0D0DC262254CD54E24F60E259 /* KYDrawerController-umbrella.h in Headers */,
+				101EEBDCD69ED44CB8DED92A9EA27FFB /* MMDrawerBarButtonItem.h in Headers */,
+				D2FC19FA554EA1DF28116B8D98B11ECB /* MMDrawerController+Subclass.h in Headers */,
+				AE67852A9393729E6306673907C945B1 /* MMDrawerController-umbrella.h in Headers */,
+				9111F78267F03EAB7D60BBE4706E4409 /* MMDrawerController.h in Headers */,
+				113E848640F4D289847E54C13D974AA6 /* MMDrawerVisualState.h in Headers */,
+				D4BB1BE93388CE6D1B9E30A6E6C1A79A /* UIViewController+MMDrawerController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C445E7DD8EB5D23614DCEAC8D27CBD9A /* Headers */ = {
+		CC8CA12EEA77152EBE3B32DBAEBA4B75 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FC56ABD960155877AE733E258F83DAB /* Pods-Food Aggregator-umbrella.h in Headers */,
+				0923C7C1EBF2443526884801C95A795F /* Pods-Food Aggregator-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0F91DA2422343880AC1AC4DD2B2533B6 /* Pods-Food Aggregator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21FA868987D0A697B7B9747B085809AE /* Build configuration list for PBXNativeTarget "Pods-Food Aggregator" */;
+			buildPhases = (
+				CC8CA12EEA77152EBE3B32DBAEBA4B75 /* Headers */,
+				DA21E75414391A790DF00FA76A42B28F /* Sources */,
+				DC275772BF9FDF9B0C0BE62AAFF31119 /* Frameworks */,
+				57F539107795BAD4158F99CC91721331 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6561427489179FA8BFF6117D9CB9FE5 /* PBXTargetDependency */,
+				D7CF3CC0CC2B4E2CDD43A3B1B46F2F39 /* PBXTargetDependency */,
+				F3A5869667969B022F63BEBA8D1FEDB6 /* PBXTargetDependency */,
+			);
+			name = "Pods-Food Aggregator";
+			productName = "Pods-Food Aggregator";
+			productReference = 81DFD9DB15D5035C8DE1AA9BB5C4FDD4 /* Pods_Food_Aggregator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		1469564F8BA49C7623488CD229E5288A /* ExpandableCell */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6972A25BF7A5D2B11B4A9D56BFC6DA35 /* Build configuration list for PBXNativeTarget "ExpandableCell" */;
@@ -360,46 +440,25 @@
 			);
 			name = ExpandableCell;
 			productName = ExpandableCell;
-			productReference = 34D301AC2080B18F2D50D85088DA502C /* ExpandableCell.framework */;
+			productReference = 6FCAA0C077F1F5093B23D1B3C63433FA /* ExpandableCell.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		5B773A57DA212BDC4286DD6F87ADA30A /* Pods-Food Aggregator */ = {
+		579B84EBF73D638C0E8CC0C174A0E953 /* MMDrawerController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 98741655DDA14D888F4E3C54357CB8D3 /* Build configuration list for PBXNativeTarget "Pods-Food Aggregator" */;
+			buildConfigurationList = 55B96BEC0C80E735CA0A8F6A7FE3A43B /* Build configuration list for PBXNativeTarget "MMDrawerController" */;
 			buildPhases = (
-				C445E7DD8EB5D23614DCEAC8D27CBD9A /* Headers */,
-				AFA80B0334BD150234F5CF3CAEF4C686 /* Sources */,
-				94088BE86FF1695D023D49A072244143 /* Frameworks */,
-				95B7E7FE90E177ACEADCD67CB3384C96 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E69BF13F6C996257A8CCB19479277387 /* PBXTargetDependency */,
-				8327F09EEE64BA84827C437BAF805691 /* PBXTargetDependency */,
-				456505B0F69EA3CE2FB405E9F01F3016 /* PBXTargetDependency */,
-			);
-			name = "Pods-Food Aggregator";
-			productName = "Pods-Food Aggregator";
-			productReference = 227BB52AFA2563C0AF722C86E4E56B27 /* Pods_Food_Aggregator.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		6838B950623C5FCFD2C6072B596E056D /* KYDrawerController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DCEE77F61ACBE2DBBB10C61E64E68871 /* Build configuration list for PBXNativeTarget "KYDrawerController" */;
-			buildPhases = (
-				A4CAE9633F3991350FC9AA738FC66C87 /* Headers */,
-				90EEFA9D8E3C826057CF2177FE1FD4EA /* Sources */,
-				E672CA89FB9A964AAB53EBCB613348D4 /* Frameworks */,
-				E3811504026C201E3480F44F7D1C6836 /* Resources */,
+				B2C07967BFB8F304D797C0B14FC629E2 /* Headers */,
+				82297D442A8A176D7916D8E8BFA1E2F7 /* Sources */,
+				E3A33707D190495C8C9AF7C2A005EA67 /* Frameworks */,
+				075FB1D14D1BCCF36B2085C3BD791978 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = KYDrawerController;
-			productName = KYDrawerController;
-			productReference = 90BF14072DC8D797E900B6BD69A0C369 /* KYDrawerController.framework */;
+			name = MMDrawerController;
+			productName = MMDrawerController;
+			productReference = 7AAD380821D1B3584F09800EDA7489EB /* MMDrawerController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C85BB5559C4F5CDE5F6B261B4EE0C54F /* BBBadgeBarButtonItem */ = {
@@ -417,7 +476,7 @@
 			);
 			name = BBBadgeBarButtonItem;
 			productName = BBBadgeBarButtonItem;
-			productReference = 3243352463C4C5915B07EB0C3ACF8F83 /* BBBadgeBarButtonItem.framework */;
+			productReference = 0A1EE1F72CE2F9867521D1CCADDA4D41 /* BBBadgeBarButtonItem.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -437,20 +496,27 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 7E2D268A634BD6E4F688A2EBA9384867 /* Products */;
+			productRefGroup = 1BAE1D9F7D387523BF7EDA484C81F689 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				C85BB5559C4F5CDE5F6B261B4EE0C54F /* BBBadgeBarButtonItem */,
 				1469564F8BA49C7623488CD229E5288A /* ExpandableCell */,
-				6838B950623C5FCFD2C6072B596E056D /* KYDrawerController */,
-				5B773A57DA212BDC4286DD6F87ADA30A /* Pods-Food Aggregator */,
+				579B84EBF73D638C0E8CC0C174A0E953 /* MMDrawerController */,
+				0F91DA2422343880AC1AC4DD2B2533B6 /* Pods-Food Aggregator */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		95B7E7FE90E177ACEADCD67CB3384C96 /* Resources */ = {
+		075FB1D14D1BCCF36B2085C3BD791978 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57F539107795BAD4158F99CC91721331 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -472,32 +538,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E3811504026C201E3480F44F7D1C6836 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		90EEFA9D8E3C826057CF2177FE1FD4EA /* Sources */ = {
+		82297D442A8A176D7916D8E8BFA1E2F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A9BD23004C25288C03E2528F9323503 /* KYDrawerController-dummy.m in Sources */,
-				25A53EE0E63F3F4E549812D5800A1DD3 /* KYDrawerController.swift in Sources */,
-				5FE0D4534F54AFC37EED7F5EC36AE8D6 /* KYEmbedDrawerControllerSegue.swift in Sources */,
-				98D5A05DEA239950FE22010EC6E3A8F4 /* KYEmbedMainControllerSegue.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AFA80B0334BD150234F5CF3CAEF4C686 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E11821C2F75DD8F92CBA32364B8FF2F7 /* Pods-Food Aggregator-dummy.m in Sources */,
+				9011CF137FE229A2FB81DB93D8264E22 /* MMDrawerBarButtonItem.m in Sources */,
+				453FB36E5FD879E21B61903632F579B9 /* MMDrawerController-dummy.m in Sources */,
+				6C66906D724CF49FF3FB4426E334D430 /* MMDrawerController.m in Sources */,
+				9FBC49AF0619AE065C725783FBC8D4DE /* MMDrawerVisualState.m in Sources */,
+				7AF948E49940BFA8766641B98505E5A5 /* UIViewController+MMDrawerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,36 +575,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DA21E75414391A790DF00FA76A42B28F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				790BF0606B6FC0037DD82C823A2AB0B3 /* Pods-Food Aggregator-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		456505B0F69EA3CE2FB405E9F01F3016 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = KYDrawerController;
-			target = 6838B950623C5FCFD2C6072B596E056D /* KYDrawerController */;
-			targetProxy = 0B641A8D50803A16BC449885C61497B0 /* PBXContainerItemProxy */;
-		};
-		8327F09EEE64BA84827C437BAF805691 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ExpandableCell;
-			target = 1469564F8BA49C7623488CD229E5288A /* ExpandableCell */;
-			targetProxy = B8DAA778C1633DB14CA61ACC81733761 /* PBXContainerItemProxy */;
-		};
-		E69BF13F6C996257A8CCB19479277387 /* PBXTargetDependency */ = {
+		D6561427489179FA8BFF6117D9CB9FE5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BBBadgeBarButtonItem;
 			target = C85BB5559C4F5CDE5F6B261B4EE0C54F /* BBBadgeBarButtonItem */;
-			targetProxy = 72F9DFFF29F937D475734C334C249E63 /* PBXContainerItemProxy */;
+			targetProxy = 3638DDC2E6EDD2CE56F73AFBBB5896CD /* PBXContainerItemProxy */;
+		};
+		D7CF3CC0CC2B4E2CDD43A3B1B46F2F39 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ExpandableCell;
+			target = 1469564F8BA49C7623488CD229E5288A /* ExpandableCell */;
+			targetProxy = 42A79D699A5F7251E82013CB47B33876 /* PBXContainerItemProxy */;
+		};
+		F3A5869667969B022F63BEBA8D1FEDB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MMDrawerController;
+			target = 579B84EBF73D638C0E8CC0C174A0E953 /* MMDrawerController */;
+			targetProxy = 0155BC4AE44F658DF3E214798FBC2432 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		332585C5BCB815FAADAA144D06307855 /* Release */ = {
+		16E61784BADCACDBBA06BF68CF9DE3D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AA36A77B0F7C32DC25CD930029047BB /* Pods-Food Aggregator.release.xcconfig */;
+			baseConfigurationReference = 7C4D3384EE335AA17F0F7C804350FA40 /* MMDrawerController.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -562,33 +620,31 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Food Aggregator/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/MMDrawerController/MMDrawerController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MMDrawerController/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/MMDrawerController/MMDrawerController.modulemap";
+				PRODUCT_MODULE_NAME = MMDrawerController;
+				PRODUCT_NAME = MMDrawerController;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		78F7D5517B04AB7CB42DD8479B78F26E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45AEA06DE8797688A2F31F029EB1671B /* BBBadgeBarButtonItem.xcconfig */;
+			baseConfigurationReference = 2A2C51D1399BEDF0BBD1A014D4EC6393 /* BBBadgeBarButtonItem.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -623,7 +679,7 @@
 		};
 		8A5DAF3FDD4D6E7170C53940FF689DF8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C39017F0F2667C531EDE1D82097638BB /* ExpandableCell.xcconfig */;
+			baseConfigurationReference = FE543A444914ABF264A4C7B9DEF7D988 /* ExpandableCell.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -719,43 +775,7 @@
 			};
 			name = Release;
 		};
-		BA0E93028296466DD18A56BBC5D585BC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67768BAE42DC28D19E577CB932FA3400 /* KYDrawerController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/KYDrawerController/KYDrawerController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/KYDrawerController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/KYDrawerController/KYDrawerController.modulemap";
-				PRODUCT_MODULE_NAME = KYDrawerController;
-				PRODUCT_NAME = KYDrawerController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C170393E0243DD4F24DA0BB40F447BE6 /* Debug */ = {
+		CB1489434A00A4E411C4C88E7398254D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4DD4758A431C4FCFEC1AEB2F917FBF1 /* Pods-Food Aggregator.debug.xcconfig */;
 			buildSettings = {
@@ -792,6 +812,81 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		CC96F4A2D02738076E4D54AAC9F8C7F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C4D3384EE335AA17F0F7C804350FA40 /* MMDrawerController.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MMDrawerController/MMDrawerController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MMDrawerController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MMDrawerController/MMDrawerController.modulemap";
+				PRODUCT_MODULE_NAME = MMDrawerController;
+				PRODUCT_NAME = MMDrawerController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D17906E9C9BD64218070A044B7CFF8BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AA36A77B0F7C32DC25CD930029047BB /* Pods-Food Aggregator.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Food Aggregator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		E19471FE7E209D0818DAFB22D649A6E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -861,7 +956,7 @@
 		};
 		E247D2E069E27762A2C188F042AD6EB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C39017F0F2667C531EDE1D82097638BB /* ExpandableCell.xcconfig */;
+			baseConfigurationReference = FE543A444914ABF264A4C7B9DEF7D988 /* ExpandableCell.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -896,7 +991,7 @@
 		};
 		E9044F58A45F7EC04DDA9A4AA37AA5EA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45AEA06DE8797688A2F31F029EB1671B /* BBBadgeBarButtonItem.xcconfig */;
+			baseConfigurationReference = 2A2C51D1399BEDF0BBD1A014D4EC6393 /* BBBadgeBarButtonItem.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -930,49 +1025,32 @@
 			};
 			name = Release;
 		};
-		F38D1D75620C4B2261182B0699E1C45B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67768BAE42DC28D19E577CB932FA3400 /* KYDrawerController.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/KYDrawerController/KYDrawerController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/KYDrawerController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/KYDrawerController/KYDrawerController.modulemap";
-				PRODUCT_MODULE_NAME = KYDrawerController;
-				PRODUCT_NAME = KYDrawerController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		21FA868987D0A697B7B9747B085809AE /* Build configuration list for PBXNativeTarget "Pods-Food Aggregator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB1489434A00A4E411C4C88E7398254D /* Debug */,
+				D17906E9C9BD64218070A044B7CFF8BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E19471FE7E209D0818DAFB22D649A6E9 /* Debug */,
 				8DFC9796FA9E6BCF680E1E0B1780DD0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55B96BEC0C80E735CA0A8F6A7FE3A43B /* Build configuration list for PBXNativeTarget "MMDrawerController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16E61784BADCACDBBA06BF68CF9DE3D6 /* Debug */,
+				CC96F4A2D02738076E4D54AAC9F8C7F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -986,29 +1064,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		98741655DDA14D888F4E3C54357CB8D3 /* Build configuration list for PBXNativeTarget "Pods-Food Aggregator" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C170393E0243DD4F24DA0BB40F447BE6 /* Debug */,
-				332585C5BCB815FAADAA144D06307855 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		CD36BF5AC5B2EEBABCCD5DB361090C1F /* Build configuration list for PBXNativeTarget "BBBadgeBarButtonItem" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				78F7D5517B04AB7CB42DD8479B78F26E /* Debug */,
 				E9044F58A45F7EC04DDA9A4AA37AA5EA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DCEE77F61ACBE2DBBB10C61E64E68871 /* Build configuration list for PBXNativeTarget "KYDrawerController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F38D1D75620C4B2261182B0699E1C45B /* Debug */,
-				BA0E93028296466DD18A56BBC5D585BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

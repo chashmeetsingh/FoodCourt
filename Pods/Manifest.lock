@@ -1,24 +1,35 @@
 PODS:
   - BBBadgeBarButtonItem (1.2)
   - ExpandableCell (1.2.4)
-  - KYDrawerController (2.1.0)
+  - MMDrawerController (0.6.0):
+    - MMDrawerController/Core (= 0.6.0)
+    - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
+    - MMDrawerController/MMDrawerVisualStates (= 0.6.0)
+    - MMDrawerController/Subclass (= 0.6.0)
+  - MMDrawerController/Core (0.6.0)
+  - MMDrawerController/MMDrawerBarButtonItem (0.6.0):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.6.0):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.6.0):
+    - MMDrawerController/Core
 
 DEPENDENCIES:
   - BBBadgeBarButtonItem
   - ExpandableCell (= 1.2.4)
-  - KYDrawerController
+  - MMDrawerController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BBBadgeBarButtonItem
     - ExpandableCell
-    - KYDrawerController
+    - MMDrawerController
 
 SPEC CHECKSUMS:
   BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
   ExpandableCell: 09235bd29b11ca958c4205aba75ddc3494a4e5a1
-  KYDrawerController: baad0e63b09c0cb564bd48f0f7f70f45d9176ebc
+  MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
 
-PODFILE CHECKSUM: 1c29437a5cfc73c58090886b1c3986b43c6d7402
+PODFILE CHECKSUM: 30d18d0d9fd7e07e324acfac209c9bd4d805d11a
 
 COCOAPODS: 1.5.3

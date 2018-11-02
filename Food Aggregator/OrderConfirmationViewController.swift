@@ -87,7 +87,7 @@ class OrderConfirmationViewController: UIViewController {
                 break
             }
         }
-        let vc = OrdersViewController()
+        let vc = OrdersViewController(collectionViewLayout: UICollectionViewFlowLayout())
         viewControllers.insert(vc, at: viewControllers.count)
         navigationController?.setViewControllers(viewControllers, animated: true)
     }

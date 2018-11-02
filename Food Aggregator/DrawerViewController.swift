@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import MMDrawerController
 
 class DrawerViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    var appDelegate: AppDelegate {
+        get {
+           return UIApplication.shared.delegate as! AppDelegate
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +60,30 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
             return view
         default:
             return UICollectionReusableView(frame: CGRect.zero)
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0...5:
+            showOrders()
+        default:
+            break
+        }
+    }
+    
+    func closeDrawer() {
+        appDelegate.centerContainer?.closeDrawer(animated: true, completion: nil)
+    }
+    
+    func showOrders() {
+        if let _ = navigationController?.topViewController as? OrdersViewController {
+            closeDrawer()
+        } else {
+            let nvc = appDelegate.centerContainer?.centerViewController as! UINavigationController
+            let orderController = OrdersViewController(collectionViewLayout: UICollectionViewFlowLayout())
+            nvc.pushViewController(orderController, animated: true)
+            appDelegate.centerContainer?.closeDrawer(animated: true, completion: nil)
         }
     }
 

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import KYDrawerController
+import MMDrawerController
 
 class AuthenticationViewController: UIViewController {
     
@@ -25,11 +25,13 @@ class AuthenticationViewController: UIViewController {
         let mainController = HomeViewController()
         let nvc = UINavigationController(rootViewController: mainController)
         let drawerViewController = DrawerViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        let drawerController = KYDrawerController(drawerDirection: .left, drawerWidth: self.view.bounds.width / 1.5)
-        drawerController.mainViewController = nvc
-        drawerController.drawerViewController = drawerViewController
         
-        self.show(drawerController, sender: self)
+        appDelegate.centerContainer = MMDrawerController(center: nvc, leftDrawerViewController: drawerViewController)
+        appDelegate.centerContainer!.openDrawerGestureModeMask = .panningCenterView
+        appDelegate.centerContainer!.closeDrawerGestureModeMask = .panningCenterView
+        appDelegate.centerContainer?.setDrawerVisualStateBlock(MMDrawerVisualState.slideAndScaleBlock())
+        
+        self.show(appDelegate.centerContainer!, sender: self)
     }
 }
 
