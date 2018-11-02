@@ -7,15 +7,16 @@
 //
 
 import UIKit
-import ExpandableCell
 
-class FoodJointMenuViewController: UIViewController {
-    
-    var tableView: ExpandableTableView!
-    
-//    var cell: UITableViewCell {
-//        return tableView.dequeueReusableCell(withIdentifier: "ExpandedCell.ID")!
-//    }
+struct cellData {
+    var opened = Bool()
+    var title = String()
+    var sectionData = [String]()
+}
+
+class FoodJointMenuViewController: UITableViewController {
+
+    var tableViewData = [cellData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,18 +25,96 @@ class FoodJointMenuViewController: UIViewController {
         
         self.view.backgroundColor = .white
         
-        tableView = ExpandableTableView()
-        tableView.expandableDelegate = self
-//        tableView.dataSource = self
-        tableView.animation = .automatic
-        tableView.register(ExpandedCell.self, forCellReuseIdentifier: "ExpandedCell")
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ExpandableCell")
-        
-        self.view.addSubview(tableView)
-        self.view.addConstraintsWithFormat(format: "H:|[v0]|", views: tableView)
-        self.view.addConstraintsWithFormat(format: "V:|[v0]|", views: tableView)
+        tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        tableViewData = [cellData(opened: false, title: "Title1", sectionData: ["asda", "asd", "asd"]),
+                cellData(opened: true, title: "Title2", sectionData: ["asda", "asd", "asd"]),
+                cellData(opened: false, title: "Title3", sectionData: ["asda", "asd", "asd"])]
+
+        tableView.register(FoodClassCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(ExpandedCell.self, forCellReuseIdentifier: "expandedCell")
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return tableViewData.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableViewData[section].opened {
+            return tableViewData[section].sectionData.count
+        } else {
+            return 1
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FoodClassCell
+            cell.textLabel?.text = tableViewData[indexPath.section].title
+            cell.backgroundColor = .black
+            cell.textLabel?.textColor = .white
+            if tableViewData[indexPath.section].opened {
+                cell.upDownButton.setImage(UIImage(named: "up_arrow"), for: .normal)
+            } else {
+                cell.upDownButton.setImage(UIImage(named: "down_arrow"), for: .normal)
+            }
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "expandedCell", for: indexPath) as! ExpandedCell
+            cell.titleLabel.text = tableViewData[indexPath.section].sectionData[indexPath.row]
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            return cell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableViewData[indexPath.section].opened {
+            tableViewData[indexPath.section].opened = false
+            handleOpening(indexPath: indexPath, upOrDown: "up_arrow")
+        } else {
+            tableViewData[indexPath.section].opened = true
+            handleOpening(indexPath: indexPath, upOrDown: "down_arrow")
+        }
+    }
+    
+    @objc func handleOpening(indexPath: IndexPath, upOrDown: String) {
+        let sections = IndexSet(integer: indexPath.section)
+        let cell = tableView.cellForRow(at: indexPath) as! FoodClassCell
+        cell.upDownButton.setImage(UIImage(named: upOrDown), for: .normal)
+        tableView.reloadSections(sections, with: .none)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
     }
 
+}
+
+class FoodClassCell: BaseTableViewCell {
+    
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    let upDownButton: UIButton = {
+        let button = UIButton()
+        return button
+    }()
+    
+    override func setupViews() {
+        super.setupViews()
+        
+        addSubview(titleLabel)
+        addSubview(upDownButton)
+        addConstraintsWithFormat(format: "H:|-24-[v0][v1]-8-|", views: titleLabel, upDownButton)
+        addConstraintsWithFormat(format: "V:|[v0]|", views: titleLabel)
+        addConstraintsWithFormat(format: "V:|[v0]|", views: upDownButton)
+    }
+    
 }
 
 class ExpandedCell: BaseTableViewCell {
@@ -44,16 +123,12 @@ class ExpandedCell: BaseTableViewCell {
         super.setupViews()
         
         addSubview(titleLabel)
-        addSubview(minusButton)
-        addSubview(plusButton)
-        addSubview(amountLabel)
+        addSubview(stepper)
         
         addConstraintsWithFormat(format: "V:|[v0]|", views: titleLabel)
-        addConstraintsWithFormat(format: "V:|-8-[v0]-8-|", views: minusButton)
-        addConstraintsWithFormat(format: "V:|-8-[v0]-8-|", views: plusButton)
-        addConstraintsWithFormat(format: "V:|-8-[v0]-8-|", views: amountLabel)
+        addConstraintsWithFormat(format: "V:|-8-[v0]-8-|", views: stepper)
         
-        addConstraintsWithFormat(format: "H:|-4-[v0]-4-[v1(28)]-4-[v2(28)]-4-[v3(28)]-4-|", views: titleLabel, minusButton, amountLabel, plusButton)
+        addConstraintsWithFormat(format: "H:|-24-[v0][v1(100)]-8-|", views: titleLabel, stepper)
         
     }
     
@@ -62,102 +137,11 @@ class ExpandedCell: BaseTableViewCell {
         return label
     }()
     
-    let minusButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .red
-        return button
+    let stepper: GMStepper = {
+        let stepper = GMStepper()
+        stepper.labelFont = UIFont.systemFont(ofSize: 16)
+        stepper.autorepeat = false
+        return stepper
     }()
-    
-    let plusButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .green
-        return button
-    }()
-    
-    let amountLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .black
-        return label
-    }()
-    
-}
-
-extension FoodJointMenuViewController: ExpandableDelegate {
-    
-    
-    func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCellsForRowAt indexPath: IndexPath) -> [UITableViewCell]? {
-        switch indexPath.row {
-        case 0...:
-            var cells: [ExpandedCell] = []
-            for i in 0...indexPath.row {
-                let cell = expandableTableView.dequeueReusableCell(withIdentifier: "ExpandedCell") as! ExpandedCell
-                cell.titleLabel.text = "Some text #\(i)"
-                cells.append(cell)
-            }
-            return cells
-        default:
-            return nil
-        }
-    }
-    
-    func expandableTableView(_ expandableTableView: ExpandableTableView, heightsForExpandedRowAt indexPath: IndexPath) -> [CGFloat]? {
-        switch indexPath.row {
-        case 0...:
-            let numberOfCells = indexPath.row
-            var cellHeights: [CGFloat] = []
-            for _ in 0...numberOfCells {
-                cellHeights.append(44)
-            }
-            return cellHeights
-            
-        default:
-            break
-        }
-        return nil
-        
-    }
-    
-    func expandableTableView(_ expandableTableView: ExpandableTableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func expandableTableView(_ expandableTableView: ExpandableTableView, didSelectRowAt indexPath: IndexPath) {
-        //        print("didSelectRow:\(indexPath)")
-//        expandableTableView.closeAll()
-    }
-    
-    func expandableTableView(_ expandableTableView: ExpandableTableView, didSelectExpandedRowAt indexPath: IndexPath) {
-        //        print("didSelectExpandedRowAt:\(indexPath)")
-//        expandableTableView.closeAll()
-    }
-    
-    func expandableTableView(_ expandableTableView: ExpandableTableView, expandedCell: UITableViewCell, didSelectExpandedRowAt indexPath: IndexPath) {
-//        if let cell = expandedCell as? ExpandedCell {
-//            print("\(cell.titleLabel.text ?? "")")
-//        }
-//        expandableTableView.closeAll()
-    }
-    
-    func expandableTableView(_ expandableTableView: ExpandableTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = expandableTableView.dequeueReusableCell(withIdentifier: "ExpandableCell", for: indexPath)
-        cell.textLabel?.text = "Some header #\(indexPath.row)"
-        cell.textLabel?.textColor = .white
-        cell.backgroundColor = .black
-        return cell
-    }
-    
-    func expandableTableView(_ expandableTableView: ExpandableTableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
-    }
-    
-//    func expandableTableView(_ expandableTableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-//        let cell = expandableTableView.cellForRow(at: indexPath)
-//        cell?.contentView.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
-//        cell?.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
-//    }
-    
-    func expandableTableView(_ expandableTableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
     
 }

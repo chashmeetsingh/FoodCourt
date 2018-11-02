@@ -11,6 +11,7 @@
 		B19E76BD2189156300B7E6F1 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E76BC2189156300B7E6F1 /* HeaderView.swift */; };
 		B19E76BF2189162500B7E6F1 /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E76BE2189162500B7E6F1 /* CartCollectionViewCell.swift */; };
 		B19E76C121892D0C00B7E6F1 /* FinalPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E76C021892D0C00B7E6F1 /* FinalPriceView.swift */; };
+		B1A0AD70218BD12C008C17F5 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A0AD6F218BD12C008C17F5 /* OrderCell.swift */; };
 		B1A344CE21713D81005B1A81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344CD21713D81005B1A81 /* AppDelegate.swift */; };
 		B1A344D021713D81005B1A81 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344CF21713D81005B1A81 /* AuthenticationViewController.swift */; };
 		B1A344D321713D81005B1A81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A344D121713D81005B1A81 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 		B19E76BC2189156300B7E6F1 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		B19E76BE2189162500B7E6F1 /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
 		B19E76C021892D0C00B7E6F1 /* FinalPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPriceView.swift; sourceTree = "<group>"; };
+		B1A0AD6F218BD12C008C17F5 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		B1A344CA21713D81005B1A81 /* Food Aggregator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Aggregator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1A344CD21713D81005B1A81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1A344CF21713D81005B1A81 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				B1E56A01218A9AA200C4B5B3 /* OrdersViewController.swift */,
 				B1E56A03218A9E4000C4B5B3 /* DrawerViewController.swift */,
 				B109D753218AA681009035B0 /* DrawerCell.swift */,
+				B1A0AD6F218BD12C008C17F5 /* OrderCell.swift */,
 			);
 			path = "Food Aggregator";
 			sourceTree = "<group>";
@@ -243,7 +246,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BBBadgeBarButtonItem/BBBadgeBarButtonItem.framework",
-				"${BUILT_PRODUCTS_DIR}/ExpandableCell/ExpandableCell.framework",
 				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -251,7 +253,6 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BBBadgeBarButtonItem.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ExpandableCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +283,7 @@
 				B1A344CE21713D81005B1A81 /* AppDelegate.swift in Sources */,
 				B1A344F321715281005B1A81 /* VendorListCollectionView.swift in Sources */,
 				B1E56A02218A9AA200C4B5B3 /* OrdersViewController.swift in Sources */,
+				B1A0AD70218BD12C008C17F5 /* OrderCell.swift in Sources */,
 				B1A344F521715B3A005B1A81 /* FoodChainViewController.swift in Sources */,
 				B1A344E321713FF6005B1A81 /* HomeViewController.swift in Sources */,
 				B1E56A002189640800C4B5B3 /* OrderConfirmationViewController.swift in Sources */,

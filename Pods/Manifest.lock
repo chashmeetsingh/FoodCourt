@@ -1,6 +1,5 @@
 PODS:
   - BBBadgeBarButtonItem (1.2)
-  - ExpandableCell (1.2.4)
   - MMDrawerController (0.6.0):
     - MMDrawerController/Core (= 0.6.0)
     - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
@@ -16,20 +15,17 @@ PODS:
 
 DEPENDENCIES:
   - BBBadgeBarButtonItem
-  - ExpandableCell (= 1.2.4)
   - MMDrawerController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BBBadgeBarButtonItem
-    - ExpandableCell
     - MMDrawerController
 
 SPEC CHECKSUMS:
   BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
-  ExpandableCell: 09235bd29b11ca958c4205aba75ddc3494a4e5a1
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
 
-PODFILE CHECKSUM: 30d18d0d9fd7e07e324acfac209c9bd4d805d11a
+PODFILE CHECKSUM: 82018f32f6272f571bec00aa5037020eece5e062
 
 COCOAPODS: 1.5.3

@@ -6,7 +6,6 @@ target 'Food Aggregator' do
   use_frameworks!
 
   # Pods for Food Aggregator
-  pod 'ExpandableCell', '1.2.4'
   pod 'MMDrawerController'
   pod 'BBBadgeBarButtonItem'
 end
