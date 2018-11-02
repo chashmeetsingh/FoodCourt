@@ -38,6 +38,7 @@ class CartCollectionViewCell: BaseCollectionViewCell {
         let stepper = GMStepper()
         stepper.labelFont = UIFont.systemFont(ofSize: 16)
         stepper.autorepeat = false
+        stepper.maximumValue = 20
         return stepper
     }()
     
