@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B109D754218AA681009035B0 /* DrawerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109D753218AA681009035B0 /* DrawerCell.swift */; };
+		B175E433219934B60043064B /* FoodChainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B175E432219934B60043064B /* FoodChainViewCell.swift */; };
 		B19E76BD2189156300B7E6F1 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E76BC2189156300B7E6F1 /* HeaderView.swift */; };
 		B19E76BF2189162500B7E6F1 /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E76BE2189162500B7E6F1 /* CartCollectionViewCell.swift */; };
 		B19E76C121892D0C00B7E6F1 /* FinalPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E76C021892D0C00B7E6F1 /* FinalPriceView.swift */; };
@@ -18,7 +19,7 @@
 		B1A344D621713D81005B1A81 /* Food_Aggregator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1A344D421713D81005B1A81 /* Food_Aggregator.xcdatamodeld */; };
 		B1A344D821713D82005B1A81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1A344D721713D82005B1A81 /* Assets.xcassets */; };
 		B1A344DB21713D82005B1A81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A344D921713D82005B1A81 /* LaunchScreen.storyboard */; };
-		B1A344E321713FF6005B1A81 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344E221713FF6005B1A81 /* HomeViewController.swift */; };
+		B1A344E321713FF6005B1A81 /* ClientHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344E221713FF6005B1A81 /* ClientHomeViewController.swift */; };
 		B1A344E521714021005B1A81 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344E421714021005B1A81 /* Extension.swift */; };
 		B1A344E921714237005B1A81 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344E821714237005B1A81 /* BaseCell.swift */; };
 		B1A344EB21714440005B1A81 /* FoodChainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344EA21714440005B1A81 /* FoodChainCollectionViewCell.swift */; };
@@ -38,6 +39,7 @@
 		59ADAEC1EAF00BED6FF7E730 /* Pods_Food_Aggregator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Aggregator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A20080A819988240ED7CC87 /* Pods-Food Aggregator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Aggregator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator.debug.xcconfig"; sourceTree = "<group>"; };
 		B109D753218AA681009035B0 /* DrawerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerCell.swift; sourceTree = "<group>"; };
+		B175E432219934B60043064B /* FoodChainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodChainViewCell.swift; sourceTree = "<group>"; };
 		B19E76BC2189156300B7E6F1 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		B19E76BE2189162500B7E6F1 /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
 		B19E76C021892D0C00B7E6F1 /* FinalPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPriceView.swift; sourceTree = "<group>"; };
@@ -50,7 +52,7 @@
 		B1A344D721713D82005B1A81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1A344DA21713D82005B1A81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1A344DC21713D82005B1A81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B1A344E221713FF6005B1A81 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B1A344E221713FF6005B1A81 /* ClientHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientHomeViewController.swift; sourceTree = "<group>"; };
 		B1A344E421714021005B1A81 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		B1A344E821714237005B1A81 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		B1A344EA21714440005B1A81 /* FoodChainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodChainCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -114,7 +116,7 @@
 				B1A344D921713D82005B1A81 /* LaunchScreen.storyboard */,
 				B1A344DC21713D82005B1A81 /* Info.plist */,
 				B1A344D421713D81005B1A81 /* Food_Aggregator.xcdatamodeld */,
-				B1A344E221713FF6005B1A81 /* HomeViewController.swift */,
+				B1A344E221713FF6005B1A81 /* ClientHomeViewController.swift */,
 				B1A344E421714021005B1A81 /* Extension.swift */,
 				B1A344E821714237005B1A81 /* BaseCell.swift */,
 				B1A344EA21714440005B1A81 /* FoodChainCollectionViewCell.swift */,
@@ -132,6 +134,7 @@
 				B1E56A03218A9E4000C4B5B3 /* DrawerViewController.swift */,
 				B109D753218AA681009035B0 /* DrawerCell.swift */,
 				B1A0AD6F218BD12C008C17F5 /* OrderCell.swift */,
+				B175E432219934B60043064B /* FoodChainViewCell.swift */,
 			);
 			path = "Food Aggregator";
 			sourceTree = "<group>";
@@ -279,13 +282,14 @@
 				B1A344F7217167C2005B1A81 /* FoodJointMenuViewController.swift in Sources */,
 				B1A344E921714237005B1A81 /* BaseCell.swift in Sources */,
 				B19E76C121892D0C00B7E6F1 /* FinalPriceView.swift in Sources */,
+				B175E433219934B60043064B /* FoodChainViewCell.swift in Sources */,
 				B19E76BF2189162500B7E6F1 /* CartCollectionViewCell.swift in Sources */,
 				B1A344CE21713D81005B1A81 /* AppDelegate.swift in Sources */,
 				B1A344F321715281005B1A81 /* VendorListCollectionView.swift in Sources */,
 				B1E56A02218A9AA200C4B5B3 /* OrdersViewController.swift in Sources */,
 				B1A0AD70218BD12C008C17F5 /* OrderCell.swift in Sources */,
 				B1A344F521715B3A005B1A81 /* FoodChainViewController.swift in Sources */,
-				B1A344E321713FF6005B1A81 /* HomeViewController.swift in Sources */,
+				B1A344E321713FF6005B1A81 /* ClientHomeViewController.swift in Sources */,
 				B1E56A002189640800C4B5B3 /* OrderConfirmationViewController.swift in Sources */,
 				B19E76BD2189156300B7E6F1 /* HeaderView.swift in Sources */,
 			);

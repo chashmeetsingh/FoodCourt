@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import BBBadgeBarButtonItem
 
 class VendorListCollectionView: UICollectionView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     var navigationController: UINavigationController!
+    
+    let images: [UIImage?] = [UIImage(named: "subway-logo"), UIImage(named: "tim-hortons"), UIImage(named: "kfc_logo"), UIImage(named: "starbucks"), UIImage(named: "nyf"), UIImage(named: "wendys"), UIImage(named: "aw"), UIImage(named: "mcd")]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
@@ -18,6 +21,7 @@ class VendorListCollectionView: UICollectionView, UICollectionViewDelegateFlowLa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! VendorCollectionViewCell
+        cell.imageView.image = images.randomElement()!
         return cell
     }
     
@@ -25,6 +29,13 @@ class VendorListCollectionView: UICollectionView, UICollectionViewDelegateFlowLa
         super.init(frame: frame, collectionViewLayout: layout)
         delegate = self
         dataSource = self
+        
+//        let cartButton = UIButton()
+//        cartButton.setImage(UIImage(named: "cart"), for: .normal)
+////        cartButton.addTarget(self, action: #selector(openCart), for: .touchUpInside)
+//        let item = BBBadgeBarButtonItem(customUIButton: cartButton)
+//        item!.badgeValue = "5"
+//        self.navigationController.navigationItem.rightBarButtonItem = item
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -35,9 +46,9 @@ class VendorListCollectionView: UICollectionView, UICollectionViewDelegateFlowLa
         return CGSize.init(width: self.bounds.height, height: self.bounds.height)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets.init(top: 0, left: 8, bottom: 0, right: 8)
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = FoodChainViewController()

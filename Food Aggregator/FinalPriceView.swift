@@ -26,7 +26,7 @@ class FinalPriceView: UICollectionReusableView {
     
     let subtotalAmountLabel: UILabel = {
         let label = UILabel()
-        label.text = "$230"
+        label.text = "$25"
 //        label.backgroundColor = .green
         label.textAlignment = .right
         return label
@@ -34,7 +34,7 @@ class FinalPriceView: UICollectionReusableView {
     
     let taxesAndChargesAmountLabel: UILabel = {
         let label = UILabel()
-        label.text = "$23.00"
+        label.text = "$3.25"
 //        label.backgroundColor = .green
         label.textAlignment = .right
         return label
@@ -49,7 +49,7 @@ class FinalPriceView: UICollectionReusableView {
     
     let grandTotalAmountLabel: UILabel = {
         let label = UILabel()
-        label.text = "$ 230.23"
+        label.text = "$ 28.25"
 //        label.backgroundColor = .green
         label.textAlignment = .right
         return label

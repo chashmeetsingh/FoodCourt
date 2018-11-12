@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BBBadgeBarButtonItem
 
 struct cellData {
     var opened = Bool()
@@ -21,20 +22,39 @@ class FoodJointMenuViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Food Joint Name"
+        title = "Food Menu"
         
         self.view.backgroundColor = .white
         
         tableView = UITableView()
+//        tableView.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0)
         tableView.delegate = self
         tableView.dataSource = self
 
-        tableViewData = [cellData(opened: false, title: "Title1", sectionData: ["asda", "asd", "asd"]),
-                cellData(opened: true, title: "Title2", sectionData: ["asda", "asd", "asd"]),
-                cellData(opened: false, title: "Title3", sectionData: ["asda", "asd", "asd"])]
+        tableViewData = [cellData(opened: false, title: "Burgers", sectionData: ["Mc Chicken", "Junior Chicken"]),
+                cellData(opened: true, title: "Beverage", sectionData: ["Ice tea", "Coke"]),
+                cellData(opened: false, title: "Sides", sectionData: ["Fries", "Poutine", "Onion Rings"])]
+        
+        tableView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
 
         tableView.register(FoodClassCell.self, forCellReuseIdentifier: "cell")
         tableView.register(ExpandedCell.self, forCellReuseIdentifier: "expandedCell")
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        
+        let cartButton = UIButton()
+        cartButton.setImage(UIImage(named: "cart"), for: .normal)
+        cartButton.addTarget(self, action: #selector(openCart), for: .touchUpInside)
+        let item = BBBadgeBarButtonItem(customUIButton: cartButton)
+        item!.badgeValue = "5"
+        self.navigationItem.rightBarButtonItem = item
+    }
+    
+    @objc func openCart() {
+        let vc = CartViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,12 +73,16 @@ class FoodJointMenuViewController: UITableViewController {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FoodClassCell
             cell.textLabel?.text = tableViewData[indexPath.section].title
-            cell.backgroundColor = .black
-            cell.textLabel?.textColor = .white
+            cell.backgroundColor = .white
+            cell.textLabel?.textColor = .black
             if tableViewData[indexPath.section].opened {
-                cell.upDownButton.setImage(UIImage(named: "up_arrow"), for: .normal)
+                let image = UIImage(named: "up_arrow")?.withRenderingMode(.alwaysTemplate)
+                cell.upDownButton.setImage(image, for: .normal)
+                cell.upDownButton.imageView?.tintColor = .black
             } else {
-                cell.upDownButton.setImage(UIImage(named: "down_arrow"), for: .normal)
+                let image = UIImage(named: "down_arrow")?.withRenderingMode(.alwaysTemplate)
+                cell.upDownButton.setImage(image, for: .normal)
+                cell.upDownButton.imageView?.tintColor = .black
             }
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
             return cell
@@ -66,6 +90,7 @@ class FoodJointMenuViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "expandedCell", for: indexPath) as! ExpandedCell
             cell.titleLabel.text = tableViewData[indexPath.section].sectionData[indexPath.row]
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
+            cell.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
             return cell
         }
     }
@@ -142,6 +167,10 @@ class ExpandedCell: BaseTableViewCell {
         stepper.labelFont = UIFont.systemFont(ofSize: 16)
         stepper.autorepeat = false
         stepper.maximumValue = 20
+        stepper.buttonsBackgroundColor = UIColor(red: 139.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        stepper.labelBackgroundColor = .white
+        stepper.labelTextColor = .black
+        stepper.limitHitAnimationColor = UIColor(red: 139.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0)
         return stepper
     }()
     

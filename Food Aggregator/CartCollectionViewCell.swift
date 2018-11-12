@@ -19,7 +19,7 @@ class CartCollectionViewCell: BaseCollectionViewCell {
     
     let itemName: UILabel = {
         let label = UILabel()
-        label.text = "Paneer Butter Masala"
+        label.text = "Junior Chicken"
         label.textColor = .black
 //        label.backgroundColor = .red
         return label
@@ -45,7 +45,7 @@ class CartCollectionViewCell: BaseCollectionViewCell {
     let totalAmountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.text = "$5.00"
+        label.text = "$25.00"
 //        label.backgroundColor = .yellow
         return label
     }()

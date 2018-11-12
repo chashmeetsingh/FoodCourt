@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import BBBadgeBarButtonItem
 
 class FoodChainViewController: UIViewController {
     
     var collectionView: UICollectionView!
+    
+    let images: [UIImage?] = [UIImage(named: "subway-logo"), UIImage(named: "tim-hortons"), UIImage(named: "kfc_logo"), UIImage(named: "starbucks"), UIImage(named: "nyf"), UIImage(named: "wendys"), UIImage(named: "aw"), UIImage(named: "mcd")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Food Joint Name"
-        self.view.backgroundColor = .white
+        self.title = "Restuarants"
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -26,10 +28,22 @@ class FoodChainViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(FoodChainViewCell.self, forCellWithReuseIdentifier: "cell")
         
         self.view.addConstraintsWithFormat(format: "V:|[v0]|", views: collectionView)
         self.view.addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
+        self.collectionView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        
+        let cartButton = UIButton()
+        cartButton.setImage(UIImage(named: "cart"), for: .normal)
+//        cartButton.addTarget(self, action: #selector(openCart), for: .touchUpInside)
+        let item = BBBadgeBarButtonItem(customUIButton: cartButton)
+        item!.badgeValue = "5"
+        self.navigationItem.rightBarButtonItem = item
     }
 
 }
@@ -37,25 +51,25 @@ class FoodChainViewController: UIViewController {
 extension FoodChainViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FoodChainViewCell
+        cell.imageView.image = images[indexPath.item]
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize.init(width: view.frame.width / 3 - 4, height: view.frame.width / 3 - 4)
+        return CGSize.init(width: view.frame.width / 2 - 8, height: view.frame.width / 2 - 8)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.init(top: 4, left: 4, bottom: 4, right: 4)
+        return UIEdgeInsets.init(top: 8, left: 4, bottom: 4, right: 4)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
+        return 8
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

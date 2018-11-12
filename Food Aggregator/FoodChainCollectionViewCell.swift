@@ -13,7 +13,8 @@ class FoodChainCollectionViewCell: BaseCollectionViewCell {
     let foodChainLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.backgroundColor = .red
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+//        label.backgroundColor = .red
         return label
     }()
     
@@ -21,7 +22,7 @@ class FoodChainCollectionViewCell: BaseCollectionViewCell {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = VendorListCollectionView.init(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .purple
+        collectionView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         collectionView.register(VendorCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
@@ -34,7 +35,7 @@ class FoodChainCollectionViewCell: BaseCollectionViewCell {
     }
     
     func setupCell() {
-        backgroundColor = .green
+        backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         
         addSubview(foodChainLabel)
         addConstraintsWithFormat(format: "H:|-4-[v0]-4-|", views: foodChainLabel)
@@ -42,7 +43,8 @@ class FoodChainCollectionViewCell: BaseCollectionViewCell {
         addSubview(vendorCollectionView)
         addConstraintsWithFormat(format: "H:|-4-[v0]-4-|", views: vendorCollectionView)
         
-        addConstraintsWithFormat(format: "V:|-4-[v0(20)]-4-[v1]-4-|", views: foodChainLabel, vendorCollectionView)
+        addConstraintsWithFormat(format: "V:|-4-[v0(32)]-8-[v1]-4-|", views: foodChainLabel, vendorCollectionView)
+        layer.cornerRadius = 8
     }
     
 }

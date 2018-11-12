@@ -30,7 +30,7 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,7 +47,8 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as! HeaderView
-            view.jointName.text = "Subway"
+            view.imageView.image = UIImage(named: "mcd")
+            view.jointName.text = "McDonald's"
             return view
         case UICollectionView.elementKindSectionFooter:
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "finalPriceView", for: indexPath) as! FinalPriceView

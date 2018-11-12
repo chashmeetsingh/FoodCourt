@@ -22,7 +22,7 @@ class OrderConfirmationViewController: UIViewController {
     let orderLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(hex: "#757575")
-        label.font = UIFont.systemFont(ofSize: 22)
+        label.font = UIFont.systemFont(ofSize: 50)
         label.text = "#31431"
         label.textAlignment = .center
         return label
@@ -69,7 +69,8 @@ class OrderConfirmationViewController: UIViewController {
         
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: confirmationLabel)
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: orderLabel)
-        view.addConstraintsWithFormat(format: "V:|-16-[v0]-16-[v1]", views: confirmationLabel, orderLabel)
+        view.addConstraint(NSLayoutConstraint(item: orderLabel, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: 0))
+        view.addConstraintsWithFormat(format: "V:|-16-[v0]", views: confirmationLabel)
         view.addConstraint(NSLayoutConstraint(item: yourOrderButton, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0))
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: orderPickupLabel)
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: orderPickupTimeLabel)
@@ -81,7 +82,7 @@ class OrderConfirmationViewController: UIViewController {
         var viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
         
         for controller in viewControllers.reversed() {
-            if !controller.isKind(of: HomeViewController.self) {
+            if !controller.isKind(of: ClientHomeViewController.self) {
                 viewControllers.removeLast()
             } else {
                 break

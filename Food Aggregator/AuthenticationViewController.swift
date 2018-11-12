@@ -21,8 +21,8 @@ class AuthenticationViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func buttonTapped(_ sender: Any) {
-        let mainController = HomeViewController()
+    @IBAction func button1Tapped(_ sender: Any) {
+        let mainController = ClientHomeViewController()
         let nvc = UINavigationController(rootViewController: mainController)
         let drawerViewController = DrawerViewController(collectionViewLayout: UICollectionViewFlowLayout())
         
@@ -33,5 +33,10 @@ class AuthenticationViewController: UIViewController {
         
         self.show(appDelegate.centerContainer!, sender: self)
     }
+    
+    @IBAction func button2Tapped(_ sender: Any) {
+        
+    }
+    
 }
 
