@@ -23,6 +23,7 @@ extension Client {
     
     struct Methods {
         static let Login = "/signIn"
+        static let FoodCourts = "/getFoodCourtByCity"
     }
     
     struct Keys {
@@ -32,6 +33,16 @@ extension Client {
         static let Token = "token"
         static let Message = "message"
         static let Name = "name"
+        static let FCList = "fcList"
+        static let Id = "id"
+        static let FoodCourtName = "foodCourtName"
+        static let Address = "address"
+        static let City = "city"
+        static let OpenTime = "open_time"
+        static let CloseTime = "close_time"
+        static let Restaurants = "restaurants"
+        static let IconName = "iconName"
+        static let FCID = "fc_id"
     }
     
     struct Colors {

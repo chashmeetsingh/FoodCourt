@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B109D754218AA681009035B0 /* DrawerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109D753218AA681009035B0 /* DrawerCell.swift */; };
+		B111EB2D219CC778005B0375 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B111EB2C219CC778005B0375 /* Restaurant.swift */; };
 		B1497DD6219B81A100816F68 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1497DD5219B81A100816F68 /* LoginViewController.swift */; };
 		B1497DD8219B820D00816F68 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1497DD7219B820D00816F68 /* Client.swift */; };
 		B1497DDA219B827400816F68 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1497DD9219B827400816F68 /* Constants.swift */; };
 		B1497DDC219B833100816F68 /* Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1497DDB219B833100816F68 /* Convenience.swift */; };
 		B1497DDE219B845900816F68 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1497DDD219B845900816F68 /* User.swift */; };
 		B1497DE0219B987500816F68 /* LeftAlignedIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1497DDF219B987500816F68 /* LeftAlignedIconButton.swift */; };
+		B1497DE2219BC31200816F68 /* FoodCourt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1497DE1219BC31200816F68 /* FoodCourt.swift */; };
 		B175E433219934B60043064B /* FoodChainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B175E432219934B60043064B /* FoodChainViewCell.swift */; };
 		B19E76BD2189156300B7E6F1 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E76BC2189156300B7E6F1 /* HeaderView.swift */; };
 		B19E76BF2189162500B7E6F1 /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E76BE2189162500B7E6F1 /* CartCollectionViewCell.swift */; };
@@ -30,7 +32,6 @@
 		B1A344E921714237005B1A81 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344E821714237005B1A81 /* BaseCell.swift */; };
 		B1A344EB21714440005B1A81 /* FoodChainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344EA21714440005B1A81 /* FoodChainCollectionViewCell.swift */; };
 		B1A344F121715143005B1A81 /* VendorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344F021715143005B1A81 /* VendorCollectionViewCell.swift */; };
-		B1A344F321715281005B1A81 /* VendorListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344F221715281005B1A81 /* VendorListCollectionView.swift */; };
 		B1A344F521715B3A005B1A81 /* FoodChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344F421715B3A005B1A81 /* FoodChainViewController.swift */; };
 		B1A344F7217167C2005B1A81 /* FoodJointMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344F6217167C2005B1A81 /* FoodJointMenuViewController.swift */; };
 		B1B077EF2187431E00A6AA67 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B077EE2187431E00A6AA67 /* CartViewController.swift */; };
@@ -45,12 +46,14 @@
 		59ADAEC1EAF00BED6FF7E730 /* Pods_Food_Aggregator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Food_Aggregator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A20080A819988240ED7CC87 /* Pods-Food Aggregator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Aggregator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator.debug.xcconfig"; sourceTree = "<group>"; };
 		B109D753218AA681009035B0 /* DrawerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerCell.swift; sourceTree = "<group>"; };
+		B111EB2C219CC778005B0375 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		B1497DD5219B81A100816F68 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B1497DD7219B820D00816F68 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		B1497DD9219B827400816F68 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B1497DDB219B833100816F68 /* Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convenience.swift; sourceTree = "<group>"; };
 		B1497DDD219B845900816F68 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B1497DDF219B987500816F68 /* LeftAlignedIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftAlignedIconButton.swift; sourceTree = "<group>"; };
+		B1497DE1219BC31200816F68 /* FoodCourt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCourt.swift; sourceTree = "<group>"; };
 		B175E432219934B60043064B /* FoodChainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodChainViewCell.swift; sourceTree = "<group>"; };
 		B19E76BC2189156300B7E6F1 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		B19E76BE2189162500B7E6F1 /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -69,7 +72,6 @@
 		B1A344E821714237005B1A81 /* BaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		B1A344EA21714440005B1A81 /* FoodChainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodChainCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1A344F021715143005B1A81 /* VendorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCollectionViewCell.swift; sourceTree = "<group>"; };
-		B1A344F221715281005B1A81 /* VendorListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorListCollectionView.swift; sourceTree = "<group>"; };
 		B1A344F421715B3A005B1A81 /* FoodChainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodChainViewController.swift; sourceTree = "<group>"; };
 		B1A344F6217167C2005B1A81 /* FoodJointMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodJointMenuViewController.swift; sourceTree = "<group>"; };
 		B1B077EE2187431E00A6AA67 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +134,6 @@
 				B1A344E421714021005B1A81 /* Extension.swift */,
 				B1A344E821714237005B1A81 /* BaseCell.swift */,
 				B1A344EA21714440005B1A81 /* FoodChainCollectionViewCell.swift */,
-				B1A344F221715281005B1A81 /* VendorListCollectionView.swift */,
 				B1A344F021715143005B1A81 /* VendorCollectionViewCell.swift */,
 				B1A344F421715B3A005B1A81 /* FoodChainViewController.swift */,
 				B1A344F6217167C2005B1A81 /* FoodJointMenuViewController.swift */,
@@ -153,6 +154,8 @@
 				B1497DDB219B833100816F68 /* Convenience.swift */,
 				B1497DDD219B845900816F68 /* User.swift */,
 				B1497DDF219B987500816F68 /* LeftAlignedIconButton.swift */,
+				B1497DE1219BC31200816F68 /* FoodCourt.swift */,
+				B111EB2C219CC778005B0375 /* Restaurant.swift */,
 			);
 			path = "Food Aggregator";
 			sourceTree = "<group>";
@@ -322,13 +325,14 @@
 				B1497DDC219B833100816F68 /* Convenience.swift in Sources */,
 				B1497DD8219B820D00816F68 /* Client.swift in Sources */,
 				B19E76BF2189162500B7E6F1 /* CartCollectionViewCell.swift in Sources */,
+				B111EB2D219CC778005B0375 /* Restaurant.swift in Sources */,
 				B1A344CE21713D81005B1A81 /* AppDelegate.swift in Sources */,
-				B1A344F321715281005B1A81 /* VendorListCollectionView.swift in Sources */,
 				B1E56A02218A9AA200C4B5B3 /* OrdersViewController.swift in Sources */,
 				B1A0AD70218BD12C008C17F5 /* OrderCell.swift in Sources */,
 				B1A344F521715B3A005B1A81 /* FoodChainViewController.swift in Sources */,
 				B1A344E321713FF6005B1A81 /* ClientHomeViewController.swift in Sources */,
 				B1E56A002189640800C4B5B3 /* OrderConfirmationViewController.swift in Sources */,
+				B1497DE2219BC31200816F68 /* FoodCourt.swift in Sources */,
 				B19E76BD2189156300B7E6F1 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

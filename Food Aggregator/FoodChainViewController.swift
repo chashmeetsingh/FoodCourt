@@ -13,6 +13,8 @@ class FoodChainViewController: UIViewController {
     
     var collectionView: UICollectionView!
     
+    var foodCourt: FoodCourt!
+    
     let images: [UIImage?] = [UIImage(named: "subway-logo"), UIImage(named: "tim-hortons"), UIImage(named: "kfc_logo"), UIImage(named: "starbucks"), UIImage(named: "nyf"), UIImage(named: "wendys"), UIImage(named: "aw"), UIImage(named: "mcd")]
 
     override func viewDidLoad() {
@@ -51,11 +53,12 @@ class FoodChainViewController: UIViewController {
 extension FoodChainViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return foodCourt.restaurants.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FoodChainViewCell
+        let _ = foodCourt.restaurants[indexPath.item]
         cell.imageView.image = images[indexPath.item]
         return cell
     }

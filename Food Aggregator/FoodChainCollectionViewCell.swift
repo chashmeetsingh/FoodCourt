@@ -8,23 +8,33 @@
 
 import UIKit
 
-class FoodChainCollectionViewCell: BaseCollectionViewCell {
+class FoodChainCollectionViewCell: BaseCollectionViewCell, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    
+    var navigationController: UINavigationController!
+    
+    var foodCourt: FoodCourt! {
+        didSet {
+            foodChainLabel.text = foodCourt.address
+            vendorCollectionView.reloadData()
+        }
+    }
     
     let foodChainLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
-//        label.backgroundColor = .red
         return label
     }()
     
-    var vendorCollectionView: VendorListCollectionView = {
+    lazy var vendorCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        let collectionView = VendorListCollectionView.init(frame: .zero, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         collectionView.register(VendorCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.delegate = self
+        collectionView.dataSource = self
         return collectionView
     }()
     
@@ -45,6 +55,33 @@ class FoodChainCollectionViewCell: BaseCollectionViewCell {
         
         addConstraintsWithFormat(format: "V:|-4-[v0(32)]-8-[v1]-4-|", views: foodChainLabel, vendorCollectionView)
         layer.cornerRadius = 8
+    }
+    
+    let images: [UIImage?] = [UIImage(named: "subway-logo"), UIImage(named: "tim-hortons"), UIImage(named: "kfc_logo"), UIImage(named: "starbucks"), UIImage(named: "nyf"), UIImage(named: "wendys"), UIImage(named: "aw"), UIImage(named: "mcd")]
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return foodCourt.restaurants.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! VendorCollectionViewCell
+        let _ = foodCourt.restaurants[indexPath.item]
+        cell.imageView.image = images.randomElement()!
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: self.vendorCollectionView.frame.height, height: self.vendorCollectionView.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = FoodChainViewController()
+        vc.foodCourt = foodCourt
+        self.navigationController.pushViewController(vc, animated: true)
     }
     
 }

@@ -11,13 +11,35 @@ PODS:
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
+  - "MaterialComponents/Buttons+ButtonThemer (68.1.0)":
+    - MaterialComponents/Buttons
+    - "MaterialComponents/Buttons+ColorThemer"
+    - "MaterialComponents/Buttons+ShapeThemer"
+    - "MaterialComponents/Buttons+TypographyThemer"
+  - "MaterialComponents/Buttons+ColorThemer (68.1.0)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Color
+  - "MaterialComponents/Buttons+ShapeThemer (68.1.0)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Shape
+  - "MaterialComponents/Buttons+TypographyThemer (68.1.0)":
+    - MaterialComponents/Buttons
+    - MaterialComponents/schemes/Typography
   - MaterialComponents/Ink (68.1.0):
     - MaterialComponents/private/Math
   - MaterialComponents/private/Application (68.1.0)
   - MaterialComponents/private/Math (68.1.0)
+  - MaterialComponents/private/ShapeLibrary (68.1.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/Shapes
   - MaterialComponents/private/Shapes (68.1.0):
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowLayer
+  - MaterialComponents/schemes/Color (68.1.0)
+  - MaterialComponents/schemes/Shape (68.1.0):
+    - MaterialComponents/private/ShapeLibrary
+    - MaterialComponents/private/Shapes
+  - MaterialComponents/schemes/Typography (68.1.0)
   - MaterialComponents/ShadowElevations (68.1.0)
   - MaterialComponents/ShadowLayer (68.1.0):
     - MaterialComponents/ShadowElevations
@@ -46,6 +68,7 @@ DEPENDENCIES:
   - BBBadgeBarButtonItem
   - FontAwesome.swift
   - MaterialComponents/Buttons
+  - "MaterialComponents/Buttons+ButtonThemer"
   - MMDrawerController
   - SkyFloatingLabelTextField (~> 3.0)
   - Toast-Swift (~> 4.0.0)
@@ -73,6 +96,6 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   Toast-Swift: 594b5c5e5129f15438e410207e43287f027b3c00
 
-PODFILE CHECKSUM: 9cafa4be8dddd3901c2f8bdc63130d1f58c22c13
+PODFILE CHECKSUM: af6e590746f9f97d4df0e26143a6936ca549f3a3
 
 COCOAPODS: 1.5.3

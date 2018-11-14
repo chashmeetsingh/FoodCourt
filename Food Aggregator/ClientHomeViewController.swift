@@ -15,13 +15,13 @@ class ClientHomeViewController: UIViewController {
     var collectionView: UICollectionView!
     var drawerOpen = false
     
+    var foodCourts: [FoodCourt] = []
+    
     var appDelegate: AppDelegate {
         get {
             return UIApplication.shared.delegate as! AppDelegate
         }
     }
-    // 139, 8, 35 -> Zomato red
-    // 240, 240, 240 -> Zomato gray
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,6 @@ class ClientHomeViewController: UIViewController {
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionViewFlowLayout.scrollDirection = .vertical
         collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: collectionViewFlowLayout)
-//        tableView.backgroundColor = .red
         self.view.addSubview(collectionView)
         self.view.addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
         self.view.addConstraintsWithFormat(format: "V:|[v0]|", views: collectionView)
@@ -44,16 +43,11 @@ class ClientHomeViewController: UIViewController {
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(openDrawer))
         
-//        let cartButton = UIButton()
-//        cartButton.setImage(UIImage(named: "cart"), for: .normal)
-//        cartButton.addTarget(self, action: #selector(openCart), for: .touchUpInside)
-//        let item = BBBadgeBarButtonItem(customUIButton: cartButton)
-//        item!.badgeValue = "5"
-//        self.navigationItem.rightBarButtonItem = item
-        
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
+        
+        getFoodCourts()
     }
     
     @objc func openDrawer() {
@@ -69,30 +63,36 @@ class ClientHomeViewController: UIViewController {
         let vc = CartViewController(collectionViewLayout: UICollectionViewFlowLayout())
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func getFoodCourts() {
+        self.view.makeToastActivity(.center)
+        
+        let params = [
+            Client.Keys.City: "Windsor"
+        ]
+        
+        Client.sharedInstance.getFoodCourts(params as [String : AnyObject]) { (foodCourts, success, error) in
+            DispatchQueue.main.async {
+                self.view.hideToastActivity()
+                self.foodCourts = foodCourts!
+                self.collectionView.reloadData()
+            }
+        }
+    }
 
 }
 
 extension ClientHomeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return foodCourts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FoodChainCollectionViewCell
-        cell.vendorCollectionView.navigationController = self.navigationController
-        switch indexPath.item {
-        case 0:
-            cell.foodChainLabel.text = "Devonshire Food Court"
-        case 1:
-            cell.foodChainLabel.text = "Tecumseh Food Court"
-        case 2:
-            cell.foodChainLabel.text = "Ambience Mall Food Court"
-        case 3:
-            cell.foodChainLabel.text = "UWindsor Food Court"
-        default:
-            cell.foodChainLabel.text = ""
-        }
+        cell.navigationController = self.navigationController
+        let item = foodCourts[indexPath.item]
+        cell.foodCourt = item
         return cell
     }
     

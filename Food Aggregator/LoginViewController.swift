@@ -36,6 +36,7 @@ class LoginViewController: UIViewController {
         textField.iconMarginBottom = 0
         textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingChanged)
+        textField.autocapitalizationType = .none
         return textField
     }()
     
@@ -53,6 +54,7 @@ class LoginViewController: UIViewController {
         textField.iconMarginBottom = 0
         textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingChanged)
+        textField.autocapitalizationType = .none
         return textField
     }()
     
@@ -134,7 +136,8 @@ class LoginViewController: UIViewController {
     }
     
     func completeLogin() {
-        self.navigationController?.dismiss(animated: true, completion: {
+        self.authController!.view.makeToastActivity(.center)
+        self.navigationController?.dismiss(animated: false, completion: {
             let mainController = ClientHomeViewController()
             let nvc = UINavigationController(rootViewController: mainController)
             let drawerViewController = DrawerViewController(collectionViewLayout: UICollectionViewFlowLayout())
@@ -145,6 +148,7 @@ class LoginViewController: UIViewController {
             self.appDelegate.centerContainer?.setDrawerVisualStateBlock(MMDrawerVisualState.slideAndScaleBlock())
             
             self.authController?.present(self.appDelegate.centerContainer!, animated: true, completion: nil)
+            self.view.hideToastActivity()
         })
     }
     

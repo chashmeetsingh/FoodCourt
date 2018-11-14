@@ -31,9 +31,9 @@ class FoodJointMenuViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
 
-        tableViewData = [cellData(opened: false, title: "Burgers", sectionData: ["Mc Chicken", "Junior Chicken"]),
+        tableViewData = [cellData(opened: true, title: "Burgers", sectionData: ["Mc Chicken", "Junior Chicken", "Chilli Chicken"]),
                 cellData(opened: true, title: "Beverage", sectionData: ["Ice tea", "Coke"]),
-                cellData(opened: false, title: "Sides", sectionData: ["Fries", "Poutine", "Onion Rings"])]
+                cellData(opened: true, title: "Sides", sectionData: ["Fries", "Poutine", "Onion Rings"])]
         
         tableView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
 
@@ -63,14 +63,14 @@ class FoodJointMenuViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableViewData[section].opened {
-            return tableViewData[section].sectionData.count
+            return tableViewData[section].sectionData.count + 1
         } else {
             return 1
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
+        if indexPath.item == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FoodClassCell
             cell.textLabel?.text = tableViewData[indexPath.section].title
             cell.backgroundColor = .white
@@ -88,7 +88,7 @@ class FoodJointMenuViewController: UITableViewController {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "expandedCell", for: indexPath) as! ExpandedCell
-            cell.titleLabel.text = tableViewData[indexPath.section].sectionData[indexPath.row]
+            cell.titleLabel.text = tableViewData[indexPath.section].sectionData[indexPath.item - 1]
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
             cell.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
             return cell
