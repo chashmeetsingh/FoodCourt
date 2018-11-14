@@ -8,4 +8,9 @@ target 'Food Aggregator' do
   # Pods for Food Aggregator
   pod 'MMDrawerController'
   pod 'BBBadgeBarButtonItem'
+  pod 'Alamofire'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'FontAwesome.swift'
+  pod 'MaterialComponents/Buttons'
+  pod 'Toast-Swift', '~> 4.0.0'
 end

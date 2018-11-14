@@ -8,6 +8,7 @@
 
 import UIKit
 import MMDrawerController
+import MaterialComponents.MaterialButtons
 
 class AuthenticationViewController: UIViewController {
     
@@ -22,6 +23,14 @@ class AuthenticationViewController: UIViewController {
     }
 
     @IBAction func button1Tapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func googleLoginButtonTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func continueAsGuestButtonTapped(_ sender: Any) {
         let mainController = ClientHomeViewController()
         let nvc = UINavigationController(rootViewController: mainController)
         let drawerViewController = DrawerViewController(collectionViewLayout: UICollectionViewFlowLayout())
@@ -34,8 +43,12 @@ class AuthenticationViewController: UIViewController {
         self.show(appDelegate.centerContainer!, sender: self)
     }
     
-    @IBAction func button2Tapped(_ sender: Any) {
-        
+    @IBAction func loginAsUserButtonTapped(_ sender: Any) {
+        let vc = LoginViewController()
+        vc.modalTransitionStyle = .flipHorizontal
+        vc.authController = self
+        let nvc = UINavigationController(rootViewController: vc)
+        self.present(nvc, animated: true, completion: nil)
     }
     
 }

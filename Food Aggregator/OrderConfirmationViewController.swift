@@ -69,7 +69,7 @@ class OrderConfirmationViewController: UIViewController {
         
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: confirmationLabel)
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: orderLabel)
-        view.addConstraint(NSLayoutConstraint(item: orderLabel, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: 0))
+        view.addConstraintsWithFormat(format: "V:|-50-[v0]", views: orderLabel)
         view.addConstraintsWithFormat(format: "V:|-16-[v0]", views: confirmationLabel)
         view.addConstraint(NSLayoutConstraint(item: yourOrderButton, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0))
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: orderPickupLabel)

@@ -13,21 +13,18 @@ class FinalPriceView: UICollectionReusableView {
     let subtotalLabel: UILabel = {
         let label = UILabel()
         label.text = "Subtotal"
-//        label.backgroundColor = .green
         return label
     }()
     
     let taxesAndChargesLabel: UILabel = {
         let label = UILabel()
         label.text = "Taxes & charges"
-//        label.backgroundColor = .green
         return label
     }()
     
     let subtotalAmountLabel: UILabel = {
         let label = UILabel()
         label.text = "$25"
-//        label.backgroundColor = .green
         label.textAlignment = .right
         return label
     }()
@@ -35,7 +32,6 @@ class FinalPriceView: UICollectionReusableView {
     let taxesAndChargesAmountLabel: UILabel = {
         let label = UILabel()
         label.text = "$3.25"
-//        label.backgroundColor = .green
         label.textAlignment = .right
         return label
     }()
@@ -43,14 +39,12 @@ class FinalPriceView: UICollectionReusableView {
     let grandTotalLabel: UILabel = {
         let label = UILabel()
         label.text = "Grand Total"
-//        label.backgroundColor = .green
         return label
     }()
     
     let grandTotalAmountLabel: UILabel = {
         let label = UILabel()
         label.text = "$ 28.25"
-//        label.backgroundColor = .green
         label.textAlignment = .right
         return label
     }()
@@ -76,9 +70,7 @@ class FinalPriceView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-//        backgroundColor = .black
-        
+                
         addSubview(subtotalLabel)
         addSubview(taxesAndChargesLabel)
         addSubview(subtotalAmountLabel)
