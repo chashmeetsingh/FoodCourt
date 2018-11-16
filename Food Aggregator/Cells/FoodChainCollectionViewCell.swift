@@ -57,16 +57,14 @@ class FoodChainCollectionViewCell: BaseCollectionViewCell, UICollectionViewDeleg
         layer.cornerRadius = 8
     }
     
-    let images: [UIImage?] = [UIImage(named: "subway-logo"), UIImage(named: "tim-hortons"), UIImage(named: "kfc_logo"), UIImage(named: "starbucks"), UIImage(named: "nyf"), UIImage(named: "wendys"), UIImage(named: "aw"), UIImage(named: "mcd")]
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return foodCourt.restaurants.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! VendorCollectionViewCell
-        let _ = foodCourt.restaurants[indexPath.item]
-        cell.imageView.image = images.randomElement()!
+        let restaurant = foodCourt.restaurants[indexPath.item]
+        cell.imageView.image = UIImage(named: restaurant.name)
         return cell
     }
     

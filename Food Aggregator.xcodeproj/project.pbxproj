@@ -131,45 +131,101 @@
 		B1A344CC21713D81005B1A81 /* Food Aggregator */ = {
 			isa = PBXGroup;
 			children = (
-				B1A344CD21713D81005B1A81 /* AppDelegate.swift */,
-				B1A344CF21713D81005B1A81 /* AuthenticationViewController.swift */,
-				B1A344D121713D81005B1A81 /* Main.storyboard */,
 				B1A344D721713D82005B1A81 /* Assets.xcassets */,
-				B1A344D921713D82005B1A81 /* LaunchScreen.storyboard */,
 				B1A344DC21713D82005B1A81 /* Info.plist */,
-				B1A344D421713D81005B1A81 /* Food_Aggregator.xcdatamodeld */,
+				B1C7A9F4219E97DA0026F614 /* Views */,
+				B1C7A9EE219E96FC0026F614 /* Controllers */,
+				B1C7A9F3219E97890026F614 /* Other */,
+				B1C7A9EF219E97210026F614 /* Cells */,
+				B1C7A9F2219E97790026F614 /* Network */,
+				B1C7A9F1219E976B0026F614 /* Model */,
+			);
+			path = "Food Aggregator";
+			sourceTree = "<group>";
+		};
+		B1C7A9EE219E96FC0026F614 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B1A344CF21713D81005B1A81 /* AuthenticationViewController.swift */,
 				B1A344E221713FF6005B1A81 /* ClientHomeViewController.swift */,
-				B1A344E421714021005B1A81 /* Extension.swift */,
-				B1A344E821714237005B1A81 /* BaseCell.swift */,
-				B1A344EA21714440005B1A81 /* FoodChainCollectionViewCell.swift */,
-				B1A344F021715143005B1A81 /* VendorCollectionViewCell.swift */,
 				B1A344F421715B3A005B1A81 /* FoodChainViewController.swift */,
 				B1A344F6217167C2005B1A81 /* FoodJointMenuViewController.swift */,
 				B1B077EE2187431E00A6AA67 /* CartViewController.swift */,
-				B19E76BC2189156300B7E6F1 /* HeaderView.swift */,
-				B19E76BE2189162500B7E6F1 /* CartCollectionViewCell.swift */,
-				B19E76C021892D0C00B7E6F1 /* FinalPriceView.swift */,
-				B1E569FD2189486600C4B5B3 /* GMStepper.swift */,
 				B1E569FF2189640800C4B5B3 /* OrderConfirmationViewController.swift */,
 				B1E56A01218A9AA200C4B5B3 /* OrdersViewController.swift */,
 				B1E56A03218A9E4000C4B5B3 /* DrawerViewController.swift */,
+				B1497DD5219B81A100816F68 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B1C7A9EF219E97210026F614 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B1A344E821714237005B1A81 /* BaseCell.swift */,
+				B1A344EA21714440005B1A81 /* FoodChainCollectionViewCell.swift */,
+				B1A344F021715143005B1A81 /* VendorCollectionViewCell.swift */,
+				B1C7A9F0219E97330026F614 /* OrderConfirmation */,
 				B109D753218AA681009035B0 /* DrawerCell.swift */,
 				B1A0AD6F218BD12C008C17F5 /* OrderCell.swift */,
 				B175E432219934B60043064B /* FoodChainViewCell.swift */,
-				B1497DD5219B81A100816F68 /* LoginViewController.swift */,
-				B1497DD7219B820D00816F68 /* Client.swift */,
-				B1497DD9219B827400816F68 /* Constants.swift */,
-				B1497DDB219B833100816F68 /* Convenience.swift */,
-				B1497DDD219B845900816F68 /* User.swift */,
-				B1497DDF219B987500816F68 /* LeftAlignedIconButton.swift */,
-				B1497DE1219BC31200816F68 /* FoodCourt.swift */,
-				B111EB2C219CC778005B0375 /* Restaurant.swift */,
 				B111EB2E219CD256005B0375 /* FoodClassCell.swift */,
 				B111EB30219CD273005B0375 /* ExpandedCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B1C7A9F0219E97330026F614 /* OrderConfirmation */ = {
+			isa = PBXGroup;
+			children = (
+				B19E76BC2189156300B7E6F1 /* HeaderView.swift */,
+				B19E76BE2189162500B7E6F1 /* CartCollectionViewCell.swift */,
+				B19E76C021892D0C00B7E6F1 /* FinalPriceView.swift */,
+			);
+			path = OrderConfirmation;
+			sourceTree = "<group>";
+		};
+		B1C7A9F1219E976B0026F614 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B1A344D421713D81005B1A81 /* Food_Aggregator.xcdatamodeld */,
+				B1497DDD219B845900816F68 /* User.swift */,
+				B1497DE1219BC31200816F68 /* FoodCourt.swift */,
+				B111EB2C219CC778005B0375 /* Restaurant.swift */,
 				B1C7A9EA219E8A3C0026F614 /* Category.swift */,
 				B1C7A9EC219E8A7C0026F614 /* FoodItem.swift */,
 			);
-			path = "Food Aggregator";
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B1C7A9F2219E97790026F614 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B1497DD7219B820D00816F68 /* Client.swift */,
+				B1497DD9219B827400816F68 /* Constants.swift */,
+				B1497DDB219B833100816F68 /* Convenience.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B1C7A9F3219E97890026F614 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				B1A344CD21713D81005B1A81 /* AppDelegate.swift */,
+				B1A344E421714021005B1A81 /* Extension.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		B1C7A9F4219E97DA0026F614 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B1E569FD2189486600C4B5B3 /* GMStepper.swift */,
+				B1497DDF219B987500816F68 /* LeftAlignedIconButton.swift */,
+				B1A344D121713D81005B1A81 /* Main.storyboard */,
+				B1A344D921713D82005B1A81 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		FA2BF6339460179A67B4CC17 /* Pods */ = {

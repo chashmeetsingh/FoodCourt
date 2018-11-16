@@ -18,6 +18,7 @@ struct CellData {
 class FoodJointMenuViewController: UITableViewController {
 
     var foodMenuData = [CellData]()
+    var restaurantName: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +27,8 @@ class FoodJointMenuViewController: UITableViewController {
         
         self.view.backgroundColor = .white
         
-//        tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
-
-//        tableViewData = [cellData(opened: true, title: "Burgers", sectionData: ["Mc Chicken", "Junior Chicken", "Chilli Chicken"]),
-//                cellData(opened: true, title: "Beverage", sectionData: ["Ice tea", "Coke"]),
-//                cellData(opened: true, title: "Sides", sectionData: ["Fries", "Poutine", "Onion Rings"])]
         
         tableView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
 
@@ -62,7 +58,7 @@ class FoodJointMenuViewController: UITableViewController {
     func getFoodMenu() {
         
         let params = [
-            Client.Keys.RestaurantName: "KFC"
+            Client.Keys.RestaurantName: restaurantName
         ]
         
         self.view.makeToastActivity(.center)

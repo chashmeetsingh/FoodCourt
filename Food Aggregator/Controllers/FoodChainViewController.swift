@@ -14,8 +14,6 @@ class FoodChainViewController: UIViewController {
     var collectionView: UICollectionView!
     
     var foodCourt: FoodCourt!
-    
-    let images: [UIImage?] = [UIImage(named: "subway-logo"), UIImage(named: "tim-hortons"), UIImage(named: "kfc_logo"), UIImage(named: "starbucks"), UIImage(named: "nyf"), UIImage(named: "wendys"), UIImage(named: "aw"), UIImage(named: "mcd")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,8 +56,8 @@ extension FoodChainViewController: UICollectionViewDelegateFlowLayout, UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! FoodChainViewCell
-        let _ = foodCourt.restaurants[indexPath.item]
-        cell.imageView.image = images[indexPath.item]
+        let restaurant = foodCourt.restaurants[indexPath.item]
+        cell.imageView.image = UIImage(named: restaurant.name)
         return cell
     }
     
@@ -81,6 +79,7 @@ extension FoodChainViewController: UICollectionViewDelegateFlowLayout, UICollect
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = FoodJointMenuViewController()
+        vc.restaurantName = foodCourt.restaurants[indexPath.item].name
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

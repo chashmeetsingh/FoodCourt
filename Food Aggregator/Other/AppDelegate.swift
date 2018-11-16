@@ -26,8 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         UINavigationBar.appearance().isTranslucent = false
         
-//        UIApplication.shared.statusBarStyle = .lightContent
-        
         return true
     }
 

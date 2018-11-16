@@ -59,11 +59,6 @@ class ClientHomeViewController: UIViewController {
         drawerOpen = !drawerOpen
     }
     
-    @objc func openCart() {
-        let vc = CartViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func getFoodCourts() {
         self.view.makeToastActivity(.center)
         
@@ -106,6 +101,7 @@ extension ClientHomeViewController: UICollectionViewDelegateFlowLayout, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = FoodChainViewController()
+        vc.foodCourt = foodCourts[indexPath.item]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
