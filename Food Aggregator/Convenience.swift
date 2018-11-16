@@ -56,4 +56,23 @@ extension Client {
         
     }
     
+    func getFoodMenu(_ params: [String: AnyObject], _ completion: @escaping(_ foodMenu: [Category]?, _ success: Bool, _ error: String?) -> Void) {
+        
+        let url = getApiUrl(APIURL.IPAddress, Methods.FoodMenu)
+        
+        _ = makeRequest(url, .post, [:], parameters: params, completion: { (results, message) in
+            
+            if let _ = message {
+                completion(nil, false, ResponseMessages.ServerError)
+            } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String, status == "success" {
+                let menu = Category.getMenuForRestuarant(dictionary: results[Keys.ItemList] as! [String : AnyObject])
+                completion(menu, true, nil)
+            } else {
+                completion(nil, false, ResponseMessages.ServerError)
+            }
+            return
+        })
+        
+    }
+    
 }

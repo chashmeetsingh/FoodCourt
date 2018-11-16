@@ -9,15 +9,15 @@
 import UIKit
 import BBBadgeBarButtonItem
 
-struct cellData {
+struct CellData {
     var opened = Bool()
     var title = String()
-    var sectionData = [String]()
+    var sectionData = [FoodItem]()
 }
 
 class FoodJointMenuViewController: UITableViewController {
 
-    var tableViewData = [cellData]()
+    var foodMenuData = [CellData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +26,13 @@ class FoodJointMenuViewController: UITableViewController {
         
         self.view.backgroundColor = .white
         
-        tableView = UITableView()
-//        tableView.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0)
+//        tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
 
-        tableViewData = [cellData(opened: true, title: "Burgers", sectionData: ["Mc Chicken", "Junior Chicken", "Chilli Chicken"]),
-                cellData(opened: true, title: "Beverage", sectionData: ["Ice tea", "Coke"]),
-                cellData(opened: true, title: "Sides", sectionData: ["Fries", "Poutine", "Onion Rings"])]
+//        tableViewData = [cellData(opened: true, title: "Burgers", sectionData: ["Mc Chicken", "Junior Chicken", "Chilli Chicken"]),
+//                cellData(opened: true, title: "Beverage", sectionData: ["Ice tea", "Coke"]),
+//                cellData(opened: true, title: "Sides", sectionData: ["Fries", "Poutine", "Onion Rings"])]
         
         tableView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
 
@@ -50,6 +49,9 @@ class FoodJointMenuViewController: UITableViewController {
         let item = BBBadgeBarButtonItem(customUIButton: cartButton)
         item!.badgeValue = "5"
         self.navigationItem.rightBarButtonItem = item
+        
+        getFoodMenu()
+        
     }
     
     @objc func openCart() {
@@ -57,13 +59,38 @@ class FoodJointMenuViewController: UITableViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func getFoodMenu() {
+        
+        let params = [
+            Client.Keys.RestaurantName: "KFC"
+        ]
+        
+        self.view.makeToastActivity(.center)
+        Client.sharedInstance.getFoodMenu(params as [String : AnyObject]) { (foodMenu, success, message) in
+            DispatchQueue.main.async {
+                self.view.hideToastActivity()
+                if success {
+                    if let menuItems = foodMenu {
+                        self.foodMenuData = []
+                        for item in menuItems {
+                            self.foodMenuData.append(CellData(opened: true, title: item.name, sectionData: item.foodItems))
+                        }
+                    }
+                    self.tableView.reloadData()
+                } else {
+                    print(message ?? "error occured")
+                }
+            }
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return tableViewData.count
+        return foodMenuData.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if tableViewData[section].opened {
-            return tableViewData[section].sectionData.count + 1
+        if foodMenuData[section].opened {
+            return foodMenuData[section].sectionData.count + 1
         } else {
             return 1
         }
@@ -72,10 +99,10 @@ class FoodJointMenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.item == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FoodClassCell
-            cell.textLabel?.text = tableViewData[indexPath.section].title
+            cell.textLabel?.text = foodMenuData[indexPath.section].title
             cell.backgroundColor = .white
             cell.textLabel?.textColor = .black
-            if tableViewData[indexPath.section].opened {
+            if foodMenuData[indexPath.section].opened {
                 let image = UIImage(named: "up_arrow")?.withRenderingMode(.alwaysTemplate)
                 cell.upDownButton.setImage(image, for: .normal)
                 cell.upDownButton.imageView?.tintColor = .black
@@ -88,7 +115,7 @@ class FoodJointMenuViewController: UITableViewController {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "expandedCell", for: indexPath) as! ExpandedCell
-            cell.titleLabel.text = tableViewData[indexPath.section].sectionData[indexPath.item - 1]
+            cell.titleLabel.text = foodMenuData[indexPath.section].sectionData[indexPath.item - 1].name
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
             cell.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
             return cell
@@ -96,11 +123,11 @@ class FoodJointMenuViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableViewData[indexPath.section].opened {
-            tableViewData[indexPath.section].opened = false
+        if foodMenuData[indexPath.section].opened {
+            foodMenuData[indexPath.section].opened = false
             handleOpening(indexPath: indexPath, upOrDown: "up_arrow")
         } else {
-            tableViewData[indexPath.section].opened = true
+            foodMenuData[indexPath.section].opened = true
             handleOpening(indexPath: indexPath, upOrDown: "down_arrow")
         }
     }
@@ -116,62 +143,4 @@ class FoodJointMenuViewController: UITableViewController {
         return 44
     }
 
-}
-
-class FoodClassCell: BaseTableViewCell {
-    
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
-    
-    let upDownButton: UIButton = {
-        let button = UIButton()
-        return button
-    }()
-    
-    override func setupViews() {
-        super.setupViews()
-        
-        addSubview(titleLabel)
-        addSubview(upDownButton)
-        addConstraintsWithFormat(format: "H:|-24-[v0][v1]-8-|", views: titleLabel, upDownButton)
-        addConstraintsWithFormat(format: "V:|[v0]|", views: titleLabel)
-        addConstraintsWithFormat(format: "V:|[v0]|", views: upDownButton)
-    }
-    
-}
-
-class ExpandedCell: BaseTableViewCell {
-    
-    override func setupViews() {
-        super.setupViews()
-        
-        addSubview(titleLabel)
-        addSubview(stepper)
-        
-        addConstraintsWithFormat(format: "V:|[v0]|", views: titleLabel)
-        addConstraintsWithFormat(format: "V:|-8-[v0]-8-|", views: stepper)
-        
-        addConstraintsWithFormat(format: "H:|-24-[v0][v1(100)]-8-|", views: titleLabel, stepper)
-        
-    }
-    
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
-    
-    let stepper: GMStepper = {
-        let stepper = GMStepper()
-        stepper.labelFont = UIFont.systemFont(ofSize: 16)
-        stepper.autorepeat = false
-        stepper.maximumValue = 20
-        stepper.buttonsBackgroundColor = UIColor(red: 139.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-        stepper.labelBackgroundColor = .white
-        stepper.labelTextColor = .black
-        stepper.limitHitAnimationColor = UIColor(red: 139.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0)
-        return stepper
-    }()
-    
 }

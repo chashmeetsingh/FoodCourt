@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B109D754218AA681009035B0 /* DrawerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B109D753218AA681009035B0 /* DrawerCell.swift */; };
 		B111EB2D219CC778005B0375 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B111EB2C219CC778005B0375 /* Restaurant.swift */; };
+		B111EB2F219CD256005B0375 /* FoodClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B111EB2E219CD256005B0375 /* FoodClassCell.swift */; };
+		B111EB31219CD273005B0375 /* ExpandedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B111EB30219CD273005B0375 /* ExpandedCell.swift */; };
 		B1497DD6219B81A100816F68 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1497DD5219B81A100816F68 /* LoginViewController.swift */; };
 		B1497DD8219B820D00816F68 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1497DD7219B820D00816F68 /* Client.swift */; };
 		B1497DDA219B827400816F68 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1497DD9219B827400816F68 /* Constants.swift */; };
@@ -35,6 +37,8 @@
 		B1A344F521715B3A005B1A81 /* FoodChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344F421715B3A005B1A81 /* FoodChainViewController.swift */; };
 		B1A344F7217167C2005B1A81 /* FoodJointMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344F6217167C2005B1A81 /* FoodJointMenuViewController.swift */; };
 		B1B077EF2187431E00A6AA67 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B077EE2187431E00A6AA67 /* CartViewController.swift */; };
+		B1C7A9EB219E8A3C0026F614 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A9EA219E8A3C0026F614 /* Category.swift */; };
+		B1C7A9ED219E8A7C0026F614 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A9EC219E8A7C0026F614 /* FoodItem.swift */; };
 		B1E569FE2189486600C4B5B3 /* GMStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E569FD2189486600C4B5B3 /* GMStepper.swift */; };
 		B1E56A002189640800C4B5B3 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E569FF2189640800C4B5B3 /* OrderConfirmationViewController.swift */; };
 		B1E56A02218A9AA200C4B5B3 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E56A01218A9AA200C4B5B3 /* OrdersViewController.swift */; };
@@ -47,6 +51,8 @@
 		7A20080A819988240ED7CC87 /* Pods-Food Aggregator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Food Aggregator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator.debug.xcconfig"; sourceTree = "<group>"; };
 		B109D753218AA681009035B0 /* DrawerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerCell.swift; sourceTree = "<group>"; };
 		B111EB2C219CC778005B0375 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		B111EB2E219CD256005B0375 /* FoodClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodClassCell.swift; sourceTree = "<group>"; };
+		B111EB30219CD273005B0375 /* ExpandedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCell.swift; sourceTree = "<group>"; };
 		B1497DD5219B81A100816F68 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B1497DD7219B820D00816F68 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		B1497DD9219B827400816F68 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -75,6 +81,8 @@
 		B1A344F421715B3A005B1A81 /* FoodChainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodChainViewController.swift; sourceTree = "<group>"; };
 		B1A344F6217167C2005B1A81 /* FoodJointMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodJointMenuViewController.swift; sourceTree = "<group>"; };
 		B1B077EE2187431E00A6AA67 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		B1C7A9EA219E8A3C0026F614 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		B1C7A9EC219E8A7C0026F614 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		B1E569FD2189486600C4B5B3 /* GMStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMStepper.swift; sourceTree = "<group>"; };
 		B1E569FF2189640800C4B5B3 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 		B1E56A01218A9AA200C4B5B3 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +164,10 @@
 				B1497DDF219B987500816F68 /* LeftAlignedIconButton.swift */,
 				B1497DE1219BC31200816F68 /* FoodCourt.swift */,
 				B111EB2C219CC778005B0375 /* Restaurant.swift */,
+				B111EB2E219CD256005B0375 /* FoodClassCell.swift */,
+				B111EB30219CD273005B0375 /* ExpandedCell.swift */,
+				B1C7A9EA219E8A3C0026F614 /* Category.swift */,
+				B1C7A9EC219E8A7C0026F614 /* FoodItem.swift */,
 			);
 			path = "Food Aggregator";
 			sourceTree = "<group>";
@@ -311,8 +323,11 @@
 				B1E56A04218A9E4000C4B5B3 /* DrawerViewController.swift in Sources */,
 				B1497DD6219B81A100816F68 /* LoginViewController.swift in Sources */,
 				B1497DDE219B845900816F68 /* User.swift in Sources */,
+				B111EB2F219CD256005B0375 /* FoodClassCell.swift in Sources */,
+				B1C7A9EB219E8A3C0026F614 /* Category.swift in Sources */,
 				B1A344F121715143005B1A81 /* VendorCollectionViewCell.swift in Sources */,
 				B109D754218AA681009035B0 /* DrawerCell.swift in Sources */,
+				B1C7A9ED219E8A7C0026F614 /* FoodItem.swift in Sources */,
 				B1A344EB21714440005B1A81 /* FoodChainCollectionViewCell.swift in Sources */,
 				B1A344D621713D81005B1A81 /* Food_Aggregator.xcdatamodeld in Sources */,
 				B1497DE0219B987500816F68 /* LeftAlignedIconButton.swift in Sources */,
@@ -325,6 +340,7 @@
 				B1497DDC219B833100816F68 /* Convenience.swift in Sources */,
 				B1497DD8219B820D00816F68 /* Client.swift in Sources */,
 				B19E76BF2189162500B7E6F1 /* CartCollectionViewCell.swift in Sources */,
+				B111EB31219CD273005B0375 /* ExpandedCell.swift in Sources */,
 				B111EB2D219CC778005B0375 /* Restaurant.swift in Sources */,
 				B1A344CE21713D81005B1A81 /* AppDelegate.swift in Sources */,
 				B1E56A02218A9AA200C4B5B3 /* OrdersViewController.swift in Sources */,
