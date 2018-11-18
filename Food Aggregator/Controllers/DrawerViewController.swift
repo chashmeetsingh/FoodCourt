@@ -11,6 +11,8 @@ import MMDrawerController
 
 class DrawerViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
+    let items = ["Profile", "Your Orders", "Logout"]
+    
     var appDelegate: AppDelegate {
         get {
            return UIApplication.shared.delegate as! AppDelegate
@@ -26,12 +28,12 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return items.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DrawerCell
-//        cell.backgroundColor = .red
+        cell.menuItemLabel.text = items[indexPath.item]
         return cell
     }
     
@@ -48,7 +50,7 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
+        return CGSize(width: view.frame.width, height: 100)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -56,7 +58,24 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath)
-            view.backgroundColor = .blue
+            view.backgroundColor = .gray
+            
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: "person")?.withRenderingMode(.alwaysTemplate)
+            imageView.tintColor = .black
+            imageView.backgroundColor = .white
+            imageView.layer.cornerRadius = 42
+            
+            let personName = UILabel()
+            personName.textColor = .black
+            personName.text = appDelegate.currentUser.name
+            
+            view.addSubview(imageView)
+            view.addSubview(personName)
+            view.addConstraintsWithFormat(format: "V:|-8-[v0(84)]-8-|", views: imageView)
+            view.addConstraintsWithFormat(format: "V:|-8-[v0(84)]-8-|", views: personName)
+            view.addConstraintsWithFormat(format: "H:|-8-[v0(84)]-12-[v1]-8-|", views: imageView, personName)
+            
             return view
         default:
             return UICollectionReusableView(frame: CGRect.zero)
@@ -65,8 +84,10 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 0...5:
+        case 0:
             showOrders()
+        case 1...5:
+            logoutUser()
         default:
             break
         }
@@ -74,6 +95,23 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
     
     func closeDrawer() {
         appDelegate.centerContainer?.closeDrawer(animated: true, completion: nil)
+    }
+    
+    func logoutUser() {
+        
+        let params = [
+            Client.Keys.Email: appDelegate.currentUser!.emailID,
+            Client.Keys.Token: appDelegate.currentUser!.accessToken
+        ]
+        
+        Client.sharedInstance.logoutUser(params as [String : AnyObject]) { (someObject, success, error) in
+            DispatchQueue.main.async {
+                print(success)
+                if success {
+                    self.appDelegate.centerContainer?.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     func showOrders() {

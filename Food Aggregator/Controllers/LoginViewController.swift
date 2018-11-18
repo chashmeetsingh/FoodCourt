@@ -21,8 +21,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    var authController: AuthenticationViewController?
-    
     lazy var emailField: SkyFloatingLabelTextField = {
         let textField = SkyFloatingLabelTextFieldWithIcon()
         textField.placeholder = "Email ID"
@@ -136,20 +134,17 @@ class LoginViewController: UIViewController {
     }
     
     func completeLogin() {
-        self.authController!.view.makeToastActivity(.center)
-        self.navigationController?.dismiss(animated: false, completion: {
-            let mainController = ClientHomeViewController()
-            let nvc = UINavigationController(rootViewController: mainController)
-            let drawerViewController = DrawerViewController(collectionViewLayout: UICollectionViewFlowLayout())
-            
-            self.appDelegate.centerContainer = MMDrawerController(center: nvc, leftDrawerViewController: drawerViewController)
-            self.appDelegate.centerContainer!.openDrawerGestureModeMask = .panningCenterView
-            self.appDelegate.centerContainer!.closeDrawerGestureModeMask = .panningCenterView
-            self.appDelegate.centerContainer?.setDrawerVisualStateBlock(MMDrawerVisualState.slideAndScaleBlock())
-            
-            self.authController?.present(self.appDelegate.centerContainer!, animated: true, completion: nil)
-            self.view.hideToastActivity()
-        })
+        self.navigationController?.dismiss(animated: false, completion: nil)
+        let mainController = ClientHomeViewController()
+        let nvc = UINavigationController(rootViewController: mainController)
+        let drawerViewController = DrawerViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        
+        self.appDelegate.centerContainer = MMDrawerController(center: nvc, leftDrawerViewController: drawerViewController)
+        self.appDelegate.centerContainer!.openDrawerGestureModeMask = .panningCenterView
+        self.appDelegate.centerContainer!.closeDrawerGestureModeMask = .panningCenterView
+        self.appDelegate.centerContainer?.setDrawerVisualStateBlock(MMDrawerVisualState.slideAndScaleBlock())
+        
+        self.presentingViewController?.present(self.appDelegate.centerContainer!, animated: true, completion: nil)
     }
     
     func toggleInteraction() {

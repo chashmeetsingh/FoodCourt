@@ -25,6 +25,8 @@ extension Client {
         static let Login = "/signIn"
         static let FoodCourts = "/getFoodCourtByCity"
         static let FoodMenu = "/FoodMenu"
+        static let PlaceOrder = "/user/placeOrder"
+        static let Logout = "/user/logout"
     }
     
     struct Keys {
@@ -51,6 +53,11 @@ extension Client {
         static let FoodCourtId = "foodCourtId"
         static let RestaurantId = "restaurantId"
         static let TimeToPrepareInMinutes = "timeToPrepareInMinutes"
+        static let OrderDetails = "orderDetails"
+        static let FirstName = "first_name"
+        static let LastName = "last_name"
+        static let PhoneNumber = "phone_number"
+        static let EmailID = "email_id"
     }
     
     struct Colors {

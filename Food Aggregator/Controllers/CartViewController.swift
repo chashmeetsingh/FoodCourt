@@ -58,7 +58,7 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
                 }
             }
         }
-        print(items)
+//        print(items)
         for (name, itemList) in items {
             var data = CartCellData()
             data.restaurantName = name
@@ -106,7 +106,7 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
             return view
         case UICollectionView.elementKindSectionFooter:
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "finalPriceView", for: indexPath) as! FinalPriceView
-            view.checkoutButton.addTarget(self, action: #selector(doSomething), for: .touchUpInside)
+            view.checkoutButton.addTarget(self, action: #selector(placeOrder), for: .touchUpInside)
             
             var subtotal = 0.0
             for data in collectionViewData {
@@ -143,7 +143,20 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
         return 0
     }
     
-    @objc func doSomething() {
+    @objc func placeOrder() {
+        let params = [
+            Client.Keys.Email: appDelegate.currentUser!.emailID,
+            Client.Keys.Token: appDelegate.currentUser!.accessToken,
+            Client.Keys.OrderDetails: appDelegate.cartItems[appDelegate.currentFoodCourt.id]!
+        ] as [String : AnyObject]
+        
+        self.view.makeToastActivity(.center)
+        Client.sharedInstance.placeOrder(params) { (category, success, message) in
+            DispatchQueue.main.async {
+                self.view.hideToastActivity()
+                
+            }
+        }
         let vc = OrderConfirmationViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }

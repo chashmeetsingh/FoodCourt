@@ -13,13 +13,21 @@ class User: NSObject {
     let accessToken: String
     let emailID: String
     let message: String
-    let name: String
+    let firstName: String
+    let lastName: String
+    let phoneNumber: String
     
     init(dictionary: [String : AnyObject]) {
         accessToken = dictionary[Client.Keys.Token] as? String ?? ""
-        emailID = dictionary[Client.Keys.Email] as? String ?? ""
+        emailID = dictionary[Client.Keys.EmailID] as? String ?? ""
         message = dictionary[Client.Keys.Message] as? String ?? ""
-        name = dictionary[Client.Keys.Name] as? String ?? ""
+        firstName = dictionary[Client.Keys.FirstName] as? String ?? ""
+        lastName = dictionary[Client.Keys.LastName] as? String ?? ""
+        phoneNumber = dictionary[Client.Keys.PhoneNumber] as? String ?? ""
+    }
+    
+    var name: String {
+        return "\(self.firstName) \(self.lastName)"
     }
     
 }

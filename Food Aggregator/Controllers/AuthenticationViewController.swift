@@ -33,10 +33,10 @@ class AuthenticationViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let defaults = UserDefaults.standard
-        print(defaults.dictionary(forKey: "currentUser") ?? "")
-        if let currentUser = defaults.dictionary(forKey: "currentUser") as? [String : AnyObject] {
-            appDelegate.currentUser = User(dictionary: currentUser)
+        if let currentUserData = UserDefaults.standard.object(forKey: "currentUser") as? Data, let user = NSKeyedUnarchiver.unarchiveObject(with: currentUserData) as? [String : AnyObject] {
+            print(user)
+            appDelegate.currentUser = User(dictionary: user)
+            print(appDelegate.currentUser.name)
             self.completeLogin()
         }
     }
@@ -80,7 +80,6 @@ class AuthenticationViewController: UIViewController {
     @IBAction func loginAsUserButtonTapped(_ sender: Any) {
         let vc = LoginViewController()
         vc.modalTransitionStyle = .flipHorizontal
-        vc.authController = self
         let nvc = UINavigationController(rootViewController: vc)
         self.present(nvc, animated: true, completion: nil)
     }
