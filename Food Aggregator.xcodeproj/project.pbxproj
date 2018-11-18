@@ -38,6 +38,7 @@
 		B1B077EF2187431E00A6AA67 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B077EE2187431E00A6AA67 /* CartViewController.swift */; };
 		B1C7A9EB219E8A3C0026F614 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A9EA219E8A3C0026F614 /* Category.swift */; };
 		B1C7A9ED219E8A7C0026F614 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A9EC219E8A7C0026F614 /* FoodItem.swift */; };
+		B1E44D9B21A219B0005CB9B0 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E44D9A21A219B0005CB9B0 /* Order.swift */; };
 		B1E569FE2189486600C4B5B3 /* GMStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E569FD2189486600C4B5B3 /* GMStepper.swift */; };
 		B1E56A002189640800C4B5B3 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E569FF2189640800C4B5B3 /* OrderConfirmationViewController.swift */; };
 		B1E56A02218A9AA200C4B5B3 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E56A01218A9AA200C4B5B3 /* OrdersViewController.swift */; };
@@ -81,6 +82,7 @@
 		B1B077EE2187431E00A6AA67 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		B1C7A9EA219E8A3C0026F614 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		B1C7A9EC219E8A7C0026F614 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
+		B1E44D9A21A219B0005CB9B0 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B1E569FD2189486600C4B5B3 /* GMStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMStepper.swift; sourceTree = "<group>"; };
 		B1E569FF2189640800C4B5B3 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 		B1E56A01218A9AA200C4B5B3 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				B111EB2C219CC778005B0375 /* Restaurant.swift */,
 				B1C7A9EA219E8A3C0026F614 /* Category.swift */,
 				B1C7A9EC219E8A7C0026F614 /* FoodItem.swift */,
+				B1E44D9A21A219B0005CB9B0 /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				B1A344E321713FF6005B1A81 /* ClientHomeViewController.swift in Sources */,
 				B1E56A002189640800C4B5B3 /* OrderConfirmationViewController.swift in Sources */,
 				B1497DE2219BC31200816F68 /* FoodCourt.swift in Sources */,
+				B1E44D9B21A219B0005CB9B0 /* Order.swift in Sources */,
 				B19E76BD2189156300B7E6F1 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

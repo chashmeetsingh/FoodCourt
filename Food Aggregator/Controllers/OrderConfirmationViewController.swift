@@ -10,6 +10,13 @@ import UIKit
 
 class OrderConfirmationViewController: UIViewController {
     
+    var order: Order! {
+        didSet {
+            orderPickupTimeLabel.text = "\(order.preparationTime) minutes"
+            orderLabel.text = "#\(order.id)"
+        }
+    }
+    
     let confirmationLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 28)

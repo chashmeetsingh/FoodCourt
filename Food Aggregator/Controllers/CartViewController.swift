@@ -144,21 +144,33 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     @objc func placeOrder() {
+        
+        var foodItemIds = ""
+        var quantity = ""
+        let ids = appDelegate.cartItems[appDelegate.currentFoodCourt.id]
+        for (key, value) in ids! {
+            foodItemIds += "\(key),"
+            quantity += "\(value),"
+        }
+        
         let params = [
             Client.Keys.Email: appDelegate.currentUser!.emailID,
             Client.Keys.Token: appDelegate.currentUser!.accessToken,
-            Client.Keys.OrderDetails: appDelegate.cartItems[appDelegate.currentFoodCourt.id]!
+            Client.Keys.FoodItemIds: foodItemIds,
+            Client.Keys.Quantity: quantity
         ] as [String : AnyObject]
         
         self.view.makeToastActivity(.center)
-        Client.sharedInstance.placeOrder(params) { (category, success, message) in
+        Client.sharedInstance.placeOrder(params) { (order, success, message) in
             DispatchQueue.main.async {
                 self.view.hideToastActivity()
-                
+                if let order = order, success {
+                    let vc = OrderConfirmationViewController()
+                    vc.order = order
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
             }
         }
-        let vc = OrderConfirmationViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

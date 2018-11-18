@@ -58,6 +58,15 @@ extension Client {
         static let LastName = "last_name"
         static let PhoneNumber = "phone_number"
         static let EmailID = "email_id"
+        static let FoodItemIds = "foodItemIds"
+        static let Quantity = "quantity"
+        static let CustomerOrder = "customer order"
+        static let OrderTime = "orderTime"
+        static let UserId = "userId"
+        static let Username = "userName"
+        static let TotalCost = "totalCost"
+        static let OrderStatus = "orderStatus"
+        static let PreparationTime = "prepTime"
     }
     
     struct Colors {

@@ -99,49 +99,24 @@ extension Client {
         
     }
     
-    func placeOrder(_ params: [String: AnyObject], _ completion: @escaping(_ foodMenu: [Category]?, _ success: Bool, _ error: String?) -> Void) {
+    func placeOrder(_ params: [String: AnyObject], _ completion: @escaping(_ order: Order?, _ success: Bool, _ error: String?) -> Void) {
         
+        let url = getApiUrl(APIURL.IPAddress, Methods.PlaceOrder)
         
-        
-//        var request = URLRequest(url: URL(string: url)!)
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.httpMethod = "POST"
-//        var postString = ""
-//
-//        for (key, value) in params {
-//            postString += "\(key)=\(value)"
-//        }
-        
-        do {
-            let jsonData = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
-            let url = getApiUrl(APIURL.IPAddress, Methods.PlaceOrder)
-            let request = NSMutableURLRequest(url: URL(string: url)!)
-            request.httpMethod = "POST"
-            request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-            request.httpBody = jsonData
-            print(jsonData, params)
-            
-            let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
-                if error != nil{
-                    print("Error -> \(error)")
-                    return
-                }
+        _ = makeRequest(url, .post, [:], parameters: params, completion: { (results, message) in
+            if let _ = message {
+                completion(nil, false, ResponseMessages.ServerError)
+            } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String, status == "success" {
+                let orderDetails = results[Keys.CustomerOrder] as? [String : AnyObject]
                 
-                do {
-                    let result = try JSONSerialization.jsonObject(with: data!, options: []) as? [String:AnyObject]
-                    
-                    print("Result -> \(result)")
-                    
-                } catch {
-                    print("Error -> \(error)")
-                }
+                let order = Order(dictionary: orderDetails!)
+                
+                completion(order, true, nil)
+            } else {
+                completion(nil, false, ResponseMessages.ServerError)
             }
-            
-            task.resume()
-            
-        } catch {
-            print(error.localizedDescription)
-        }
+            return
+        })
         
     }
     

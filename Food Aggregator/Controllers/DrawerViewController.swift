@@ -85,8 +85,10 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
+            print("hello")
+        case 1:
             showOrders()
-        case 1...5:
+        case 2:
             logoutUser()
         default:
             break
