@@ -14,6 +14,7 @@ class Restaurant: NSObject {
     let fcId: String
     let name: String
     let iconName: String
+    var foodItems: [FoodItem]!
     
     init(dictionary: [String : AnyObject]) {
         id = dictionary[Client.Keys.Id] as? String ?? ""

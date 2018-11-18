@@ -13,12 +13,34 @@ class FoodChainViewController: UIViewController {
     
     var collectionView: UICollectionView!
     
-    var foodCourt: FoodCourt!
+    var foodCourt: FoodCourt! {
+        didSet {
+            appDelegate.currentFoodCourt = foodCourt
+        }
+    }
+    
+    var appDelegate: AppDelegate {
+        get {
+            return UIApplication.shared.delegate as! AppDelegate
+        }
+    }
+    
+    var cartItemsCount: String {
+        get {
+            var count: Int  = 0
+            if let currentFoodCourtCart = appDelegate.cartItems[foodCourt.id] {
+                for item in currentFoodCourtCart {
+                    count += Int(item.value)!
+                }
+            }
+            return "\(count)"
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Restuarants"
+        self.title = "Restaurants"
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -37,13 +59,26 @@ class FoodChainViewController: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
-        
+    }
+    
+    func setCartIconBadge(_ value: String = "") {
         let cartButton = UIButton()
         cartButton.setImage(UIImage(named: "cart"), for: .normal)
-//        cartButton.addTarget(self, action: #selector(openCart), for: .touchUpInside)
+        cartButton.addTarget(self, action: #selector(openCart), for: .touchUpInside)
         let item = BBBadgeBarButtonItem(customUIButton: cartButton)
-        item!.badgeValue = "5"
+        item!.badgeValue = cartItemsCount
         self.navigationItem.rightBarButtonItem = item
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setCartIconBadge(cartItemsCount)
+    }
+    
+    @objc func openCart() {
+        let vc = CartViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }
@@ -79,7 +114,7 @@ extension FoodChainViewController: UICollectionViewDelegateFlowLayout, UICollect
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = FoodJointMenuViewController()
-        vc.restaurantName = foodCourt.restaurants[indexPath.item].name
+        vc.restaurant = foodCourt.restaurants[indexPath.item]
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

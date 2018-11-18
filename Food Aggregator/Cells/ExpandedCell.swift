@@ -18,9 +18,7 @@ class ExpandedCell: BaseTableViewCell {
         
         addConstraintsWithFormat(format: "V:|[v0]|", views: titleLabel)
         addConstraintsWithFormat(format: "V:|-8-[v0]-8-|", views: stepper)
-        
         addConstraintsWithFormat(format: "H:|-24-[v0][v1(100)]-8-|", views: titleLabel, stepper)
-        
     }
     
     let titleLabel: UILabel = {

@@ -45,9 +45,13 @@ extension Client {
             if let _ = message {
                 completion(nil, false, ResponseMessages.ServerError)
             } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String, status == "success" {
+                
                 let fcList = results[Keys.FCList] as! [[String : AnyObject]]
+                
                 let foodCourts = FoodCourt.getFoodCourts(dictionary: fcList)
+                
                 completion(foodCourts, true, nil)
+                
             } else {
                 completion(nil, false, ResponseMessages.ServerError)
             }

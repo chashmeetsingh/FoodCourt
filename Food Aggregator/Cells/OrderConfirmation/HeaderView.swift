@@ -23,14 +23,6 @@ class HeaderView: UICollectionReusableView {
         return iv
     }()
     
-    let label: UILabel = {
-        let label = UILabel()
-        label.textColor = .white
-        label.text = "S"
-        label.textAlignment = .center
-        return label
-    }()
-    
     let divider: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(hex: "#E0E0E0")
@@ -43,13 +35,10 @@ class HeaderView: UICollectionReusableView {
         
         addSubview(jointName)
         addSubview(imageView)
-        addSubview(label)
         
         addConstraintsWithFormat(format: "V:|-14-[v0(44)]-14-|", views: jointName)
         addConstraintsWithFormat(format: "V:|-4-[v0(64)]-4-|", views: imageView)
-        addConstraintsWithFormat(format: "V:|-4-[v0(64)]-4-|", views: label)
         addConstraintsWithFormat(format: "H:|-8-[v0(64)]-8-[v1]-8-|", views: imageView, jointName)
-        addConstraintsWithFormat(format: "H:|-8-[v0(64)]", views: label)
         
         addSubview(divider)
         addConstraintsWithFormat(format: "H:|[v0]|", views: divider)

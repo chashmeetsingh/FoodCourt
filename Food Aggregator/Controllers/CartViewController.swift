@@ -10,8 +10,11 @@ import UIKit
 
 class CartViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var delegate: AppDelegate!
-    var items: [String] = [""]
+    var appDelegate: AppDelegate {
+        get {
+            return UIApplication.shared.delegate as! AppDelegate
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +22,23 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.backgroundColor = .white
-
-        delegate = UIApplication.shared.delegate as? AppDelegate
+        collectionView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         
         collectionView.register(CartCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView")
         collectionView.register(FinalPriceView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "finalPriceView")
         title = "Your Cart"
+        
+        getDataForItemsInCart()
+    }
+    
+    func getDataForItemsInCart() {
+        if let cart = appDelegate.cartItems[appDelegate.currentFoodCourt.id] {
+            for (id, count) in cart {
+                print(id, count)
+                
+            }
+        }
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -34,7 +46,7 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return appDelegate.cartItems.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

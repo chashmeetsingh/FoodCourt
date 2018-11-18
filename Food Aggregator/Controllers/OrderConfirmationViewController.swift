@@ -22,7 +22,7 @@ class OrderConfirmationViewController: UIViewController {
     let orderLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(hex: "#757575")
-        label.font = UIFont.systemFont(ofSize: 50)
+        label.font = UIFont.systemFont(ofSize: 60)
         label.text = "#31431"
         label.textAlignment = .center
         return label
@@ -57,8 +57,10 @@ class OrderConfirmationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Order Confirmed"
 
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         navigationItem.setHidesBackButton(true, animated: true)
         
         view.addSubview(confirmationLabel)
@@ -69,13 +71,14 @@ class OrderConfirmationViewController: UIViewController {
         
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: confirmationLabel)
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: orderLabel)
-        view.addConstraintsWithFormat(format: "V:|-50-[v0]", views: orderLabel)
         view.addConstraintsWithFormat(format: "V:|-16-[v0]", views: confirmationLabel)
+        view.addConstraint(NSLayoutConstraint(item: orderLabel, attribute: .centerY, relatedBy: .equal, toItem: self.view, attribute: .centerY, multiplier: 1, constant: -50))
+        view.addConstraint(NSLayoutConstraint(item: orderLabel, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0))
         view.addConstraint(NSLayoutConstraint(item: yourOrderButton, attribute: .centerX, relatedBy: .equal, toItem: self.view, attribute: .centerX, multiplier: 1, constant: 0))
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: orderPickupLabel)
         view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: orderPickupTimeLabel)
         view.addConstraintsWithFormat(format: "H:[v0(200)]", views: yourOrderButton)
-        view.addConstraintsWithFormat(format: "V:[v0]-16-[v1]-16-[v2]-32-|", views: yourOrderButton, orderPickupLabel, orderPickupTimeLabel)
+        view.addConstraintsWithFormat(format: "V:[v0]-8-[v1]-8-[v2]-16-|", views: yourOrderButton, orderPickupLabel, orderPickupTimeLabel)
     }
     
     @objc func yourOrdersButtonTapped() {

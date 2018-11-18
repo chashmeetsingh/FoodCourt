@@ -11,35 +11,13 @@ PODS:
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
-  - "MaterialComponents/Buttons+ButtonThemer (68.1.0)":
-    - MaterialComponents/Buttons
-    - "MaterialComponents/Buttons+ColorThemer"
-    - "MaterialComponents/Buttons+ShapeThemer"
-    - "MaterialComponents/Buttons+TypographyThemer"
-  - "MaterialComponents/Buttons+ColorThemer (68.1.0)":
-    - MaterialComponents/Buttons
-    - MaterialComponents/schemes/Color
-  - "MaterialComponents/Buttons+ShapeThemer (68.1.0)":
-    - MaterialComponents/Buttons
-    - MaterialComponents/schemes/Shape
-  - "MaterialComponents/Buttons+TypographyThemer (68.1.0)":
-    - MaterialComponents/Buttons
-    - MaterialComponents/schemes/Typography
   - MaterialComponents/Ink (68.1.0):
     - MaterialComponents/private/Math
   - MaterialComponents/private/Application (68.1.0)
   - MaterialComponents/private/Math (68.1.0)
-  - MaterialComponents/private/ShapeLibrary (68.1.0):
-    - MaterialComponents/private/Math
-    - MaterialComponents/private/Shapes
   - MaterialComponents/private/Shapes (68.1.0):
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowLayer
-  - MaterialComponents/schemes/Color (68.1.0)
-  - MaterialComponents/schemes/Shape (68.1.0):
-    - MaterialComponents/private/ShapeLibrary
-    - MaterialComponents/private/Shapes
-  - MaterialComponents/schemes/Typography (68.1.0)
   - MaterialComponents/ShadowElevations (68.1.0)
   - MaterialComponents/ShadowLayer (68.1.0):
     - MaterialComponents/ShadowElevations
@@ -60,6 +38,11 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.6.0):
     - MMDrawerController/Core
+  - Realm (3.11.1):
+    - Realm/Headers (= 3.11.1)
+  - Realm/Headers (3.11.1)
+  - RealmSwift (3.11.1):
+    - Realm (= 3.11.1)
   - SkyFloatingLabelTextField (3.6.0)
   - Toast-Swift (4.0.0)
 
@@ -68,8 +51,8 @@ DEPENDENCIES:
   - BBBadgeBarButtonItem
   - FontAwesome.swift
   - MaterialComponents/Buttons
-  - "MaterialComponents/Buttons+ButtonThemer"
   - MMDrawerController
+  - RealmSwift
   - SkyFloatingLabelTextField (~> 3.0)
   - Toast-Swift (~> 4.0.0)
 
@@ -82,6 +65,8 @@ SPEC REPOS:
     - MDFInternationalization
     - MDFTextAccessibility
     - MMDrawerController
+    - Realm
+    - RealmSwift
     - SkyFloatingLabelTextField
     - Toast-Swift
 
@@ -93,9 +78,11 @@ SPEC CHECKSUMS:
   MDFInternationalization: b5b8626628abf026e630e5ebaeee563037712cbb
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
+  Realm: 037c5919b9ceb59d6beed5d3b031096856b119b3
+  RealmSwift: c9580133e73ef40ed340401af2dbc9a5790dfea7
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   Toast-Swift: 594b5c5e5129f15438e410207e43287f027b3c00
 
-PODFILE CHECKSUM: af6e590746f9f97d4df0e26143a6936ca549f3a3
+PODFILE CHECKSUM: 449cb8555ad548f908d342b832b3c3eb5b061835
 
 COCOAPODS: 1.5.3

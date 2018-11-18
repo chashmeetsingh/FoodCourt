@@ -39,6 +39,10 @@ class CartCollectionViewCell: BaseCollectionViewCell {
         stepper.labelFont = UIFont.systemFont(ofSize: 16)
         stepper.autorepeat = false
         stepper.maximumValue = 20
+        stepper.buttonsBackgroundColor = UIColor(red: 139.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        stepper.labelBackgroundColor = .white
+        stepper.labelTextColor = .black
+        stepper.limitHitAnimationColor = UIColor(red: 139.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0)
         return stepper
     }()
     

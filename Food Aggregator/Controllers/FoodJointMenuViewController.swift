@@ -18,7 +18,25 @@ struct CellData {
 class FoodJointMenuViewController: UITableViewController {
 
     var foodMenuData = [CellData]()
-    var restaurantName: String!
+    var restaurant: Restaurant!
+    
+    var appDelegate:  AppDelegate {
+        get {
+            return UIApplication.shared.delegate as! AppDelegate
+        }
+    }
+    
+    var cartItemsCount: String {
+        get {
+            var count: Int  = 0
+            if let currentFoodCourtCart = appDelegate.cartItems[restaurant.fcId] {
+                for item in currentFoodCourtCart {
+                    count += Int(item.value)!
+                }
+            }
+            return "\(count)"
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +57,22 @@ class FoodJointMenuViewController: UITableViewController {
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
         
+        getFoodMenu()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setCartIconBadge(cartItemsCount)
+    }
+    
+    func setCartIconBadge(_ value: String = "") {
         let cartButton = UIButton()
         cartButton.setImage(UIImage(named: "cart"), for: .normal)
         cartButton.addTarget(self, action: #selector(openCart), for: .touchUpInside)
         let item = BBBadgeBarButtonItem(customUIButton: cartButton)
-        item!.badgeValue = "5"
+        item!.badgeValue = cartItemsCount
         self.navigationItem.rightBarButtonItem = item
-        
-        getFoodMenu()
-        
     }
     
     @objc func openCart() {
@@ -58,7 +83,7 @@ class FoodJointMenuViewController: UITableViewController {
     func getFoodMenu() {
         
         let params = [
-            Client.Keys.RestaurantName: restaurantName
+            Client.Keys.RestaurantId: restaurant.id
         ]
         
         self.view.makeToastActivity(.center)
@@ -87,9 +112,8 @@ class FoodJointMenuViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if foodMenuData[section].opened {
             return foodMenuData[section].sectionData.count + 1
-        } else {
-            return 1
         }
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -110,10 +134,15 @@ class FoodJointMenuViewController: UITableViewController {
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
             return cell
         } else {
+            let item = foodMenuData[indexPath.section].sectionData[indexPath.item - 1]
             let cell = tableView.dequeueReusableCell(withIdentifier: "expandedCell", for: indexPath) as! ExpandedCell
-            cell.titleLabel.text = foodMenuData[indexPath.section].sectionData[indexPath.item - 1].name
+            cell.titleLabel.text = item.name
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
             cell.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+            cell.stepper.addTarget(self, action: #selector(cartUpdated), for: .allEvents)
+            if let restCart = appDelegate.cartItems[restaurant.fcId], let count = restCart["\(item.id)"] {
+                cell.stepper.value = Double(count)!
+            }
             return cell
         }
     }
@@ -137,6 +166,29 @@ class FoodJointMenuViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
+    }
+    
+    @objc func cartUpdated() {
+        var cartData = [String : String]()
+        if let data = appDelegate.cartItems[restaurant.fcId] {
+            cartData = data
+        }
+        for section in 0..<foodMenuData.count {
+            let rows = tableView.numberOfRows(inSection: section)
+            for row in 0..<rows {
+                if let cell = tableView.cellForRow(at: IndexPath(row: row, section: section)) as? ExpandedCell {
+                    let item = foodMenuData[section].sectionData[row - 1]
+                    if Int(cell.stepper.value) > 0 {
+                        cartData["\(item.id)"] = "\(Int(cell.stepper.value))"
+                    } else {
+                        cartData.removeValue(forKey: "\(item.id)")
+                    }
+                }
+            }
+        }
+
+        appDelegate.cartItems[restaurant.fcId] = cartData
+        setCartIconBadge(cartItemsCount)
     }
 
 }

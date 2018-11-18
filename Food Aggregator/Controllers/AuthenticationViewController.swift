@@ -35,9 +35,9 @@ class AuthenticationViewController: UIViewController {
         
         let defaults = UserDefaults.standard
         print(defaults.dictionary(forKey: "currentUser") ?? "")
-        if let _ = defaults.dictionary(forKey: "currentUser") {
+        if let currentUser = defaults.dictionary(forKey: "currentUser") as? [String : AnyObject] {
+            appDelegate.currentUser = User(dictionary: currentUser)
             self.completeLogin()
-            
         }
     }
     

@@ -10,7 +10,7 @@ import UIKit
 
 class FoodCourt: NSObject {
     
-    let id: Int
+    let id: String
     let foodCourtName: String
     let address: String
     let city: String
@@ -19,7 +19,7 @@ class FoodCourt: NSObject {
     let restaurants: [Restaurant]
     
     init(dictionary: [String : AnyObject]) {
-        id = dictionary[Client.Keys.Id] as? Int ?? 0
+        id = dictionary[Client.Keys.Id] as? String ?? ""
         foodCourtName = dictionary[Client.Keys.FoodCourtName] as? String ?? ""
         address = dictionary[Client.Keys.Address] as? String ?? ""
         city = dictionary[Client.Keys.City] as? String ?? ""

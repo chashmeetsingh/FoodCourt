@@ -26,7 +26,6 @@
 		B1A344CE21713D81005B1A81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344CD21713D81005B1A81 /* AppDelegate.swift */; };
 		B1A344D021713D81005B1A81 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344CF21713D81005B1A81 /* AuthenticationViewController.swift */; };
 		B1A344D321713D81005B1A81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A344D121713D81005B1A81 /* Main.storyboard */; };
-		B1A344D621713D81005B1A81 /* Food_Aggregator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B1A344D421713D81005B1A81 /* Food_Aggregator.xcdatamodeld */; };
 		B1A344D821713D82005B1A81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1A344D721713D82005B1A81 /* Assets.xcassets */; };
 		B1A344DB21713D82005B1A81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1A344D921713D82005B1A81 /* LaunchScreen.storyboard */; };
 		B1A344E321713FF6005B1A81 /* ClientHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A344E221713FF6005B1A81 /* ClientHomeViewController.swift */; };
@@ -69,7 +68,6 @@
 		B1A344CD21713D81005B1A81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1A344CF21713D81005B1A81 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		B1A344D221713D81005B1A81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B1A344D521713D81005B1A81 /* Food_Aggregator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Food_Aggregator.xcdatamodel; sourceTree = "<group>"; };
 		B1A344D721713D82005B1A81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1A344DA21713D82005B1A81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1A344DC21713D82005B1A81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,12 +131,12 @@
 			children = (
 				B1A344D721713D82005B1A81 /* Assets.xcassets */,
 				B1A344DC21713D82005B1A81 /* Info.plist */,
+				B1C7A9F1219E976B0026F614 /* Model */,
 				B1C7A9F4219E97DA0026F614 /* Views */,
 				B1C7A9EE219E96FC0026F614 /* Controllers */,
-				B1C7A9F3219E97890026F614 /* Other */,
-				B1C7A9EF219E97210026F614 /* Cells */,
 				B1C7A9F2219E97790026F614 /* Network */,
-				B1C7A9F1219E976B0026F614 /* Model */,
+				B1C7A9EF219E97210026F614 /* Cells */,
+				B1C7A9F3219E97890026F614 /* Other */,
 			);
 			path = "Food Aggregator";
 			sourceTree = "<group>";
@@ -188,7 +186,6 @@
 		B1C7A9F1219E976B0026F614 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B1A344D421713D81005B1A81 /* Food_Aggregator.xcdatamodeld */,
 				B1497DDD219B845900816F68 /* User.swift */,
 				B1497DE1219BC31200816F68 /* FoodCourt.swift */,
 				B111EB2C219CC778005B0375 /* Restaurant.swift */,
@@ -344,6 +341,8 @@
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
@@ -358,6 +357,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
@@ -385,7 +386,6 @@
 				B109D754218AA681009035B0 /* DrawerCell.swift in Sources */,
 				B1C7A9ED219E8A7C0026F614 /* FoodItem.swift in Sources */,
 				B1A344EB21714440005B1A81 /* FoodChainCollectionViewCell.swift in Sources */,
-				B1A344D621713D81005B1A81 /* Food_Aggregator.xcdatamodeld in Sources */,
 				B1497DE0219B987500816F68 /* LeftAlignedIconButton.swift in Sources */,
 				B1B077EF2187431E00A6AA67 /* CartViewController.swift in Sources */,
 				B1A344D021713D81005B1A81 /* AuthenticationViewController.swift in Sources */,
@@ -609,19 +609,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		B1A344D421713D81005B1A81 /* Food_Aggregator.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B1A344D521713D81005B1A81 /* Food_Aggregator.xcdatamodel */,
-			);
-			currentVersion = B1A344D521713D81005B1A81 /* Food_Aggregator.xcdatamodel */;
-			path = Food_Aggregator.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B1A344C221713D81005B1A81 /* Project object */;
 }
