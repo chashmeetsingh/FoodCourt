@@ -13,5 +13,4 @@ target 'Food Aggregator' do
   pod 'FontAwesome.swift'
   pod 'MaterialComponents/Buttons'
   pod 'Toast-Swift', '~> 4.0.0'
-  pod 'RealmSwift'
 end

@@ -63,7 +63,9 @@ class FoodJointMenuViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        print(appDelegate.cartItems)
         setCartIconBadge(cartItemsCount)
+        cartUpdatedFromDidAppear()
     }
     
     func setCartIconBadge(_ value: String = "") {
@@ -95,6 +97,9 @@ class FoodJointMenuViewController: UITableViewController {
                         self.foodMenuData = []
                         for item in menuItems {
                             self.foodMenuData.append(CellData(opened: true, title: item.name, sectionData: item.foodItems))
+                            for foodItem in item.foodItems {
+                                self.appDelegate.items["\(foodItem.id)"] = foodItem
+                            }
                         }
                     }
                     self.tableView.reloadData()
@@ -139,7 +144,7 @@ class FoodJointMenuViewController: UITableViewController {
             cell.titleLabel.text = item.name
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
             cell.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
-            cell.stepper.addTarget(self, action: #selector(cartUpdated), for: .allEvents)
+            cell.stepper.addTarget(self, action: #selector(cartUpdated), for: .valueChanged)
             if let restCart = appDelegate.cartItems[restaurant.fcId], let count = restCart["\(item.id)"] {
                 cell.stepper.value = Double(count)!
             }
@@ -159,9 +164,10 @@ class FoodJointMenuViewController: UITableViewController {
     
     @objc func handleOpening(indexPath: IndexPath, upOrDown: String) {
         let sections = IndexSet(integer: indexPath.section)
-        let cell = tableView.cellForRow(at: indexPath) as! FoodClassCell
-        cell.upDownButton.setImage(UIImage(named: upOrDown), for: .normal)
-        tableView.reloadSections(sections, with: .none)
+        if let cell = tableView.cellForRow(at: indexPath) as? FoodClassCell {
+            cell.upDownButton.setImage(UIImage(named: upOrDown), for: .normal)
+            tableView.reloadSections(sections, with: .none)
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -189,6 +195,29 @@ class FoodJointMenuViewController: UITableViewController {
 
         appDelegate.cartItems[restaurant.fcId] = cartData
         setCartIconBadge(cartItemsCount)
+    }
+    
+    @objc func cartUpdatedFromDidAppear() {
+        var cartData = [String : String]()
+        if let data = appDelegate.cartItems[restaurant.fcId] {
+            cartData = data
+            
+            for section in 0..<foodMenuData.count {
+                let rows = tableView.numberOfRows(inSection: section)
+                for row in 0..<rows {
+                    if let cell = tableView.cellForRow(at: IndexPath(row: row, section: section)) as? ExpandedCell {
+                        let item = foodMenuData[section].sectionData[row - 1]
+                        if let data = cartData["\(item.id)"], Int(data)! > 0 {
+                            cell.stepper.value = Double(data)!
+                        } else {
+                            cell.stepper.value = 0
+                        }
+                    }
+                }
+            }
+            
+            setCartIconBadge(cartItemsCount)
+        }
     }
 
 }

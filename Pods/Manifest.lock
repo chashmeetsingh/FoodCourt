@@ -38,11 +38,6 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.6.0):
     - MMDrawerController/Core
-  - Realm (3.11.1):
-    - Realm/Headers (= 3.11.1)
-  - Realm/Headers (3.11.1)
-  - RealmSwift (3.11.1):
-    - Realm (= 3.11.1)
   - SkyFloatingLabelTextField (3.6.0)
   - Toast-Swift (4.0.0)
 
@@ -52,7 +47,6 @@ DEPENDENCIES:
   - FontAwesome.swift
   - MaterialComponents/Buttons
   - MMDrawerController
-  - RealmSwift
   - SkyFloatingLabelTextField (~> 3.0)
   - Toast-Swift (~> 4.0.0)
 
@@ -65,8 +59,6 @@ SPEC REPOS:
     - MDFInternationalization
     - MDFTextAccessibility
     - MMDrawerController
-    - Realm
-    - RealmSwift
     - SkyFloatingLabelTextField
     - Toast-Swift
 
@@ -78,11 +70,9 @@ SPEC CHECKSUMS:
   MDFInternationalization: b5b8626628abf026e630e5ebaeee563037712cbb
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
-  Realm: 037c5919b9ceb59d6beed5d3b031096856b119b3
-  RealmSwift: c9580133e73ef40ed340401af2dbc9a5790dfea7
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   Toast-Swift: 594b5c5e5129f15438e410207e43287f027b3c00
 
-PODFILE CHECKSUM: 449cb8555ad548f908d342b832b3c3eb5b061835
+PODFILE CHECKSUM: 9cafa4be8dddd3901c2f8bdc63130d1f58c22c13
 
 COCOAPODS: 1.5.3

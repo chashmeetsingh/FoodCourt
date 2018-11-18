@@ -39,7 +39,6 @@ class Client: NSObject {
                 
             case .success(_):
                 if let data = response.result.value as? Dictionary<String, Any> {
-                    
                     completion(data as AnyObject?, nil)
                 } else {
                     completion(nil, NSError(domain: ResponseMessages.ServerError, code: 1))

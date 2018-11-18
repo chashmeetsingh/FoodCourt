@@ -10,14 +10,13 @@ import UIKit
 import CoreData
 import MMDrawerController
 import Foundation
-import Realm
-import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var centerContainer: MMDrawerController?
+    
     var cartItems: [String : [String : String]] = [:] {
         didSet {
             UserDefaults.standard.set(cartItems, forKey: currentUser.emailID)
@@ -32,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    var foodCourts: [FoodCourt]!
+    var items = [String: FoodItem]()
+    
     var currentFoodCourt: FoodCourt!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -40,18 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         UINavigationBar.appearance().isTranslucent = false
-        setDefaultRealmForUser(username: "food-aggregator")
+
         return true
-    }
-    
-    func setDefaultRealmForUser(username: String) {
-        var config = Realm.Configuration()
-        
-        // Use the default directory, but replace the filename with the username
-        config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("\(username).realm")
-        
-        // Set this as the configuration used for the default Realm
-        Realm.Configuration.defaultConfiguration = config
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

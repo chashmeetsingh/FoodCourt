@@ -19,6 +19,7 @@ class FoodItem: NSObject {
     let restaurantName: String
     let timeToPrepareInMinutes: Int
     let category: String
+    var count = 0
     
     init(dictionary: [String : AnyObject]) {
         cost = dictionary[Client.Keys.Cost] as? Double ?? 0

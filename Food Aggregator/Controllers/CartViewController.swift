@@ -8,7 +8,14 @@
 
 import UIKit
 
+struct CartCellData {
+    var restaurantName = ""
+    var foodItems = [FoodItem]()
+}
+
 class CartViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    var collectionViewData = [CartCellData]()
     
     var appDelegate: AppDelegate {
         get {
@@ -32,25 +39,60 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
         getDataForItemsInCart()
     }
     
-    func getDataForItemsInCart() {
-        if let cart = appDelegate.cartItems[appDelegate.currentFoodCourt.id] {
+    func getDataForItemsInCart(_ indexPath: IndexPath? = nil, _ operation: String? = nil) {
+        print("before", collectionViewData)
+        collectionViewData = []
+        var items = [String : [FoodItem]]()
+        if let cart = appDelegate.cartItems[appDelegate.currentFoodCourt.id], cart.count > 0 {
             for (id, count) in cart {
-                print(id, count)
-                
+//                print(id, count)
+                if let item = appDelegate.items[id] {
+                    if let _ = items[item.restaurantName] {
+                        item.count = Int(count)!
+                        print(item.name)
+                        items[item.restaurantName]?.append(item)
+                    } else {
+                        item.count = Int(count)!
+                        items[item.restaurantName] = [item]
+                    }
+                }
             }
+        }
+        print(items)
+        for (name, itemList) in items {
+            var data = CartCellData()
+            data.restaurantName = name
+            data.foodItems = itemList
+            collectionViewData.append(data)
+        }
+        print("after", collectionViewData)
+        if let indexPath = indexPath {
+            if let operation = operation, operation == "delete" {
+                collectionView.deleteItems(at: [IndexPath(item: indexPath.item, section: indexPath.section)])
+            }
+            collectionView.reloadSections(IndexSet(integer: indexPath.section))
         }
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return collectionViewData.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return appDelegate.cartItems.count
+        return collectionViewData[section].foodItems.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CartCollectionViewCell
+        let item = collectionViewData[indexPath.section].foodItems[indexPath.item]
+        cell.itemName.text = item.name
+        cell.amountLabel.text = "$\(item.cost)"
+        cell.stepper.value = Double(item.count)
+        cell.totalAmountLabel.text = "$\((item.cost * Double(item.count)).rounded(toPlaces: 2))"
+        cell.stepper.tag = item.id
+        cell.item = item
+        cell.delegate = self
+        cell.indexPath = indexPath
         return cell
     }
     
@@ -59,12 +101,23 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as! HeaderView
-            view.imageView.image = UIImage(named: "mcd")
-            view.jointName.text = "McDonald's"
+            view.imageView.image = UIImage(named: collectionViewData[indexPath.section].restaurantName)
+            view.jointName.text = collectionViewData[indexPath.section].restaurantName
             return view
         case UICollectionView.elementKindSectionFooter:
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "finalPriceView", for: indexPath) as! FinalPriceView
             view.checkoutButton.addTarget(self, action: #selector(doSomething), for: .touchUpInside)
+            
+            var subtotal = 0.0
+            for data in collectionViewData {
+                for item in data.foodItems {
+                    subtotal += (item.cost * Double(item.count))
+                }
+            }
+            view.subtotalAmountLabel.text = "$\(subtotal.rounded(toPlaces: 2))"
+            view.taxesAndChargesAmountLabel.text = "$\((subtotal * 0.13).rounded(toPlaces: 2))"
+            view.grandTotalAmountLabel.text = "$\((subtotal * 1.13).rounded(toPlaces: 2))"
+            
             return view
         default:
             return UICollectionReusableView(frame: CGRect.zero)

@@ -71,6 +71,7 @@ class ClientHomeViewController: UIViewController {
                 self.view.hideToastActivity()
                 self.foodCourts = foodCourts!
                 self.collectionView.reloadData()
+                self.appDelegate.foodCourts = foodCourts!
             }
         }
     }
