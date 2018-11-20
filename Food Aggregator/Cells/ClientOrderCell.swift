@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrderCell: BaseCollectionViewCell {
+class ClientOrderCell: BaseCollectionViewCell {
     
     let foodCourtName: UILabel = {
         let label = UILabel()

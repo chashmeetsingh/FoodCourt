@@ -27,7 +27,7 @@ class OrdersViewController: UICollectionViewController, UICollectionViewDelegate
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(openDrawer))
         
-        collectionView.register(OrderCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(ClientOrderCell.self, forCellWithReuseIdentifier: "cell")
     }
     
     @objc func openDrawer() {
@@ -44,7 +44,7 @@ class OrdersViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! OrderCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ClientOrderCell
         cell.backgroundColor = .red
         return cell
     }

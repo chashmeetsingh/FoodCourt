@@ -27,6 +27,7 @@ extension Client {
         static let FoodMenu = "/FoodMenu"
         static let PlaceOrder = "/user/placeOrder"
         static let Logout = "/user/logout"
+        static let GetOrders = "/user/getOrdersForUser"
     }
     
     struct Keys {
@@ -67,6 +68,13 @@ extension Client {
         static let TotalCost = "totalCost"
         static let OrderStatus = "orderStatus"
         static let PreparationTime = "prepTime"
+        static let OrderId = "orderId"
+        static let ItemCost = "itemCost"
+        static let OrderItemList = "orderItemList"
+        static let OrderList = "OrderList"
+        static let UserRole = "user_role"
+        static let Active = "ACTIVE"
+        static let Completed = "COMPLETED"
     }
     
     struct Colors {

@@ -19,6 +19,7 @@ struct Order {
     let totalCost: Double
     let orderStatus: String
     let preparationTime: Int
+    var orderItems = [OrderItem]()
     
     init(dictionary: [String : AnyObject]) {
         foodCourtId = dictionary[Client.Keys.FoodCourtId] as? Int ?? 0
@@ -30,6 +31,18 @@ struct Order {
         totalCost = dictionary[Client.Keys.TotalCost] as? Double ?? 0.0
         orderStatus = dictionary[Client.Keys.OrderStatus] as? String ?? ""
         preparationTime = dictionary[Client.Keys.PreparationTime] as? Int ?? 0
+    }
+    
+    static func getOrderList(dictionary: [[String : AnyObject]]) -> [Order] {
+        var orders = [Order]()
+        for order in dictionary {
+            if let customerOrder = order[Client.Keys.CustomerOrder] as? [String : AnyObject], let orderItemsList = order[Client.Keys.OrderItemList] as? [[String : AnyObject]] {
+                var order = Order(dictionary: customerOrder)
+                order.orderItems = OrderItem.getOrderItemsList(dictionary: orderItemsList)
+                orders.append(order)
+            }
+        }
+        return orders
     }
     
 }

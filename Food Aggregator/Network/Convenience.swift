@@ -120,4 +120,24 @@ extension Client {
         
     }
     
+    func getOrders(_ params: [String: AnyObject], _ completion: @escaping(_ activeOrders: [Order]?, _ completedOrders: [Order]?, _ results: [String: AnyObject]?, _ success: Bool, _ error: String) -> Void) {
+        
+        let url = getApiUrl(APIURL.IPAddress, Methods.GetOrders)
+        
+        _ = makeRequest(url, .post, [:], parameters: params, completion: { (results, message) in
+            
+            if let _ = message {
+                completion(nil, nil, nil, false, ResponseMessages.InvalidParams)
+            } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String, status == "success", let activeOrdersList = results[Keys.Active] as? [[String : AnyObject]], let completedOrderList = results[Keys.Completed] as? [[String : AnyObject]] {
+                let activeOrders = Order.getOrderList(dictionary: activeOrdersList)
+                let completedOrders = Order.getOrderList(dictionary: completedOrderList)
+                completion(activeOrders, completedOrders, results, true, status)
+            } else {
+                completion(nil, nil, nil, false, ResponseMessages.ServerError)
+            }
+            return
+        })
+        
+    }
+    
 }

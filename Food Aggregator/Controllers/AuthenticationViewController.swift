@@ -42,18 +42,26 @@ class AuthenticationViewController: UIViewController {
     }
     
     func completeLogin() {
-        self.view.makeToastActivity(.center)
-        let mainController = ClientHomeViewController()
-        let nvc = UINavigationController(rootViewController: mainController)
-        let drawerViewController = DrawerViewController(collectionViewLayout: UICollectionViewFlowLayout())
-        
-        self.appDelegate.centerContainer = MMDrawerController(center: nvc, leftDrawerViewController: drawerViewController)
-        self.appDelegate.centerContainer!.openDrawerGestureModeMask = .panningCenterView
-        self.appDelegate.centerContainer!.closeDrawerGestureModeMask = .panningCenterView
-        self.appDelegate.centerContainer?.setDrawerVisualStateBlock(MMDrawerVisualState.slideAndScaleBlock())
-        
-        self.present(appDelegate.centerContainer!, animated: true, completion: nil)
-        self.view.hideToastActivity()
+        if appDelegate.currentUser.userRole == 0 {
+            self.view.makeToastActivity(.center)
+            let mainController = ClientHomeViewController()
+            let nvc = UINavigationController(rootViewController: mainController)
+            let drawerViewController = DrawerViewController(collectionViewLayout: UICollectionViewFlowLayout())
+            
+            self.appDelegate.centerContainer = MMDrawerController(center: nvc, leftDrawerViewController: drawerViewController)
+            self.appDelegate.centerContainer!.openDrawerGestureModeMask = .panningCenterView
+            self.appDelegate.centerContainer!.closeDrawerGestureModeMask = .panningCenterView
+            self.appDelegate.centerContainer?.setDrawerVisualStateBlock(MMDrawerVisualState.slideAndScaleBlock())
+            
+            self.present(appDelegate.centerContainer!, animated: true, completion: nil)
+            self.view.hideToastActivity()
+        } else {
+            self.view.makeToastActivity(.center)
+            let vc = VendorHomeViewController(collectionViewLayout: UICollectionViewFlowLayout())
+            let nvc = UINavigationController(rootViewController: vc)
+            self.present(nvc, animated: true, completion: nil)
+            self.view.hideToastActivity()
+        }
     }
 
     @IBAction func button1Tapped(_ sender: Any) {

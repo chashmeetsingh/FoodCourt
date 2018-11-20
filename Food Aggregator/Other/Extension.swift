@@ -25,6 +25,7 @@ extension UIView {
 }
 
 extension UIColor {
+    
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         let hexString: String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         let scanner = Scanner(string: hex)
@@ -42,6 +43,7 @@ extension UIColor {
         let blue  = CGFloat(b) / 255.0
         self.init(red:red, green:green, blue:blue, alpha:alpha)
     }
+    
     func toHexString() -> String {
         var r:CGFloat = 0
         var g:CGFloat = 0
@@ -50,6 +52,10 @@ extension UIColor {
         getRed(&r, green: &g, blue: &b, alpha: &a)
         let rgb:Int = (Int)(r*255)<<16 | (Int)(g*255)<<8 | (Int)(b*255)<<0
         return String(format:"#%06x", rgb)
+    }
+    
+    static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
+        return UIColor(red: red / 255, green: green / 255, blue: blue / 255, alpha: 1)
     }
 }
 
