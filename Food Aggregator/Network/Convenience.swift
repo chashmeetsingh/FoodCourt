@@ -70,6 +70,7 @@ extension Client {
             } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String {
                 UserDefaults.standard.removeObject(forKey: "currentUser")
                 self.appDelegate.currentUser = nil
+                self.appDelegate.cartItems = [:]
                 completion(results, true, status)
             } else {
                 completion(nil, false, ResponseMessages.ServerError)
@@ -149,11 +150,13 @@ extension Client {
             if let _ = message {
                 completion(nil, false, ResponseMessages.ServerError)
             } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String, status == "success" {
-                let orderDetails = results[Keys.CustomerOrder] as? [String : AnyObject]
-                
-                let order = Order(dictionary: orderDetails!)
-                
-                completion(order, true, nil)
+                if let orderDetails = results[Keys.CustomerOrder] as? [String : AnyObject] {
+                    let order = Order(dictionary: orderDetails)
+                    
+                    completion(order, true, nil)
+                } else {
+                    completion(nil, false, "Error")
+                }
             } else {
                 completion(nil, false, ResponseMessages.ServerError)
             }

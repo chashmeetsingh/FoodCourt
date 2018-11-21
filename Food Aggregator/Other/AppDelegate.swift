@@ -25,9 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var currentUser: User! {
         didSet {
-//            if let cartData = UserDefaults.standard.dictionary(forKey: currentUser.emailID) {
-//                cartItems = cartData as! [String : [String : String]]
-//            }
+            print(currentUser)
         }
     }
     

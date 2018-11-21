@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import DeepDiff
 
 struct CartCellData: Hashable {
     var restaurantName = ""
@@ -23,12 +22,24 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
             return UIApplication.shared.delegate as! AppDelegate
         }
     }
+    
+    let noItemsInCardLabel: UILabel = {
+        let label = UILabel()
+        label.text = "No Items added to cart"
+        label.textColor = .gray
+        label.textAlignment = .center
+        return label
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        collectionView.addSubview(noItemsInCardLabel)
+        collectionView.addConstraintsWithFormat(format: "H:|[v0(\(collectionView.frame.width))]|", views: noItemsInCardLabel)
+        collectionView.addConstraintsWithFormat(format: "V:|[v0(\(collectionView.frame.height))]|", views: noItemsInCardLabel)
         
         collectionView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         
@@ -41,7 +52,6 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func getDataForItemsInCart(_ indexPath: IndexPath? = nil, _ operation: String? = nil) {
-        print("before", collectionViewData)
         collectionViewData = []
         var items = [String : [FoodItem]]()
         if let cart = appDelegate.cartItems[appDelegate.currentFoodCourt.id], cart.count > 0 {
@@ -49,7 +59,6 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
                 if let item = appDelegate.items[id] {
                     if let _ = items[item.restaurantName] {
                         item.count = Int(count)!
-                        print(item.name)
                         items[item.restaurantName]?.append(item)
                     } else {
                         item.count = Int(count)!
@@ -64,13 +73,14 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
             data.foodItems = itemList
             collectionViewData.append(data)
         }
-        print("after", collectionViewData)
-        if let indexPath = indexPath {
-            if let operation = operation, operation == "delete" {
-                collectionView.deleteItems(at: [IndexPath(item: indexPath.item, section: indexPath.section)])
-            }
-            collectionView.reloadSections(IndexSet(integer: indexPath.section))
+        
+        if collectionViewData.count > 0 {
+            noItemsInCardLabel.isHidden = true
+        } else {
+            noItemsInCardLabel.isHidden = false
         }
+        
+        collectionView.reloadData()
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -144,7 +154,7 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     @objc func placeOrder() {
         
-        if let user  = appDelegate.currentUser {
+        if let user = appDelegate.currentUser {
             var foodItemIds = ""
             var quantity = ""
             let ids = appDelegate.cartItems[appDelegate.currentFoodCourt.id]

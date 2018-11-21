@@ -65,23 +65,25 @@ class CartCollectionViewCell: BaseCollectionViewCell {
         return label
     }()
     
+    var tapped = true
+    
     @objc func valueUpdated(_ sender: Any) {
-        if let _ = sender as? GMStepper, let item = item {
+        if let _ = sender as? GMStepper, let item = item, tapped {
             if var data = appDelegate.cartItems["\(self.item.foodCourtId)"] {
                 let value = Int(stepper.value)
                 if value > 0 {
                     data["\(item.id)"] = "\(value)"
+                    tapped = true
                 } else {
                     data.removeValue(forKey: "\(item.id)")
+                    tapped = false
                 }
                 appDelegate.cartItems["\(self.item.foodCourtId)"] = data
-                if value > 0 {
-                    delegate?.getDataForItemsInCart()
-                } else {
-                    delegate?.getDataForItemsInCart(indexPath, "delete")
-                }
+                delegate?.getDataForItemsInCart()
             }
             print(appDelegate.cartItems)
+        } else {
+            tapped = true
         }
     }
     
