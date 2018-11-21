@@ -11,7 +11,7 @@ import MMDrawerController
 
 class DrawerViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let items = ["Profile", "Your Orders", "Logout"]
+    let items = ["Dashboard", "Profile", "Your Orders", "Logout"]
     
     var appDelegate: AppDelegate {
         get {
@@ -24,7 +24,13 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
 
         collectionView.backgroundColor = .black
         collectionView.register(DrawerCell.self, forCellWithReuseIdentifier: "cell")
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView")
+        collectionView.register(DrawerHeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        collectionView.reloadData()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -57,24 +63,14 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
         
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath)
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as! DrawerHeaderCell
             view.backgroundColor = .gray
             
-            let imageView = UIImageView()
-            imageView.image = UIImage(named: "person")?.withRenderingMode(.alwaysTemplate)
-            imageView.tintColor = .black
-            imageView.backgroundColor = .white
-            imageView.layer.cornerRadius = 42
-            
-            let personName = UILabel()
-            personName.textColor = .black
-            personName.text = appDelegate.currentUser.name
-            
-            view.addSubview(imageView)
-            view.addSubview(personName)
-            view.addConstraintsWithFormat(format: "V:|-8-[v0(84)]-8-|", views: imageView)
-            view.addConstraintsWithFormat(format: "V:|-8-[v0(84)]-8-|", views: personName)
-            view.addConstraintsWithFormat(format: "H:|-8-[v0(84)]-12-[v1]-8-|", views: imageView, personName)
+            if let user = appDelegate.currentUser {
+                view.label.text = user.name
+            } else {
+                view.label.text = "Guest User"
+            }
             
             return view
         default:
@@ -85,13 +81,37 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            print("hello")
+            showDashboard()
         case 1:
-            showOrders()
+            showProfile()
         case 2:
+            showOrders()
+        case 3:
             logoutUser()
         default:
             break
+        }
+    }
+    
+    func showDashboard() {
+        if let _ = navigationController?.topViewController as? ClientHomeViewController {
+            closeDrawer()
+        } else {
+            let nvc = appDelegate.centerContainer?.centerViewController as! UINavigationController
+            let homeViewController = ClientHomeViewController()
+            nvc.pushViewController(homeViewController, animated: true)
+            appDelegate.centerContainer?.closeDrawer(animated: true, completion: nil)
+        }
+    }
+    
+    func showProfile() {
+        if let _ = navigationController?.topViewController as? ProfileViewController {
+            closeDrawer()
+        } else {
+            let nvc = appDelegate.centerContainer?.centerViewController as! UINavigationController
+            let profileViewController = ProfileViewController()
+            nvc.pushViewController(profileViewController, animated: true)
+            appDelegate.centerContainer?.closeDrawer(animated: true, completion: nil)
         }
     }
     
@@ -101,19 +121,23 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
     
     func logoutUser() {
         
-        let params = [
-            Client.Keys.Email: appDelegate.currentUser!.emailID,
-            Client.Keys.Token: appDelegate.currentUser!.accessToken
-        ]
-        
-        Client.sharedInstance.logoutUser(params as [String : AnyObject]) { (someObject, success, error) in
-            DispatchQueue.main.async {
-                print(success)
-                if success {
-                    self.appDelegate.centerContainer?.dismiss(animated: true, completion: nil)
+        if let user = appDelegate.currentUser {
+            let params = [
+                Client.Keys.Email: user.emailID,
+                Client.Keys.Token: user.accessToken
+            ]
+            
+            Client.sharedInstance.logoutUser(params as [String : AnyObject]) { (_, success, error) in
+                DispatchQueue.main.async {
+                    if success {
+                        self.appDelegate.centerContainer?.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
+        } else {
+            self.appDelegate.centerContainer?.dismiss(animated: true, completion: nil)
         }
+        
     }
     
     func showOrders() {

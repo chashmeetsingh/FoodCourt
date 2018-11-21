@@ -67,9 +67,6 @@ class CartCollectionViewCell: BaseCollectionViewCell {
     
     @objc func valueUpdated(_ sender: Any) {
         if let _ = sender as? GMStepper, let item = item {
-            print(self.appDelegate.cartItems)
-//            print(self.item.foodCourtId)
-//            print(appDelegate.cartItems["\(self.item.foodCourtId)"])
             if var data = appDelegate.cartItems["\(self.item.foodCourtId)"] {
                 let value = Int(stepper.value)
                 if value > 0 {
@@ -79,7 +76,7 @@ class CartCollectionViewCell: BaseCollectionViewCell {
                 }
                 appDelegate.cartItems["\(self.item.foodCourtId)"] = data
                 if value > 0 {
-                    delegate?.getDataForItemsInCart(indexPath)
+                    delegate?.getDataForItemsInCart()
                 } else {
                     delegate?.getDataForItemsInCart(indexPath, "delete")
                 }

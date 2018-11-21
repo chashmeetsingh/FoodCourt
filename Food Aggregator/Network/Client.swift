@@ -32,12 +32,12 @@ class Client: NSObject {
             completion(nil, NSError(domain: "makeRequestMethod", code: 1, userInfo: userInfo))
         }
         
-        print(parameters)
+//        print(parameters)
         
         Alamofire.request(url, method: httpMethod, parameters: parameters, encoding: URLEncoding.httpBody, headers: headers).validate().responseJSON { (response: DataResponse<Any>) in
             print(response.request?.url ?? "Error: invalid URL")
             
-            print(response)
+//            print(response)
             switch(response.result) {
                 
             case .success(_):

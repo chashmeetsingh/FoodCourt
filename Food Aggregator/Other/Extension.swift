@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SkyFloatingLabelTextField
+import FontAwesome_swift
 
 extension UIView {
     
@@ -98,12 +100,58 @@ extension String {
         return true
     }
     
+    func isPhoneNumberValid() -> Bool {
+        let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
+        let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
+        let result =  phoneTest.evaluate(with: self)
+        return result
+    }
+    
 }
 
 extension Double {
     /// Rounds the double to decimal places value
     func rounded(toPlaces places:Int) -> Double {
         let divisor = pow(10.0, Double(places))
-        return (self * divisor).rounded() / divisor
+        return Double(String(format: "%.2f", (self * divisor).rounded() / divisor))!
     }
+}
+
+
+class SkyFloatingLabelBaseTextField: SkyFloatingLabelTextField {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        tintColor = Client.Colors.overcastBlueColor
+        selectedTitleColor = Client.Colors.overcastBlueColor
+        selectedLineColor = Client.Colors.overcastBlueColor
+        errorColor = .red
+        autocapitalizationType = .none
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+class SkyFloatingLabelBaseTextFieldWithIcon: SkyFloatingLabelTextFieldWithIcon {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        tintColor = Client.Colors.overcastBlueColor
+        selectedTitleColor = Client.Colors.overcastBlueColor
+        selectedLineColor = Client.Colors.overcastBlueColor
+        errorColor = .red
+        autocapitalizationType = .none
+        iconFont = UIFont.fontAwesome(ofSize: 15, style: .solid)
+        iconMarginBottom = 0
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }

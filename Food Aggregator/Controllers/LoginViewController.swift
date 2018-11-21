@@ -21,38 +21,26 @@ class LoginViewController: UIViewController {
         }
     }
     
-    lazy var emailField: SkyFloatingLabelTextField = {
-        let textField = SkyFloatingLabelTextFieldWithIcon()
+    var fromSignUpView = false
+    
+    lazy var emailField: SkyFloatingLabelBaseTextFieldWithIcon = {
+        let textField = SkyFloatingLabelBaseTextFieldWithIcon()
         textField.placeholder = "Email ID"
         textField.title = "Your email id"
-        textField.iconFont = UIFont.fontAwesome(ofSize: 15, style: .solid)
         textField.iconText = String.fontAwesomeIcon(name: .at)
-        textField.tintColor = Client.Colors.overcastBlueColor
-        textField.selectedTitleColor = Client.Colors.overcastBlueColor
-        textField.selectedLineColor = Client.Colors.overcastBlueColor
-        textField.errorColor = .red
-        textField.iconMarginBottom = 0
         textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingChanged)
-        textField.autocapitalizationType = .none
         return textField
     }()
     
-    lazy var passwordField: SkyFloatingLabelTextFieldWithIcon = {
-        let textField = SkyFloatingLabelTextFieldWithIcon()
+    lazy var passwordField: SkyFloatingLabelBaseTextFieldWithIcon = {
+        let textField = SkyFloatingLabelBaseTextFieldWithIcon()
         textField.placeholder = "Password"
         textField.title = "Password"
         textField.isSecureTextEntry = true
-        textField.iconFont = UIFont.fontAwesome(ofSize: 15, style: .solid)
         textField.iconText = String.fontAwesomeIcon(name: .key)
-        textField.tintColor = Client.Colors.overcastBlueColor
-        textField.selectedTitleColor = Client.Colors.overcastBlueColor
-        textField.selectedLineColor = Client.Colors.overcastBlueColor
-        textField.errorColor = .red
-        textField.iconMarginBottom = 0
         textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingChanged)
-        textField.autocapitalizationType = .none
         return textField
     }()
     
@@ -61,7 +49,7 @@ class LoginViewController: UIViewController {
         button.setTitle("Login", for: .normal)
         button.backgroundColor = UIColor(hex: "#00C853")
         button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 16
+//        button.layer.cornerRadius = 16
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
     }()
@@ -73,9 +61,11 @@ class LoginViewController: UIViewController {
         title = "Login"
         configureView()
         
-        let backButton = UIBarButtonItem(image: UIImage(named: "back_arrow"), style: .plain, target: self, action: #selector(dismissController))
-        navigationItem.leftItemsSupplementBackButton = true
-        navigationItem.leftBarButtonItem = backButton
+        if !fromSignUpView {
+            let backButton = UIBarButtonItem(image: UIImage(named: "back_arrow"), style: .plain, target: self, action: #selector(dismissController))
+            navigationItem.leftItemsSupplementBackButton = true
+            navigationItem.leftBarButtonItem = backButton
+        }
     }
     
     private func configureView() {
@@ -121,7 +111,7 @@ class LoginViewController: UIViewController {
             Client.Keys.Password: passwordField.text!
         ]
         
-        Client.sharedInstance.loginUser(params as [String : AnyObject]) { (user, results, success, error) in
+        Client.sharedInstance.loginUser(params as [String : AnyObject]) { (user, success, error) in
             DispatchQueue.main.async {
                 self.view.hideToastActivity()
                 self.toggleInteraction()
@@ -135,25 +125,30 @@ class LoginViewController: UIViewController {
     
     func completeLogin() {
         self.navigationController?.dismiss(animated: false, completion: nil)
-        if appDelegate.currentUser.userRole == 0 {
-            self.view.makeToastActivity(.center)
-            let mainController = ClientHomeViewController()
-            let nvc = UINavigationController(rootViewController: mainController)
-            let drawerViewController = DrawerViewController(collectionViewLayout: UICollectionViewFlowLayout())
-            
-            self.appDelegate.centerContainer = MMDrawerController(center: nvc, leftDrawerViewController: drawerViewController)
-            self.appDelegate.centerContainer!.openDrawerGestureModeMask = .panningCenterView
-            self.appDelegate.centerContainer!.closeDrawerGestureModeMask = .panningCenterView
-            self.appDelegate.centerContainer?.setDrawerVisualStateBlock(MMDrawerVisualState.slideAndScaleBlock())
-            
-            self.presentingViewController?.present(appDelegate.centerContainer!, animated: true, completion: nil)
-            self.view.hideToastActivity()
+        
+        if !fromSignUpView {
+            if appDelegate.currentUser.userRole == "USER" {
+                self.view.makeToastActivity(.center)
+                let mainController = ClientHomeViewController()
+                let nvc = UINavigationController(rootViewController: mainController)
+                let drawerViewController = DrawerViewController(collectionViewLayout: UICollectionViewFlowLayout())
+                
+                self.appDelegate.centerContainer = MMDrawerController(center: nvc, leftDrawerViewController: drawerViewController)
+                self.appDelegate.centerContainer!.openDrawerGestureModeMask = .panningCenterView
+                self.appDelegate.centerContainer!.closeDrawerGestureModeMask = .panningCenterView
+                self.appDelegate.centerContainer?.setDrawerVisualStateBlock(MMDrawerVisualState.slideAndScaleBlock())
+                
+                self.presentingViewController?.present(appDelegate.centerContainer!, animated: true, completion: nil)
+                self.view.hideToastActivity()
+            } else {
+                self.view.makeToastActivity(.center)
+                let vc = VendorHomeViewController(collectionViewLayout: UICollectionViewFlowLayout())
+                let nvc = UINavigationController(rootViewController: vc)
+                self.presentingViewController?.present(nvc, animated: true, completion: nil)
+                self.view.hideToastActivity()
+            }
         } else {
-            self.view.makeToastActivity(.center)
-            let vc = VendorHomeViewController(collectionViewLayout: UICollectionViewFlowLayout())
-            let nvc = UINavigationController(rootViewController: vc)
-            self.presentingViewController?.present(nvc, animated: true, completion: nil)
-            self.view.hideToastActivity()
+            
         }
     }
     

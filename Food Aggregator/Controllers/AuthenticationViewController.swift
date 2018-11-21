@@ -42,7 +42,7 @@ class AuthenticationViewController: UIViewController {
     }
     
     func completeLogin() {
-        if appDelegate.currentUser.userRole == 0 {
+        if appDelegate.currentUser.userRole == "USER" {
             self.view.makeToastActivity(.center)
             let mainController = ClientHomeViewController()
             let nvc = UINavigationController(rootViewController: mainController)

@@ -18,16 +18,15 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
         return menuBar
     }()
     
-//    var items: [String]! {
-//        didSet {
-//            let indexPath = IndexPath(item: 0, section: 0)
-//            collectionView.reloadItems(at: [indexPath])
-//        }
-//    }
+    var appDelegate: AppDelegate {
+        get {
+            return UIApplication.shared.delegate as! AppDelegate
+        }
+    }
     
-    var activeOrders: [Order]!
-    var completedOrders: [Order]!
-
+    var activeOrders = [Order]()
+    var completedOrders = [Order]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,11 +36,18 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
         setupCollectionView()
         setupMenuBar()
         
+        configureNavigationBar()
+        
+        getOrders()
+    }
+    
+    fileprivate func configureNavigationBar() {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
         
-        getOrders()
+        let logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutUser))
+        navigationItem.rightBarButtonItem = logoutButton
     }
     
     func getOrders() {
@@ -59,6 +65,24 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
                 self.completedOrders = completedOrders!
                 self.activeOrders = activeOrders!
                 self.collectionView.reloadData()
+            }
+        }
+    }
+    
+    @objc func logoutUser() {
+        self.view.makeToastActivity(.center)
+        
+        let params = [
+            Client.Keys.Email: appDelegate.currentUser!.emailID,
+            Client.Keys.Token: appDelegate.currentUser!.accessToken
+        ]
+        
+        Client.sharedInstance.logoutUser(params as [String : AnyObject]) { (_, success, message) in
+            DispatchQueue.main.async {
+                self.view.hideToastActivity()
+                if success {
+                    self.navigationController?.dismiss(animated: true, completion: nil)
+                }
             }
         }
     }
@@ -119,9 +143,9 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! VendorOrderCell
         if indexPath.item == 0 {
-            cell.orderType = OrderType.current
+            cell.orderType = OrderType.active
         } else {
-            cell.orderType = OrderType.past
+            cell.orderType = OrderType.complete
         }
         cell.homeController = self
         return cell

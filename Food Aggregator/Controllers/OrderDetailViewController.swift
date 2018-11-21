@@ -11,22 +11,28 @@ import UIKit
 class OrderDetailViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var orderType: OrderType!
+    var order: Order!
+    var yourOrdersView = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.register(OrderDetailCell.self, forCellWithReuseIdentifier: "orderDetailCell")
-        collectionView.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView")
-        collectionView.register(FinalPriceView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "finalPriceView")
+        collectionView.register(VendorHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView")
+        collectionView.register(FooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footerView")
         collectionView.backgroundColor = .white
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return order.orderItems.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "orderDetailCell", for: indexPath) as! OrderDetailCell
+        let item = order.orderItems[indexPath.item]
+        cell.itemName.text = item.name
+        cell.amountLabel.text = "$\(item.itemCost)"
+        cell.totalAmountLabel.text = "$\((item.itemCost * Double(item.quantity)).rounded(toPlaces: 2))"
         return cell
     }
     
@@ -50,11 +56,27 @@ class OrderDetailViewController: UICollectionViewController, UICollectionViewDel
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as! VendorHeaderView
+            view.orderNumber.text = "#\(order.id)"
+            view.personName.text = "By: \(order.userName)"
             return view
         case UICollectionView.elementKindSectionFooter:
-            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "finalPriceView", for: indexPath) as! FooterView
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "footerView", for: indexPath) as! FooterView
             
-            if orderType == OrderType.current {
+            var subtotal = 0.0
+            
+            for item in order.orderItems {
+                subtotal += (item.itemCost * Double(item.quantity))
+            }
+            subtotal = subtotal.rounded(toPlaces: 2)
+            view.subtotalAmountLabel.text = "$\(subtotal)"
+            
+            let tax = (subtotal * 0.13).rounded(toPlaces: 2)
+            view.taxesAndChargesAmountLabel.text = "$\(tax)"
+            
+            let total = subtotal + tax
+            view.grandTotalAmountLabel.text = "$\(total)"
+            
+            if orderType == OrderType.active {
                 view.markCompleteButton.backgroundColor = UIColor(hex: "#00C853")
                 view.markCompleteButton.isUserInteractionEnabled = true
                 view.markCompleteButton.setTitle("Mark complete", for: .normal)

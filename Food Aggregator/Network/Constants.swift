@@ -28,6 +28,8 @@ extension Client {
         static let PlaceOrder = "/user/placeOrder"
         static let Logout = "/user/logout"
         static let GetOrders = "/user/getOrdersForUser"
+        static let UpdateProfile = "/user/updateProfile"
+        static let Register = "/register"
     }
     
     struct Keys {
@@ -61,7 +63,7 @@ extension Client {
         static let EmailID = "email_id"
         static let FoodItemIds = "foodItemIds"
         static let Quantity = "quantity"
-        static let CustomerOrder = "customer order"
+        static let CustomerOrder = "customerOrder"
         static let OrderTime = "orderTime"
         static let UserId = "userId"
         static let Username = "userName"
@@ -75,6 +77,7 @@ extension Client {
         static let UserRole = "user_role"
         static let Active = "ACTIVE"
         static let Completed = "COMPLETED"
+        static let PhoneNum = "PhoneNum"
     }
     
     struct Colors {

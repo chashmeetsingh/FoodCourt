@@ -19,15 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var cartItems: [String : [String : String]] = [:] {
         didSet {
-            UserDefaults.standard.set(cartItems, forKey: currentUser.emailID)
+            //UserDefaults.standard.set(cartItems, forKey: currentUser.emailID)
         }
     }
     
     var currentUser: User! {
         didSet {
-            if let cartData = UserDefaults.standard.dictionary(forKey: currentUser.emailID) {
-                cartItems = cartData as! [String : [String : String]]
-            }
+//            if let cartData = UserDefaults.standard.dictionary(forKey: currentUser.emailID) {
+//                cartItems = cartData as! [String : [String : String]]
+//            }
         }
     }
     

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import DeepDiff
 
-struct CartCellData {
+struct CartCellData: Hashable {
     var restaurantName = ""
     var foodItems = [FoodItem]()
 }
@@ -45,7 +46,6 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
         var items = [String : [FoodItem]]()
         if let cart = appDelegate.cartItems[appDelegate.currentFoodCourt.id], cart.count > 0 {
             for (id, count) in cart {
-//                print(id, count)
                 if let item = appDelegate.items[id] {
                     if let _ = items[item.restaurantName] {
                         item.count = Int(count)!
@@ -58,7 +58,6 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
                 }
             }
         }
-//        print(items)
         for (name, itemList) in items {
             var data = CartCellData()
             data.restaurantName = name
@@ -145,32 +144,39 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     @objc func placeOrder() {
         
-        var foodItemIds = ""
-        var quantity = ""
-        let ids = appDelegate.cartItems[appDelegate.currentFoodCourt.id]
-        for (key, value) in ids! {
-            foodItemIds += "\(key),"
-            quantity += "\(value),"
-        }
-        
-        let params = [
-            Client.Keys.Email: appDelegate.currentUser!.emailID,
-            Client.Keys.Token: appDelegate.currentUser!.accessToken,
-            Client.Keys.FoodItemIds: foodItemIds,
-            Client.Keys.Quantity: quantity
-        ] as [String : AnyObject]
-        
-        self.view.makeToastActivity(.center)
-        Client.sharedInstance.placeOrder(params) { (order, success, message) in
-            DispatchQueue.main.async {
-                self.view.hideToastActivity()
-                if let order = order, success {
-                    let vc = OrderConfirmationViewController()
-                    vc.order = order
-                    self.navigationController?.pushViewController(vc, animated: true)
+        if let user  = appDelegate.currentUser {
+            var foodItemIds = ""
+            var quantity = ""
+            let ids = appDelegate.cartItems[appDelegate.currentFoodCourt.id]
+            for (key, value) in ids! {
+                foodItemIds += "\(key),"
+                quantity += "\(value),"
+            }
+            
+            let params = [
+                Client.Keys.Email: user.emailID,
+                Client.Keys.Token: user.accessToken,
+                Client.Keys.FoodItemIds: foodItemIds,
+                Client.Keys.Quantity: quantity
+                ] as [String : AnyObject]
+            
+            self.view.makeToastActivity(.center)
+            Client.sharedInstance.placeOrder(params) { (order, success, message) in
+                DispatchQueue.main.async {
+                    self.view.hideToastActivity()
+                    if let order = order, success {
+                        let vc = OrderConfirmationViewController()
+                        vc.order = order
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
                 }
             }
+        } else {
+            let vc = SignupViewController()
+            let nvc = UINavigationController(rootViewController: vc)
+            self.present(nvc, animated: true, completion: nil)
         }
+        
     }
 
 }

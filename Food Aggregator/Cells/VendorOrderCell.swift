@@ -9,8 +9,8 @@
 import UIKit
 
 enum OrderType {
-    case current
-    case past
+    case active
+    case complete
 }
 
 class VendorOrderCell: BaseCollectionViewCell, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
@@ -40,7 +40,7 @@ class VendorOrderCell: BaseCollectionViewCell, UICollectionViewDelegateFlowLayou
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if orderType == OrderType.current {
+        if orderType == OrderType.active {
             return 5
         } else {
             return 1

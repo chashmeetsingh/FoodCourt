@@ -38,6 +38,8 @@
 		B1B077EF2187431E00A6AA67 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B077EE2187431E00A6AA67 /* CartViewController.swift */; };
 		B1C7A9EB219E8A3C0026F614 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A9EA219E8A3C0026F614 /* Category.swift */; };
 		B1C7A9ED219E8A7C0026F614 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C7A9EC219E8A7C0026F614 /* FoodItem.swift */; };
+		B1E1A5FC21A4EDDB00F2FCA0 /* DrawerHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E1A5FB21A4EDDB00F2FCA0 /* DrawerHeaderCell.swift */; };
+		B1E1A5FE21A508DD00F2FCA0 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E1A5FD21A508DD00F2FCA0 /* SignupViewController.swift */; };
 		B1E44D9B21A219B0005CB9B0 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E44D9A21A219B0005CB9B0 /* Order.swift */; };
 		B1E569FE2189486600C4B5B3 /* GMStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E569FD2189486600C4B5B3 /* GMStepper.swift */; };
 		B1E56A002189640800C4B5B3 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E569FF2189640800C4B5B3 /* OrderConfirmationViewController.swift */; };
@@ -93,6 +95,10 @@
 		B1B077EE2187431E00A6AA67 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		B1C7A9EA219E8A3C0026F614 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		B1C7A9EC219E8A7C0026F614 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
+		B1E1A5FB21A4EDDB00F2FCA0 /* DrawerHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerHeaderCell.swift; sourceTree = "<group>"; };
+		B1E1A5FD21A508DD00F2FCA0 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		B1E1A5FF21A526C800F2FCA0 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		B1E1A60021A526F400F2FCA0 /* ExceptionCatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExceptionCatcher.h; sourceTree = "<group>"; };
 		B1E44D9A21A219B0005CB9B0 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B1E569FD2189486600C4B5B3 /* GMStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMStepper.swift; sourceTree = "<group>"; };
 		B1E569FF2189640800C4B5B3 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +161,8 @@
 			children = (
 				B1A344D721713D82005B1A81 /* Assets.xcassets */,
 				B1A344DC21713D82005B1A81 /* Info.plist */,
+				B1E1A5FF21A526C800F2FCA0 /* Header.h */,
+				B1E1A60021A526F400F2FCA0 /* ExceptionCatcher.h */,
 				B1C7A9F1219E976B0026F614 /* Model */,
 				B1C7A9F4219E97DA0026F614 /* Views */,
 				B1C7A9EE219E96FC0026F614 /* Controllers */,
@@ -180,6 +188,7 @@
 				B1497DD5219B81A100816F68 /* LoginViewController.swift */,
 				B1E9613721A43C14003A1FD9 /* OrderDetailViewController.swift */,
 				B1E9614021A44B99003A1FD9 /* ProfileViewController.swift */,
+				B1E1A5FD21A508DD00F2FCA0 /* SignupViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -200,6 +209,7 @@
 				B111EB2E219CD256005B0375 /* FoodClassCell.swift */,
 				B111EB30219CD273005B0375 /* ExpandedCell.swift */,
 				B1E9613F21A43CF8003A1FD9 /* VendorCells */,
+				B1E1A5FB21A4EDDB00F2FCA0 /* DrawerHeaderCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -380,6 +390,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BBBadgeBarButtonItem/BBBadgeBarButtonItem.framework",
+				"${BUILT_PRODUCTS_DIR}/DeepDiff/DeepDiff.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
@@ -394,6 +405,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BBBadgeBarButtonItem.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeepDiff.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
@@ -456,7 +468,9 @@
 				B1E9613621A43C0E003A1FD9 /* OrderDetailCell.swift in Sources */,
 				B1497DE2219BC31200816F68 /* FoodCourt.swift in Sources */,
 				B1E44D9B21A219B0005CB9B0 /* Order.swift in Sources */,
+				B1E1A5FC21A4EDDB00F2FCA0 /* DrawerHeaderCell.swift in Sources */,
 				B19E76BD2189156300B7E6F1 /* HeaderView.swift in Sources */,
+				B1E1A5FE21A508DD00F2FCA0 /* SignupViewController.swift in Sources */,
 				B1E9613A21A43C21003A1FD9 /* OrderItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,6 +628,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.exxon.Food-Aggregator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/chashmeet/Documents/food-aggregator/Food Aggregator/Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -634,6 +649,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.exxon.Food-Aggregator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/chashmeet/Documents/food-aggregator/Food Aggregator/Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
