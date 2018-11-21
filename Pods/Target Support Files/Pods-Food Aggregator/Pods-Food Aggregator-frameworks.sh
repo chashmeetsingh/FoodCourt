@@ -145,7 +145,6 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BBBadgeBarButtonItem/BBBadgeBarButtonItem.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DeepDiff/DeepDiff.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework"
@@ -157,7 +156,6 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/BBBadgeBarButtonItem/BBBadgeBarButtonItem.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DeepDiff/DeepDiff.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework"

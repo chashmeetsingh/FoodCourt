@@ -97,8 +97,6 @@
 		B1C7A9EC219E8A7C0026F614 /* FoodItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		B1E1A5FB21A4EDDB00F2FCA0 /* DrawerHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerHeaderCell.swift; sourceTree = "<group>"; };
 		B1E1A5FD21A508DD00F2FCA0 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		B1E1A5FF21A526C800F2FCA0 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
-		B1E1A60021A526F400F2FCA0 /* ExceptionCatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExceptionCatcher.h; sourceTree = "<group>"; };
 		B1E44D9A21A219B0005CB9B0 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B1E569FD2189486600C4B5B3 /* GMStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMStepper.swift; sourceTree = "<group>"; };
 		B1E569FF2189640800C4B5B3 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
@@ -161,8 +159,6 @@
 			children = (
 				B1A344D721713D82005B1A81 /* Assets.xcassets */,
 				B1A344DC21713D82005B1A81 /* Info.plist */,
-				B1E1A5FF21A526C800F2FCA0 /* Header.h */,
-				B1E1A60021A526F400F2FCA0 /* ExceptionCatcher.h */,
 				B1C7A9F1219E976B0026F614 /* Model */,
 				B1C7A9F4219E97DA0026F614 /* Views */,
 				B1C7A9EE219E96FC0026F614 /* Controllers */,
@@ -390,7 +386,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Food Aggregator/Pods-Food Aggregator-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BBBadgeBarButtonItem/BBBadgeBarButtonItem.framework",
-				"${BUILT_PRODUCTS_DIR}/DeepDiff/DeepDiff.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
@@ -405,7 +400,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BBBadgeBarButtonItem.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeepDiff.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
@@ -628,7 +622,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.exxon.Food-Aggregator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/chashmeet/Documents/food-aggregator/Food Aggregator/Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -649,7 +643,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.exxon.Food-Aggregator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/chashmeet/Documents/food-aggregator/Food Aggregator/Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
