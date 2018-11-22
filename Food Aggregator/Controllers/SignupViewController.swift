@@ -205,7 +205,16 @@ class SignupViewController: UIViewController {
                 self.view.hideToastActivity()
                 self.toggleInteraction()
                 if success {
-                    self.loginUser()
+                    self.view.makeToastActivity(.center)
+                    Client.sharedInstance.loginUser(params as [String : AnyObject], { (user, success, message) in
+                        DispatchQueue.main.async {
+                            self.view.hideToastActivity()
+                            self.toggleInteraction()
+                            if success {
+                                self.loginUser()
+                            }
+                        }
+                    })
                 }
             }
         }
