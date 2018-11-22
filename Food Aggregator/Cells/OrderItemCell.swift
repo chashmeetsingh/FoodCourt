@@ -10,6 +10,14 @@ import UIKit
 
 class OrderItemCell: BaseCollectionViewCell {
     
+    var order: Order! {
+        didSet {
+            orderNumberLabel.text = "#\(order.id)"
+            customerName.text = "By: \(order.userName)"
+            print(order.orderItems)
+        }
+    }
+    
     let orderNumberLabel: UILabel = {
         let label = UILabel()
         label.text = "#234234"

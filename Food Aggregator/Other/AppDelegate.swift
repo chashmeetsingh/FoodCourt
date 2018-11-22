@@ -24,8 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     var currentUser: User! {
-        didSet {
-            print(currentUser)
+        get {
+            if let currentUserData = UserDefaults.standard.object(forKey: "currentUser") as? Data, let user = NSKeyedUnarchiver.unarchiveObject(with: currentUserData) as? [String : AnyObject] {
+                return User(dictionary: user)
+            }
+            return nil
         }
     }
     

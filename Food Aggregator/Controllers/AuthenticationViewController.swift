@@ -35,8 +35,8 @@ class AuthenticationViewController: UIViewController {
         
         if let currentUserData = UserDefaults.standard.object(forKey: "currentUser") as? Data, let user = NSKeyedUnarchiver.unarchiveObject(with: currentUserData) as? [String : AnyObject] {
             print(user)
-            appDelegate.currentUser = User(dictionary: user)
-            print(appDelegate.currentUser.name)
+//            appDelegate.currentUser = User(dictionary: user)
+//            print(appDelegate.currentUser.name)
             self.completeLogin()
         }
     }

@@ -30,6 +30,7 @@ extension Client {
         static let GetOrders = "/user/getOrdersForUser"
         static let UpdateProfile = "/user/updateProfile"
         static let Register = "/register"
+        static let UpdateOrder = "/user/updateOrderStatus"
     }
     
     struct Keys {
@@ -78,6 +79,7 @@ extension Client {
         static let Active = "ACTIVE"
         static let Completed = "COMPLETED"
         static let PhoneNum = "PhoneNum"
+        static let Customerorder = "customer order"
     }
     
     struct Colors {

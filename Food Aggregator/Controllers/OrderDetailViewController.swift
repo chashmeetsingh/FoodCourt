@@ -61,7 +61,7 @@ class OrderDetailViewController: UICollectionViewController, UICollectionViewDel
             return view
         case UICollectionView.elementKindSectionFooter:
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "footerView", for: indexPath) as! FooterView
-            
+            view.order = order
             var subtotal = 0.0
             
             for item in order.orderItems {

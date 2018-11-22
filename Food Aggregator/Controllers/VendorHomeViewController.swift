@@ -27,6 +27,8 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
     var activeOrders = [Order]()
     var completedOrders = [Order]()
     
+    var timer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,10 +37,27 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
         title = "Orders"
         setupCollectionView()
         setupMenuBar()
-        
         configureNavigationBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        getOrders()
+        runTimer()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        stopTimer()
+    }
+    
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(getOrders), userInfo: nil, repeats: true)
+    }
+    
+    func stopTimer() {
+        timer.invalidate()
     }
     
     fileprivate func configureNavigationBar() {
@@ -50,23 +69,26 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
         navigationItem.rightBarButtonItem = logoutButton
     }
     
-    func getOrders() {
+    @objc func getOrders() {
         
-        let params = [
-            Client.Keys.Email: "jalaj@yopmail.com",
-            Client.Keys.Token: "yololo",
-            Client.Keys.RestaurantId: "3"
-        ]
-        
-        self.view.makeToastActivity(.center)
-        Client.sharedInstance.getOrders(params as [String : AnyObject]) { (activeOrders, completedOrders, results, success, message) in
-            DispatchQueue.main.async {
-                self.view.hideToastActivity()
-                self.completedOrders = completedOrders!
-                self.activeOrders = activeOrders!
-                self.collectionView.reloadData()
+        if let user = appDelegate.currentUser {
+            let params = [
+                Client.Keys.Email: user.emailID,
+                Client.Keys.Token: user.accessToken,
+                Client.Keys.RestaurantId: user.restaurantId
+                ] as [String : AnyObject]
+            
+            self.view.makeToastActivity(.center)
+            Client.sharedInstance.getOrders(params) { (activeOrders, completedOrders, results, success, message) in
+                DispatchQueue.main.async {
+                    self.view.hideToastActivity()
+                    self.completedOrders = completedOrders!
+                    self.activeOrders = activeOrders!
+                    self.collectionView.reloadData()
+                }
             }
         }
+        
     }
     
     @objc func logoutUser() {
@@ -144,8 +166,10 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! VendorOrderCell
         if indexPath.item == 0 {
             cell.orderType = OrderType.active
+            cell.orders = activeOrders
         } else {
             cell.orderType = OrderType.complete
+            cell.orders = completedOrders
         }
         cell.homeController = self
         return cell

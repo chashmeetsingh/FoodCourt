@@ -21,7 +21,7 @@ extension Client {
                 completion(nil, false, ResponseMessages.InvalidParams)
             } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String, status == "success", let userData = results["user"] as? [String : AnyObject] {
                 let user = User(dictionary: results)
-                self.appDelegate.currentUser = user
+//                self.appDelegate.currentUser = user
                 
                 let data = NSKeyedArchiver.archivedData(withRootObject: userData)
                 UserDefaults.standard.setValue(data, forKey: "currentUser")
@@ -45,7 +45,7 @@ extension Client {
                 completion(nil, false, ResponseMessages.InvalidParams)
             } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String, status == "success", let userData = results["user"] as? [String : AnyObject] {
                 let user = User(dictionary: results)
-                self.appDelegate.currentUser = user
+//                self.appDelegate.currentUser = user
                 
                 let data = NSKeyedArchiver.archivedData(withRootObject: userData)
                 UserDefaults.standard.setValue(data, forKey: "currentUser")
@@ -69,7 +69,7 @@ extension Client {
                 completion(nil, false, ResponseMessages.InvalidParams)
             } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String {
                 UserDefaults.standard.removeObject(forKey: "currentUser")
-                self.appDelegate.currentUser = nil
+//                self.appDelegate.currentUser = nil
                 self.appDelegate.cartItems = [:]
                 completion(results, true, status)
             } else {
@@ -150,7 +150,7 @@ extension Client {
             if let _ = message {
                 completion(nil, false, ResponseMessages.ServerError)
             } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String, status == "success" {
-                if let orderDetails = results[Keys.CustomerOrder] as? [String : AnyObject] {
+                if let orderDetails = results[Keys.Customerorder] as? [String : AnyObject] {
                     let order = Order(dictionary: orderDetails)
                     
                     completion(order, true, nil)
@@ -179,6 +179,24 @@ extension Client {
                 completion(activeOrders, completedOrders, results, true, status)
             } else {
                 completion(nil, nil, nil, false, ResponseMessages.ServerError)
+            }
+            return
+        })
+        
+    }
+    
+    func updateOrderStatus(_ params: [String: AnyObject], _ completion: @escaping( _ success: Bool, _ error: String) -> Void) {
+        
+        let url = getApiUrl(APIURL.IPAddress, Methods.UpdateOrder)
+        
+        _ = makeRequest(url, .post, [:], parameters: params, completion: { (results, message) in
+            
+            if let _ = message {
+                completion(false, ResponseMessages.InvalidParams)
+            } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String, status == "success" {
+                completion(true, status)
+            } else {
+                completion(false, ResponseMessages.ServerError)
             }
             return
         })

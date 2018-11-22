@@ -7,8 +7,17 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialButtons
 
 class FooterView: UICollectionReusableView {
+    
+    var order: Order!
+    
+    var appDelegate: AppDelegate {
+        get {
+            return UIApplication.shared.delegate as! AppDelegate
+        }
+    }
     
     let subtotalLabel: UILabel = {
         let label = UILabel()
@@ -61,10 +70,11 @@ class FooterView: UICollectionReusableView {
         return view
     }()
     
-    let markCompleteButton: UIButton = {
-        let button = UIButton()
+    let markCompleteButton: MDCButton = {
+        let button = MDCButton()
         button.backgroundColor = UIColor(hex: "#00C853")
         button.setTitle("Confirm Order", for: .normal)
+        button.addTarget(self, action: #selector(markOrderComplete), for: .touchUpInside)
         return button
     }()
     
@@ -95,6 +105,25 @@ class FooterView: UICollectionReusableView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func markOrderComplete() {
+        let params = [
+            Client.Keys.Email: appDelegate.currentUser!.emailID,
+            Client.Keys.Token: appDelegate.currentUser!.accessToken,
+            Client.Keys.OrderId: order.id,
+            Client.Keys.OrderStatus: "completed"
+        ] as [String : AnyObject]
+        
+        Client.sharedInstance.updateOrderStatus(params) { (success, message) in
+            DispatchQueue.main.async {
+                if success {
+                    self.markCompleteButton.backgroundColor = .gray
+                    self.markCompleteButton.isUserInteractionEnabled = false
+                    self.markCompleteButton.setTitle("Order complete", for: .normal)
+                }
+            }
+        }
     }
     
 }

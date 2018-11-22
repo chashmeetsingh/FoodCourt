@@ -109,7 +109,7 @@ class ProfileViewController: UIViewController {
             view.addConstraintsWithFormat(format: "V:|-8-[v0(\(widthForFrame - 16))]", views: imageView)
         }
         
-        view.addConstraintsWithFormat(format: "V:|-32-[v0]-32-[v1]", views: firstNameTextField, lastNameTextField)
+        view.addConstraintsWithFormat(format: "V:|-28-[v0]-32-[v1]", views: firstNameTextField, lastNameTextField)
         view.addConstraintsWithFormat(format: "H:|-16-[v0(\(widthForFrame - 16))]-16-[v1]-16-|", views: imageView, firstNameTextField)
         view.addConstraintsWithFormat(format: "H:|-16-[v0(\(widthForFrame - 16))]-16-[v1]-16-|", views: imageView, lastNameTextField)
         
@@ -191,7 +191,7 @@ class ProfileViewController: UIViewController {
                         if self.passwordTextField.text != "drowssap" {
                             user[Client.Keys.Password] = self.passwordTextField.text! as AnyObject
                         }
-                        self.appDelegate.currentUser = User(dictionary: user)
+//                        self.appDelegate.currentUser = User(dictionary: user)
                         let data = NSKeyedArchiver.archivedData(withRootObject: user)
                         UserDefaults.standard.setValue(data, forKey: "currentUser")
                     }

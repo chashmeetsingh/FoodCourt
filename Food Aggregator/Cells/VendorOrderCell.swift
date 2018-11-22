@@ -16,7 +16,11 @@ enum OrderType {
 class VendorOrderCell: BaseCollectionViewCell, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     var orderType: OrderType!
-    var orders: [Order]!
+    var orders: [Order]! {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     var homeController: VendorHomeViewController?
     
@@ -40,16 +44,13 @@ class VendorOrderCell: BaseCollectionViewCell, UICollectionViewDelegateFlowLayou
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if orderType == OrderType.active {
-            return 5
-        } else {
-            return 1
-        }
+        return orders.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "orderItemCell", for: indexPath) as! OrderItemCell
         cell.backgroundColor = .white
+        cell.order = orders[indexPath.item]
         return cell
     }
     
@@ -61,6 +62,7 @@ class VendorOrderCell: BaseCollectionViewCell, UICollectionViewDelegateFlowLayou
         let layout = UICollectionViewFlowLayout()
         let vc = OrderDetailViewController(collectionViewLayout: layout)
         vc.orderType = orderType
+        vc.order = orders[indexPath.item]
         homeController?.navigationController?.pushViewController(vc, animated: true)
     }
     

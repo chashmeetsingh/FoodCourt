@@ -154,7 +154,7 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     @objc func placeOrder() {
         
-        if let user = appDelegate.currentUser {
+        if let user = appDelegate.currentUser, !user.accessToken.isEmpty {
             var foodItemIds = ""
             var quantity = ""
             let ids = appDelegate.cartItems[appDelegate.currentFoodCourt.id]

@@ -17,6 +17,7 @@ class User: NSObject {
     let lastName: String
     let phoneNumber: String
     let userRole: String
+    let restaurantId: Int
     
     init(dictionary: [String : AnyObject]) {
         accessToken = dictionary[Client.Keys.Token] as? String ?? ""
@@ -26,6 +27,7 @@ class User: NSObject {
         lastName = dictionary[Client.Keys.LastName] as? String ?? ""
         phoneNumber = dictionary[Client.Keys.PhoneNumber] as? String ?? ""
         userRole = dictionary[Client.Keys.UserRole] as? String ?? ""
+        restaurantId = dictionary[Client.Keys.RestaurantId] as? Int ?? 0
     }
     
     var name: String {
