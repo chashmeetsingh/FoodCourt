@@ -22,6 +22,8 @@
 		B1531AC321AF166B0042C158 /* YouOrderHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1531AC221AF166B0042C158 /* YouOrderHeaderView.swift */; };
 		B1531AC721AF19660042C158 /* ClientOrderPastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1531AC621AF19660042C158 /* ClientOrderPastCell.swift */; };
 		B166BC9E21AF87370050C02E /* GMStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B166BC9D21AF87370050C02E /* GMStepper.swift */; };
+		B166BCA021AFBB0C0050C02E /* ClientOrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B166BC9F21AFBB0C0050C02E /* ClientOrderDetailViewController.swift */; };
+		B166BCA221AFBDFD0050C02E /* OrderDetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B166BCA121AFBDFD0050C02E /* OrderDetailViewCell.swift */; };
 		B175E433219934B60043064B /* FoodChainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B175E432219934B60043064B /* FoodChainViewCell.swift */; };
 		B19E76BD2189156300B7E6F1 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E76BC2189156300B7E6F1 /* HeaderView.swift */; };
 		B19E76BF2189162500B7E6F1 /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19E76BE2189162500B7E6F1 /* CartCollectionViewCell.swift */; };
@@ -82,6 +84,8 @@
 		B1531AC221AF166B0042C158 /* YouOrderHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouOrderHeaderView.swift; sourceTree = "<group>"; };
 		B1531AC621AF19660042C158 /* ClientOrderPastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientOrderPastCell.swift; sourceTree = "<group>"; };
 		B166BC9D21AF87370050C02E /* GMStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMStepper.swift; sourceTree = "<group>"; };
+		B166BC9F21AFBB0C0050C02E /* ClientOrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientOrderDetailViewController.swift; sourceTree = "<group>"; };
+		B166BCA121AFBDFD0050C02E /* OrderDetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewCell.swift; sourceTree = "<group>"; };
 		B175E432219934B60043064B /* FoodChainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodChainViewCell.swift; sourceTree = "<group>"; };
 		B19E76BC2189156300B7E6F1 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		B19E76BE2189162500B7E6F1 /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 				B1E9614021A44B99003A1FD9 /* ProfileViewController.swift */,
 				B1E1A5FD21A508DD00F2FCA0 /* SignupViewController.swift */,
 				B1531AC221AF166B0042C158 /* YouOrderHeaderView.swift */,
+				B166BC9F21AFBB0C0050C02E /* ClientOrderDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 				B1E9613F21A43CF8003A1FD9 /* VendorCells */,
 				B1E1A5FB21A4EDDB00F2FCA0 /* DrawerHeaderCell.swift */,
 				B1531AC621AF19660042C158 /* ClientOrderPastCell.swift */,
+				B166BCA121AFBDFD0050C02E /* OrderDetailViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -462,6 +468,7 @@
 				B1A344E921714237005B1A81 /* BaseCell.swift in Sources */,
 				B1E9613C21A43C28003A1FD9 /* OrderItemCell.swift in Sources */,
 				B1E9613221A43B70003A1FD9 /* MenuCell.swift in Sources */,
+				B166BCA221AFBDFD0050C02E /* OrderDetailViewCell.swift in Sources */,
 				B19E76C121892D0C00B7E6F1 /* FinalPriceView.swift in Sources */,
 				B175E433219934B60043064B /* FoodChainViewCell.swift in Sources */,
 				B1E9612E21A43AD7003A1FD9 /* VendorHeaderView.swift in Sources */,
@@ -473,6 +480,7 @@
 				B111EB2D219CC778005B0375 /* Restaurant.swift in Sources */,
 				B1A344CE21713D81005B1A81 /* AppDelegate.swift in Sources */,
 				B1E56A02218A9AA200C4B5B3 /* OrdersViewController.swift in Sources */,
+				B166BCA021AFBB0C0050C02E /* ClientOrderDetailViewController.swift in Sources */,
 				B1A0AD70218BD12C008C17F5 /* ClientOrderOngoingCell.swift in Sources */,
 				B1A344F521715B3A005B1A81 /* FoodChainViewController.swift in Sources */,
 				B1A344E321713FF6005B1A81 /* ClientHomeViewController.swift in Sources */,

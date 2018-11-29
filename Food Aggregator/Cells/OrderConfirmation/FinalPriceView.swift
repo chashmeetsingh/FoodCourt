@@ -10,6 +10,12 @@ import UIKit
 
 class FinalPriceView: UICollectionReusableView {
     
+    var orderDetailView: Bool = false {
+        didSet {
+            print(orderDetailView)
+        }
+    }
+    
     let subtotalLabel: UILabel = {
         let label = UILabel()
         label.text = "Subtotal"
@@ -79,7 +85,12 @@ class FinalPriceView: UICollectionReusableView {
         addSubview(grandTotalAmountLabel)
         addSubview(divider)
         addSubview(divider1)
-        addSubview(checkoutButton)
+        
+        if !orderDetailView {
+            addSubview(checkoutButton)
+            addConstraintsWithFormat(format: "V:[v0]-4-|", views: checkoutButton)
+            addConstraintsWithFormat(format: "H:|-8-[v0]-8-|", views: checkoutButton)
+        }
         
         addConstraintsWithFormat(format: "H:|-8-[v0][v1]-8-|", views: subtotalLabel, subtotalAmountLabel)
         addConstraintsWithFormat(format: "H:|-8-[v0][v1]-8-|", views: taxesAndChargesLabel, taxesAndChargesAmountLabel)
@@ -89,8 +100,7 @@ class FinalPriceView: UICollectionReusableView {
         addConstraintsWithFormat(format: "V:|-16-[v0]-4-[v1]-4-[v2(1)]-4-[v3]-4-[v4(1)]", views: subtotalLabel, taxesAndChargesLabel, divider, grandTotalLabel, divider1)
         addConstraintsWithFormat(format: "V:|-16-[v0]-4-[v1]-9-[v2]", views: subtotalAmountLabel, taxesAndChargesAmountLabel, grandTotalAmountLabel)
         
-        addConstraintsWithFormat(format: "V:[v0]-4-|", views: checkoutButton)
-        addConstraintsWithFormat(format: "H:|-8-[v0]-8-|", views: checkoutButton)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

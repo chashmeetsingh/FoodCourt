@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct CartCellData: Hashable {
+struct CartCellData {
     var restaurantName = ""
     var foodItems = [FoodItem]()
 }
@@ -111,7 +111,7 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
         case UICollectionView.elementKindSectionFooter:
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "finalPriceView", for: indexPath) as! FinalPriceView
             view.checkoutButton.addTarget(self, action: #selector(placeOrder), for: .touchUpInside)
-            
+            view.orderDetailView = false
             var subtotal = 0.0
             for data in collectionViewData {
                 for item in data.foodItems {
@@ -177,6 +177,7 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
                         if let order = order, success {
                             let vc = OrderConfirmationViewController()
                             vc.order = order
+                            self.appDelegate.cartItems = [:]
                             self.navigationController?.pushViewController(vc, animated: true)
                         }
                     }

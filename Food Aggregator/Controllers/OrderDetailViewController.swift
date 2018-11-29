@@ -11,7 +11,11 @@ import UIKit
 class OrderDetailViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var orderType: OrderType!
-    var order: Order!
+    var order: Order! {
+        didSet {
+            print(order)
+        }
+    }
     var yourOrdersView = false
     
     override func viewDidLoad() {

@@ -12,7 +12,7 @@ import MMDrawerController
 class DrawerViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let items = ["Dashboard", "Profile", "Your Orders", "Logout"]
-    let guestItems = ["Dashboard", "Profile"]
+    let guestItems = ["Dashboard", "Profile", "Login"]
     
     var appDelegate: AppDelegate {
         get {
@@ -107,6 +107,8 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
                 showDashboard()
             case 1:
                 showProfile()
+            case 2:
+                showLogin()
             default:
                 break
             }
@@ -131,6 +133,18 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
             let nvc = appDelegate.centerContainer?.centerViewController as! UINavigationController
             let profileViewController = ProfileViewController()
             nvc.pushViewController(profileViewController, animated: true)
+            appDelegate.centerContainer?.closeDrawer(animated: true, completion: nil)
+        }
+    }
+    
+    func showLogin() {
+        if let _ = navigationController?.topViewController as? LoginViewController {
+            closeDrawer()
+        } else {
+            let nvc = appDelegate.centerContainer?.centerViewController as! UINavigationController
+            let loginVC = LoginViewController()
+            loginVC.fromSignUpView = true
+            nvc.pushViewController(loginVC, animated: true)
             appDelegate.centerContainer?.closeDrawer(animated: true, completion: nil)
         }
     }

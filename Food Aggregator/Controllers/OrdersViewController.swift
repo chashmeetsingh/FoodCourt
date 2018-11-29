@@ -173,9 +173,8 @@ class OrdersViewController: UICollectionViewController, UICollectionViewDelegate
     
     @objc func orderDetails(_ sender: Any?) {
         if let cell = sender as? UIButton {
-            let vc = OrderDetailViewController(collectionViewLayout: UICollectionViewFlowLayout())
+            let vc = ClientOrderDetailViewController(collectionViewLayout: UICollectionViewFlowLayout())
             vc.order = orders[cell.tag]
-            vc.yourOrdersView = true
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
