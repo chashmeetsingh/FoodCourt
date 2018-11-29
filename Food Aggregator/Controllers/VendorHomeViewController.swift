@@ -88,9 +88,11 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
             Client.sharedInstance.getOrders(params) { (activeOrders, completedOrders, results, success, message) in
                 DispatchQueue.main.async {
 //                    self.view.hideToastActivity()
-                    self.completedOrders = completedOrders!
-                    self.activeOrders = activeOrders!
-                    self.collectionView.reloadData()
+                    if success {
+                        self.completedOrders = completedOrders!
+                        self.activeOrders = activeOrders!
+                        self.collectionView.reloadData()
+                    }
                 }
             }
         }
