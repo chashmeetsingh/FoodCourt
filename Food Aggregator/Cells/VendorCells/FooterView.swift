@@ -89,7 +89,6 @@ class FooterView: UICollectionReusableView {
         addSubview(grandTotalAmountLabel)
         addSubview(divider)
         addSubview(divider1)
-        addSubview(markCompleteButton)
         
         addConstraintsWithFormat(format: "H:|-8-[v0][v1]-8-|", views: subtotalLabel, subtotalAmountLabel)
         addConstraintsWithFormat(format: "H:|-8-[v0][v1]-8-|", views: taxesAndChargesLabel, taxesAndChargesAmountLabel)
@@ -99,8 +98,11 @@ class FooterView: UICollectionReusableView {
         addConstraintsWithFormat(format: "V:|-16-[v0]-4-[v1]-4-[v2(1)]-4-[v3]-4-[v4(1)]", views: subtotalLabel, taxesAndChargesLabel, divider, grandTotalLabel, divider1)
         addConstraintsWithFormat(format: "V:|-16-[v0]-4-[v1]-9-[v2]", views: subtotalAmountLabel, taxesAndChargesAmountLabel, grandTotalAmountLabel)
         
-        addConstraintsWithFormat(format: "V:[v0]-4-|", views: markCompleteButton)
-        addConstraintsWithFormat(format: "H:|-8-[v0]-8-|", views: markCompleteButton)
+        if appDelegate.currentUser.userRole == "VENDOR" {
+            addSubview(markCompleteButton)
+            addConstraintsWithFormat(format: "V:[v0]-4-|", views: markCompleteButton)
+            addConstraintsWithFormat(format: "H:|-8-[v0]-8-|", views: markCompleteButton)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

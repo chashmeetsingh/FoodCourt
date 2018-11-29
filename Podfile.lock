@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.7.3)
   - BBBadgeBarButtonItem (1.2)
   - FontAwesome.swift (1.4.5)
+  - IQKeyboardManagerSwift (6.2.0)
   - MaterialComponents/Buttons (68.1.0):
     - MaterialComponents/Ink
     - MaterialComponents/private/Math
@@ -45,6 +46,7 @@ DEPENDENCIES:
   - Alamofire
   - BBBadgeBarButtonItem
   - FontAwesome.swift
+  - IQKeyboardManagerSwift
   - MaterialComponents/Buttons
   - MMDrawerController
   - SkyFloatingLabelTextField (~> 3.0)
@@ -55,6 +57,7 @@ SPEC REPOS:
     - Alamofire
     - BBBadgeBarButtonItem
     - FontAwesome.swift
+    - IQKeyboardManagerSwift
     - MaterialComponents
     - MDFInternationalization
     - MDFTextAccessibility
@@ -66,6 +69,7 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   BBBadgeBarButtonItem: c2fbca0bff18e21b70defc9438a8a5048008e7ca
   FontAwesome.swift: a351dbb86b9fcec9aad6bce2fdd5b95e9a7b8828
+  IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   MaterialComponents: 9090ac82784a9c031ff62a44d3d9880143029d63
   MDFInternationalization: b5b8626628abf026e630e5ebaeee563037712cbb
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
@@ -73,6 +77,6 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 38164979b79512f9ff9288ad8acfc4bbf5d843e3
   Toast-Swift: 594b5c5e5129f15438e410207e43287f027b3c00
 
-PODFILE CHECKSUM: 9cafa4be8dddd3901c2f8bdc63130d1f58c22c13
+PODFILE CHECKSUM: 1835c137323007506206a3e8ac630e3bf8e6f6de
 
 COCOAPODS: 1.5.3

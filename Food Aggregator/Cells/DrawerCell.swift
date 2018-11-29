@@ -12,14 +12,14 @@ class DrawerCell: BaseCollectionViewCell {
     
     let menuItemLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .white
+        label.textColor = .black
         label.text = "Profile"
         return label
     }()
     
     let divider: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(hex: "#E0E0E0")
+        view.backgroundColor = .black
         return view
     }()
     

@@ -13,19 +13,12 @@
         <!--Authentication View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AuthenticationViewController" customModule="Food_Aggregator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AuthenticationViewController" customModule="Food_Court" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-58" translatesAutoresizingMaskIntoConstraints="NO" id="0UO-uh-Ghh">
-                                <rect key="frame" x="78" y="84" width="258" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="258" id="07L-QI-bRg"/>
-                                    <constraint firstAttribute="height" constant="150" id="GNN-zz-uHp"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiS-Ma-9eD" customClass="LeftAlignedIconButton" customModule="Food_Aggregator" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiS-Ma-9eD" customClass="LeftAlignedIconButton" customModule="Food_Court" customModuleProvider="target">
                                 <rect key="frame" x="16" y="408" width="382" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -43,7 +36,7 @@
                                     <action selector="googleLoginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rTx-VT-M8D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1a5-Zj-KuQ" customClass="LeftAlignedIconButton" customModule="Food_Aggregator" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1a5-Zj-KuQ" customClass="LeftAlignedIconButton" customModule="Food_Court" customModuleProvider="target">
                                 <rect key="frame" x="16" y="472" width="382" height="48"/>
                                 <color key="backgroundColor" red="0.74901960784313726" green="0.035294117647058823" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -60,7 +53,7 @@
                                     <action selector="continueAsGuestButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uxS-AQ-JuS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1K1-EK-XTV" customClass="LeftAlignedIconButton" customModule="Food_Aggregator" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1K1-EK-XTV" customClass="LeftAlignedIconButton" customModule="Food_Court" customModuleProvider="target">
                                 <rect key="frame" x="16" y="536" width="382" height="48"/>
                                 <color key="backgroundColor" red="0.74901960784313726" green="0.035294117647058823" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -77,7 +70,7 @@
                                     <action selector="loginAsUserButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l4E-NZ-GAU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbQ-VL-dpD" customClass="LeftAlignedIconButton" customModule="Food_Aggregator" customModuleProvider="target">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbQ-VL-dpD" customClass="LeftAlignedIconButton" customModule="Food_Court" customModuleProvider="target">
                                 <rect key="frame" x="16" y="344" width="382" height="48"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.31764705882352939" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -95,6 +88,9 @@
                                     <action selector="button1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y05-ZN-VtZ"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app-icon" translatesAutoresizingMaskIntoConstraints="NO" id="0UO-uh-Ghh">
+                                <rect key="frame" x="82" y="56" width="250" height="250"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -102,16 +98,18 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1K1-EK-XTV" secondAttribute="trailing" constant="16" id="1Lo-ee-Sgf"/>
                             <constraint firstItem="lbQ-VL-dpD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IdQ-eO-DG3"/>
                             <constraint firstItem="lbQ-VL-dpD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Kwy-z4-9pO"/>
-                            <constraint firstItem="0UO-uh-Ghh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ShR-IK-cfs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1a5-Zj-KuQ" secondAttribute="trailing" constant="16" id="Y3Q-Yl-Dg0"/>
                             <constraint firstItem="lbQ-VL-dpD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="awD-0s-ZY4"/>
                             <constraint firstItem="1K1-EK-XTV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dSh-Wg-4En"/>
+                            <constraint firstItem="0UO-uh-Ghh" firstAttribute="centerX" secondItem="lbQ-VL-dpD" secondAttribute="centerX" id="eki-nB-mts"/>
                             <constraint firstItem="1K1-EK-XTV" firstAttribute="top" secondItem="1a5-Zj-KuQ" secondAttribute="bottom" constant="16" id="evc-fK-Wmb"/>
+                            <constraint firstItem="0UO-uh-Ghh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="ftd-lM-RUl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lbQ-VL-dpD" secondAttribute="trailing" constant="16" id="jWW-Km-mOJ"/>
+                            <constraint firstItem="0UO-uh-Ghh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="82" id="ksC-hX-eWb"/>
                             <constraint firstItem="1a5-Zj-KuQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lpD-In-bn1"/>
+                            <constraint firstItem="lbQ-VL-dpD" firstAttribute="top" secondItem="0UO-uh-Ghh" secondAttribute="bottom" constant="38" id="qVj-ug-Tpb"/>
                             <constraint firstItem="1a5-Zj-KuQ" firstAttribute="top" secondItem="oiS-Ma-9eD" secondAttribute="bottom" constant="16" id="u7A-I2-LRX"/>
                             <constraint firstItem="oiS-Ma-9eD" firstAttribute="top" secondItem="lbQ-VL-dpD" secondAttribute="bottom" constant="16" id="xRP-wk-Gcx"/>
-                            <constraint firstItem="0UO-uh-Ghh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="xZ6-As-WNZ"/>
                             <constraint firstItem="oiS-Ma-9eD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zer-Hz-yQf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -129,9 +127,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="app-icon" width="333.33334350585938" height="333.33334350585938"/>
         <image name="fb" width="24" height="24"/>
         <image name="google" width="24" height="24"/>
-        <image name="logo-58" width="150" height="150"/>
         <image name="person" width="72" height="72"/>
     </resources>
 </document>

@@ -101,7 +101,7 @@ extension String {
     }
     
     func isPhoneNumberValid() -> Bool {
-        let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
+        let PHONE_REGEX = "^\\d{3}\\d{3}\\d{4}$"
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
         let result =  phoneTest.evaluate(with: self)
         return result
@@ -154,4 +154,13 @@ class SkyFloatingLabelBaseTextFieldWithIcon: SkyFloatingLabelTextFieldWithIcon {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+extension UIApplication {
+    var statusBarView: UIView? {
+        if responds(to: Selector("statusBar")) {
+            return value(forKey: "statusBar") as? UIView
+        }
+        return nil
+    }
 }

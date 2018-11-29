@@ -85,13 +85,13 @@ class FoodJointMenuViewController: UITableViewController {
     func getFoodMenu() {
         
         let params = [
-            Client.Keys.RestaurantId: restaurant.id
+            Client.Keys.RestaurantID: restaurant.id
         ]
         
-        self.view.makeToastActivity(.center)
+        self.tableView.makeToastActivity(.center)
         Client.sharedInstance.getFoodMenu(params as [String : AnyObject]) { (foodMenu, success, message) in
             DispatchQueue.main.async {
-                self.view.hideToastActivity()
+                self.tableView.hideToastActivity()
                 if success {
                     if let menuItems = foodMenu {
                         self.foodMenuData = []

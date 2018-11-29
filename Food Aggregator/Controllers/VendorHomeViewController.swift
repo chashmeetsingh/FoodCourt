@@ -14,7 +14,6 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
     lazy var menuBar: MenuBar = {
         let menuBar = MenuBar()
         menuBar.homeController = self
-        menuBar.backgroundColor = .red
         return menuBar
     }()
     
@@ -38,12 +37,19 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
         setupCollectionView()
         setupMenuBar()
         configureNavigationBar()
+        
+        getOrders()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        getOrders()
         runTimer()
+//        collectionView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: ""), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage(named: "")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -75,8 +81,8 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
             let params = [
                 Client.Keys.Email: user.emailID,
                 Client.Keys.Token: user.accessToken,
-                Client.Keys.RestaurantId: user.restaurantId
-                ] as [String : AnyObject]
+                Client.Keys.RestaurantID: user.restaurantId
+            ] as [String : AnyObject]
             
             self.view.makeToastActivity(.center)
             Client.sharedInstance.getOrders(params) { (activeOrders, completedOrders, results, success, message) in
@@ -130,7 +136,7 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
     
     private func setupMenuBar() {        
         let redView = UIView()
-        redView.backgroundColor = UIColor.rgb(red: 230, green: 32, blue: 31)
+        redView.backgroundColor = UIColor(red: 139.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0)
         view.addSubview(redView)
         view.addConstraintsWithFormat(format: "H:|[v0]|", views: redView)
         view.addConstraintsWithFormat(format: "V:[v0(50)]", views: redView)
@@ -164,6 +170,7 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! VendorOrderCell
+        cell.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         if indexPath.item == 0 {
             cell.orderType = OrderType.active
             cell.orders = activeOrders
@@ -178,5 +185,9 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height - 50)
     }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 24
+//    }
 
 }

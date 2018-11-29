@@ -55,6 +55,24 @@ class OrderConfirmationViewController: UIViewController {
         return label
     }()
     
+    let orderOrderedLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 28)
+        label.textAlignment = .center
+        label.text = "Ordered at:"
+        label.numberOfLines = 2
+        return label
+    }()
+    
+    let orderOrderedTimeLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor(hex: "#757575")
+        label.font = UIFont.systemFont(ofSize: 22)
+        label.text = "25 minutes"
+        label.textAlignment = .center
+        return label
+    }()
+    
     let yourOrderButton: UIButton = {
         let button = UIButton()
         button.setTitle("Your Orders", for: .normal)
@@ -63,6 +81,8 @@ class OrderConfirmationViewController: UIViewController {
         button.addTarget(self, action: #selector(yourOrdersButtonTapped), for: .touchUpInside)
         return button
     }()
+    
+    var timer = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +119,32 @@ class OrderConfirmationViewController: UIViewController {
             view.addConstraintsWithFormat(format: "V:[v0]-8-[v1]-16-|", views: orderPickupLabel, orderPickupTimeLabel)
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+//        runTimer()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+//        timer.invalidate()
+    }
+    
+//    func runTimer() {
+//        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
+//            let date1 = Date()
+//            let date2 = Date(timeIntervalSince1970: TimeInterval(self.order!.preparationTime))
+//            let diff = Int(date1.timeIntervalSince1970 - date2.timeIntervalSince1970) - Int(date1.timeIntervalSince1970)
+//            print(diff)
+//            if diff > 0 {
+//                self.orderPickupTimeLabel.text = "\(diff) minutes"
+//            } else {
+//                self.orderPickupTimeLabel.text = "0 minutes"
+//            }
+//        })
+//    }
     
     @objc func yourOrdersButtonTapped() {
         var viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]

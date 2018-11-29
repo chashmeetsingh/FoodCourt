@@ -78,7 +78,7 @@ class SignupViewController: UIViewController {
     lazy var signUpButton: MDCButton = {
         let button = MDCButton()
         button.setTitle("Sign Up", for: .normal)
-        button.backgroundColor = .red
+        button.backgroundColor = UIColor(red: 139.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         return button
@@ -87,7 +87,7 @@ class SignupViewController: UIViewController {
     lazy var loginButton: MDCButton = {
         let button = MDCButton()
         button.setTitle("Login", for: .normal)
-        button.backgroundColor = .red
+        button.backgroundColor = UIColor(red: 139.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         return button
@@ -138,7 +138,7 @@ class SignupViewController: UIViewController {
         self.view.makeToastActivity(.center)
         toggleInteraction()
         
-        if !(firstNameTextField.text?.isEmpty)! {
+        if (firstNameTextField.text?.isEmpty)! {
             self.view.hideToastActivity()
             toggleInteraction()
             firstNameTextField.errorMessage = "First Name empty"
@@ -147,7 +147,7 @@ class SignupViewController: UIViewController {
         }
         firstNameTextField.errorMessage = ""
         
-        if !(lastNameTextField.text?.isEmpty)! {
+        if (lastNameTextField.text?.isEmpty)! {
             self.view.hideToastActivity()
             toggleInteraction()
             lastNameTextField.errorMessage = "Last Name empty"
@@ -193,11 +193,11 @@ class SignupViewController: UIViewController {
         phoneNumberTextField.errorMessage = ""
         
         let params = [
-            Client.Keys.FirstName: firstNameTextField.text!,
-            Client.Keys.LastName: lastNameTextField.text!,
+            Client.Keys.First_Name: firstNameTextField.text!,
+            Client.Keys.Last_Name: lastNameTextField.text!,
             Client.Keys.Email: emailIDTextField.text!,
             Client.Keys.Password: passwordTextField.text!,
-            Client.Keys.PhoneNum: phoneNumberTextField.text!
+            Client.Keys.Phone_Number: phoneNumberTextField.text!
         ]
         
         Client.sharedInstance.signUpUser(params as [String : AnyObject]) { (user, success, error) in

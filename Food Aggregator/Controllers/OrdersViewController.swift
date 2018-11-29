@@ -40,11 +40,13 @@ class OrdersViewController: UICollectionViewController, UICollectionViewDelegate
         super.viewDidLoad()
 
         title = "My Orders"
-        collectionView.backgroundColor = .black//UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+        collectionView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(openDrawer))
         
-        collectionView.register(ClientOrderCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(ClientOrderOngoingCell.self, forCellWithReuseIdentifier: "ongoingCell")
+        collectionView.register(ClientOrderPastCell.self, forCellWithReuseIdentifier: "pastCell")
+        collectionView.register(YourOrderHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView")
         
         
         let backItem = UIBarButtonItem()
@@ -55,24 +57,24 @@ class OrdersViewController: UICollectionViewController, UICollectionViewDelegate
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        if appDelegate.currentUser == nil {
-//            noOrderLabel.isHidden = false
-//        } else {
+        if appDelegate.currentUser == nil {
+            noOrderLabel.isHidden = false
+        } else {
             getOrders()
-//        }
+        }
     }
     
     func getOrders() {
-        self.view.makeToastActivity(.center)
+        self.collectionView.makeToastActivity(.center)
         
         let params = [
-            Client.Keys.Email: "jalaj@yopmail.com",//appDelegate.currentUser!.emailID,
-            Client.Keys.Token: "yololo"//appDelegate.currentUser!.accessToken
+            Client.Keys.Email: appDelegate.currentUser!.emailID,
+            Client.Keys.Token: appDelegate.currentUser!.accessToken
         ]
         
         Client.sharedInstance.getOrders(params as [String : AnyObject]) { (activeOrders, completedOrders, _, success, message) in
             DispatchQueue.main.async {
-                self.view.hideToastActivity()
+                self.collectionView.hideToastActivity()
                 self.activeOrders = activeOrders!
                 self.completedOrders = completedOrders!
                 self.collectionView.reloadData()
@@ -94,23 +96,39 @@ class OrdersViewController: UICollectionViewController, UICollectionViewDelegate
         drawerOpen = !drawerOpen
     }
     
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return orders.count
+        if section == 0 {
+            return activeOrders.count
+        } else {
+            return completedOrders.count
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ClientOrderCell
-        let item = orders[indexPath.item]
-        cell.foodCourtName.text = item.foodCourtName
-        cell.orderNumberLabel.text = "#\(item.id)"
-        cell.orderStatusButton.tag = indexPath.item
-        cell.orderStatusButton.addTarget(self, action: #selector(orderStatusView(_:)), for: .touchUpInside)
-        cell.orderDetailsButton.addTarget(self, action: #selector(orderDetails(_:)), for: .touchUpInside)
-        return cell
+        var item: Order!
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ongoingCell", for: indexPath) as! ClientOrderOngoingCell
+            item = activeOrders[indexPath.item]
+            cell.foodCourtName.text = "\(item.foodCourtName) - #\(item.id)"
+            cell.orderStatusButton.tag = indexPath.item
+            cell.orderStatusButton.addTarget(self, action: #selector(orderStatusView(_:)), for: .touchUpInside)
+            cell.orderDetailsButton.addTarget(self, action: #selector(orderDetails(_:)), for: .touchUpInside)
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pastCell", for: indexPath) as! ClientOrderPastCell
+            item = completedOrders[indexPath.item]
+            cell.foodCourtName.text = "\(item.foodCourtName) - #\(item.id)"
+            cell.orderDetailsButton.addTarget(self, action: #selector(orderDetails(_:)), for: .touchUpInside)
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 100)
+        return CGSize(width: view.frame.width, height: 80)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -119,6 +137,27 @@ class OrdersViewController: UICollectionViewController, UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as! YourOrderHeaderView
+            
+            if indexPath.section == 0 {
+                view.label.text = "Current"
+            } else if indexPath.section == 1 {
+                view.label.text = "Past"
+            }
+            
+            return view
+        default:
+            return UICollectionReusableView(frame: CGRect.zero)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 44)
     }
     
     @objc func orderStatusView(_ sender: Any?) {

@@ -12,6 +12,7 @@ import MMDrawerController
 class DrawerViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let items = ["Dashboard", "Profile", "Your Orders", "Logout"]
+    let guestItems = ["Dashboard", "Profile"]
     
     var appDelegate: AppDelegate {
         get {
@@ -22,7 +23,7 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         collectionView.register(DrawerCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.register(DrawerHeaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView")
     }
@@ -34,12 +35,20 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        if let _ = appDelegate.currentUser {
+            return items.count
+        } else {
+            return guestItems.count
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DrawerCell
-        cell.menuItemLabel.text = items[indexPath.item]
+        if let _ = appDelegate.currentUser {
+            cell.menuItemLabel.text = items[indexPath.item]
+        } else {
+            cell.menuItemLabel.text = guestItems[indexPath.item]
+        }
         return cell
     }
     
@@ -64,7 +73,7 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as! DrawerHeaderCell
-            view.backgroundColor = .gray
+            view.backgroundColor = UIColor(red: 139.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0)
             
             if let user = appDelegate.currentUser {
                 view.label.text = user.name
@@ -79,17 +88,28 @@ class DrawerViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            showDashboard()
-        case 1:
-            showProfile()
-        case 2:
-            showOrders()
-        case 3:
-            logoutUser()
-        default:
-            break
+        if let _ = appDelegate.currentUser {
+            switch indexPath.row {
+            case 0:
+                showDashboard()
+            case 1:
+                showProfile()
+            case 2:
+                showOrders()
+            case 3:
+                logoutUser()
+            default:
+                break
+            }
+        } else {
+            switch indexPath.row {
+            case 0:
+                showDashboard()
+            case 1:
+                showProfile()
+            default:
+                break
+            }
         }
     }
     

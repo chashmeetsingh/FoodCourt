@@ -29,6 +29,7 @@ class VendorOrderCell: BaseCollectionViewCell, UICollectionViewDelegateFlowLayou
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.delegate = self
         cv.dataSource = self
+        cv.backgroundColor = .white//UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
         return cv
     }()
     
@@ -39,8 +40,10 @@ class VendorOrderCell: BaseCollectionViewCell, UICollectionViewDelegateFlowLayou
         addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
         addConstraintsWithFormat(format: "V:|[v0]|", views: collectionView)
         
+        collectionView.contentInset = UIEdgeInsets(top: 4, left: 8, bottom: 0, right: 8)
+        
         collectionView.register(OrderItemCell.self, forCellWithReuseIdentifier: "orderItemCell")
-        collectionView.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0)
+//        collectionView.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -51,11 +54,38 @@ class VendorOrderCell: BaseCollectionViewCell, UICollectionViewDelegateFlowLayou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "orderItemCell", for: indexPath) as! OrderItemCell
         cell.backgroundColor = .white
         cell.order = orders[indexPath.item]
+        cell.layer.cornerRadius = 20
+        
+//        cell.layer.borderColor = UIColor(red: 139.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0).cgColor
+//        cell.layer.borderWidth = 7
+        cell.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
+        
+        var items = ""
+        for item in orders[indexPath.item].orderItems {
+            items += "\(item.quantity) X \(item.name), "
+        }
+        items.removeLast()
+        items.removeLast()
+        cell.itemsLabel.text = items
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: bounds.width, height: 120)
+        
+        var items = ""
+        for item in orders[indexPath.item].orderItems {
+            items += "\(item.quantity) X \(item.name), "
+        }
+        items.removeLast()
+        items.removeLast()
+        
+        let size = CGSize(width: frame.width - 16 - 16, height: 1000)
+        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+        let estimatedRect = NSString(string: items).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)], context: nil)
+        
+        
+        return CGSize(width: bounds.width - 16, height: estimatedRect.height + 40)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

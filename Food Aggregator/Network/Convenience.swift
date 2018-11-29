@@ -19,16 +19,22 @@ extension Client {
             
             if let _ = message {
                 completion(nil, false, ResponseMessages.InvalidParams)
-            } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String, status == "success", let userData = results["user"] as? [String : AnyObject] {
-                let user = User(dictionary: results)
-//                self.appDelegate.currentUser = user
+            } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String, let userData = results["user"] as? [String : AnyObject] {
                 
-                let data = NSKeyedArchiver.archivedData(withRootObject: userData)
-                UserDefaults.standard.setValue(data, forKey: "currentUser")
+                if status == "success" {
+                    let user = User(dictionary: results)
+                    
+                    let data = NSKeyedArchiver.archivedData(withRootObject: userData)
+                    UserDefaults.standard.setValue(data, forKey: "currentUser")
+                    
+                    completion(user, true, user.message)
+                } else {
+                    let message = results["reason"] as! String
+                    completion(nil, false, message)
+                }
                 
-                completion(user, true, user.message)
             } else {
-                completion(nil, false, ResponseMessages.ServerError)
+                completion(nil, false, ResponseMessages.InvalidParams)
             }
             return
         })
@@ -43,14 +49,14 @@ extension Client {
             
             if let _ = message {
                 completion(nil, false, ResponseMessages.InvalidParams)
-            } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String, status == "success", let userData = results["user"] as? [String : AnyObject] {
-                let user = User(dictionary: results)
+            } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String, status == "success" {
+//                let user = User(dictionary: results)
 //                self.appDelegate.currentUser = user
                 
-                let data = NSKeyedArchiver.archivedData(withRootObject: userData)
-                UserDefaults.standard.setValue(data, forKey: "currentUser")
+//                let data = NSKeyedArchiver.archivedData(withRootObject: userData)
+//                UserDefaults.standard.setValue(data, forKey: "currentUser")
                 
-                completion(user, true, user.message)
+                completion(nil, true, "no error")
             } else {
                 completion(nil, false, ResponseMessages.ServerError)
             }
@@ -82,13 +88,13 @@ extension Client {
     
     func updateUserProfile(_ params: [String : AnyObject], _ completion: @escaping (_ success: Bool, _ error: String) -> Void) {
         
-        let url = getApiUrl(APIURL.IPAddress, Methods.Logout)
+        let url = getApiUrl(APIURL.IPAddress, Methods.UpdateProfile)
         
         _ = makeRequest(url, .post, [:], parameters: params, completion: { (results, message) in
             
             if let _ = message {
                 completion(false, ResponseMessages.InvalidParams)
-            } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String {
+            } else if let results = results as? [String: AnyObject], let status = results[Keys.Status] as? String, status == "success" {
                 completion(true, status)
             } else {
                 completion(false, ResponseMessages.ServerError)

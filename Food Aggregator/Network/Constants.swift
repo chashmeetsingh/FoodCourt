@@ -55,7 +55,7 @@ extension Client {
         static let Category = "category"
         static let Cost = "cost"
         static let FoodCourtId = "foodCourtId"
-        static let RestaurantId = "restaurantId"
+        static let RestaurantId = "restaurant_id"
         static let TimeToPrepareInMinutes = "timeToPrepareInMinutes"
         static let OrderDetails = "orderDetails"
         static let FirstName = "first_name"
@@ -79,7 +79,11 @@ extension Client {
         static let Active = "ACTIVE"
         static let Completed = "COMPLETED"
         static let PhoneNum = "PhoneNum"
+        static let Phone_Number = "phoneNumber"
         static let Customerorder = "customer order"
+        static let First_Name = "firstName"
+        static let Last_Name = "lastName"
+        static let RestaurantID = "restaurantId"
     }
     
     struct Colors {

@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
     lazy var loginButton: MDCButton = {
        let button = MDCButton()
         button.setTitle("Login", for: .normal)
-        button.backgroundColor = UIColor(hex: "#00C853")
+        button.backgroundColor = UIColor(red: 139.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0)
         button.setTitleColor(.white, for: .normal)
 //        button.layer.cornerRadius = 16
         button.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
@@ -117,6 +117,8 @@ class LoginViewController: UIViewController {
                 self.toggleInteraction()
                 if success {
                     self.completeLogin()
+                } else {
+                    self.view.makeToast(error)
                 }
             }
         }

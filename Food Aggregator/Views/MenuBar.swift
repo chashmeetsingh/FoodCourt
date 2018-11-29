@@ -13,7 +13,7 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor.rgb(red: 230, green: 32, blue: 31)
+        cv.backgroundColor = UIColor(red: 139.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0)
         cv.delegate = self
         cv.dataSource = self
         return cv
@@ -70,7 +70,7 @@ class MenuBar: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UIC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MenuCell
         cell.titleLabel.text = titles[indexPath.item]
         if indexPath.item == 1 {
-            cell.titleLabel.textColor = UIColor.rgb(red: 91, green: 14, blue: 13)
+            cell.titleLabel.textColor = .white//UIColor.rgb(red: 91, green: 14, blue: 13)
         }
         cell.tintColor = UIColor.rgb(red: 91, green: 14, blue: 13)
         return cell

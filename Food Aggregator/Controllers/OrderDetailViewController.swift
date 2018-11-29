@@ -17,6 +17,8 @@ class OrderDetailViewController: UICollectionViewController, UICollectionViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Order Details"
+        
         collectionView.register(OrderDetailCell.self, forCellWithReuseIdentifier: "orderDetailCell")
         collectionView.register(VendorHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView")
         collectionView.register(FooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footerView")
@@ -30,7 +32,7 @@ class OrderDetailViewController: UICollectionViewController, UICollectionViewDel
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "orderDetailCell", for: indexPath) as! OrderDetailCell
         let item = order.orderItems[indexPath.item]
-        cell.itemName.text = item.name
+        cell.itemName.text = "\(item.quantity) X \(item.name)"
         cell.amountLabel.text = "$\(item.itemCost)"
         cell.totalAmountLabel.text = "$\((item.itemCost * Double(item.quantity)).rounded(toPlaces: 2))"
         return cell
@@ -74,7 +76,7 @@ class OrderDetailViewController: UICollectionViewController, UICollectionViewDel
             view.taxesAndChargesAmountLabel.text = "$\(tax)"
             
             let total = subtotal + tax
-            view.grandTotalAmountLabel.text = "$\(total)"
+            view.grandTotalAmountLabel.text = "$\(total.rounded(toPlaces: 2))"
             
             if orderType == OrderType.active {
                 view.markCompleteButton.backgroundColor = UIColor(hex: "#00C853")

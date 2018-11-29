@@ -22,9 +22,9 @@ class ProfileViewController: UIViewController {
     let imageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.backgroundColor = .gray
-        iv.image = UIImage(named: "person")?.withRenderingMode(.alwaysTemplate)
-        iv.tintColor = .black
+        iv.backgroundColor = UIColor(red: 139.0/255.0, green: 8.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+        iv.image = UIImage(named: "placeholder")
+//        iv.tintColor = .black
         return iv
     }()
     
@@ -102,18 +102,20 @@ class ProfileViewController: UIViewController {
         if let _ = appDelegate.currentUser {
             view.addSubview(passwordTextField)
             view.addSubview(emailIDTextField)
-            view.addConstraintsWithFormat(format: "V:|-8-[v0(\(widthForFrame - 16))]-16-[v1]-16-[v2]", views: imageView, emailIDTextField, passwordTextField)
+            view.addConstraintsWithFormat(format: "V:|[v0(\(widthForFrame - 16))]-16-[v1]-16-[v2]-16-[v3]-16-[v4]", views: imageView, firstNameTextField, lastNameTextField, emailIDTextField, passwordTextField)
             view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: passwordTextField)
             view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: emailIDTextField)
         } else {
-            view.addConstraintsWithFormat(format: "V:|-8-[v0(\(widthForFrame - 16))]", views: imageView)
+            view.addConstraintsWithFormat(format: "V:|-8-[v0(\(widthForFrame - 16))]-16-[v1]-16-[v2]", views: imageView, firstNameTextField, lastNameTextField)
         }
         
-        view.addConstraintsWithFormat(format: "V:|-28-[v0]-32-[v1]", views: firstNameTextField, lastNameTextField)
-        view.addConstraintsWithFormat(format: "H:|-16-[v0(\(widthForFrame - 16))]-16-[v1]-16-|", views: imageView, firstNameTextField)
-        view.addConstraintsWithFormat(format: "H:|-16-[v0(\(widthForFrame - 16))]-16-[v1]-16-|", views: imageView, lastNameTextField)
+//        view.addConstraintsWithFormat(format: "V:|-\(8 + 16 + widthForFrame - 16)-[v0]-32-[v1]", views: firstNameTextField, lastNameTextField)
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: imageView)
+//        view.addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: self.tableView, attribute: .centerX, multiplier: 1, constant: 0))
+        view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: firstNameTextField)
+        view.addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: lastNameTextField)
         
-        imageView.layer.cornerRadius = (widthForFrame - 16) / 2
+//        imageView.layer.cornerRadius = (widthForFrame - 16) / 2
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(openDrawer))
         
         if let _ = appDelegate.currentUser {
@@ -168,14 +170,15 @@ class ProfileViewController: UIViewController {
         }
         
         var params = [
-            Client.Keys.FirstName: firstNameTextField.text!,
-            Client.Keys.LastName: lastNameTextField.text!
+            Client.Keys.First_Name: firstNameTextField.text!,
+            Client.Keys.Last_Name: lastNameTextField.text!,
+            Client.Keys.Email: appDelegate.currentUser!.emailID,
+            Client.Keys.Token: appDelegate.currentUser!.accessToken
         ]
         
         if passwordTextField.text != "drowssap" {
             params[Client.Keys.Password] = passwordTextField.text!
         }
-        
         
         self.view.makeToastActivity(.center)
         Client.sharedInstance.updateUserProfile(params as [String : AnyObject]) { (success, message) in

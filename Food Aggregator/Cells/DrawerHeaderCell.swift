@@ -21,7 +21,7 @@ class DrawerHeaderCell: UICollectionReusableView {
     
     let label: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = .white
         return label
     }()
     

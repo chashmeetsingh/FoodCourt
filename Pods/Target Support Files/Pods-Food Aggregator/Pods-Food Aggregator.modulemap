@@ -1,6 +1,0 @@
-framework module Pods_Food_Aggregator {
-  umbrella header "Pods-Food Aggregator-umbrella.h"
-
-  export *
-  module * { export * }
-}
