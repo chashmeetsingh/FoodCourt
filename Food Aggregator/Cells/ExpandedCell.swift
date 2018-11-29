@@ -15,14 +15,23 @@ class ExpandedCell: BaseTableViewCell {
         
         addSubview(titleLabel)
         addSubview(stepper)
+        addSubview(priceLabel)
         
-        addConstraintsWithFormat(format: "V:|[v0]|", views: titleLabel)
-        addConstraintsWithFormat(format: "V:|-8-[v0]-8-|", views: stepper)
+        addConstraintsWithFormat(format: "V:|-8-[v0]-4-[v1]", views: titleLabel, priceLabel)
+        addConstraintsWithFormat(format: "V:|-8-[v0(32)]", views: stepper)
         addConstraintsWithFormat(format: "H:|-24-[v0][v1(100)]-8-|", views: titleLabel, stepper)
+        addConstraintsWithFormat(format: "H:|-26-[v0][v1(100)]-8-|", views: priceLabel, stepper)
+        
     }
     
     let titleLabel: UILabel = {
         let label = UILabel()
+        return label
+    }()
+    
+    let priceLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     

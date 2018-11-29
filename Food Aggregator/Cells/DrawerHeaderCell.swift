@@ -12,8 +12,8 @@ class DrawerHeaderCell: UICollectionReusableView {
     
     let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "person")?.withRenderingMode(.alwaysTemplate)
-        iv.tintColor = .black
+        iv.image = UIImage(named: "placeholder")
+//        iv.tintColor = .black
         iv.backgroundColor = .white
         iv.layer.cornerRadius = 42
         return iv

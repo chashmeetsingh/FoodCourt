@@ -19,7 +19,7 @@ class HeaderView: UICollectionReusableView {
     
     let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = .black
+//        iv.backgroundColor = .black
         return iv
     }()
     

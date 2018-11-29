@@ -69,9 +69,11 @@ class ClientHomeViewController: UIViewController {
         Client.sharedInstance.getFoodCourts(params as [String : AnyObject]) { (foodCourts, success, error) in
             DispatchQueue.main.async {
                 self.view.hideToastActivity()
-                self.foodCourts = foodCourts!
-                self.collectionView.reloadData()
-                self.appDelegate.foodCourts = foodCourts!
+                if success {
+                    self.foodCourts = foodCourts!
+                    self.collectionView.reloadData()
+                    self.appDelegate.foodCourts = foodCourts!
+                }
             }
         }
     }

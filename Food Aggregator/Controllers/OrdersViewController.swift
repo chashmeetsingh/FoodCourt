@@ -75,13 +75,15 @@ class OrdersViewController: UICollectionViewController, UICollectionViewDelegate
         Client.sharedInstance.getOrders(params as [String : AnyObject]) { (activeOrders, completedOrders, _, success, message) in
             DispatchQueue.main.async {
                 self.collectionView.hideToastActivity()
-                self.activeOrders = activeOrders!
-                self.completedOrders = completedOrders!
-                self.collectionView.reloadData()
-                if self.activeOrders.count + self.completedOrders.count > 0 {
-                    self.noOrderLabel.isHidden = true
-                } else {
-                    self.noOrderLabel.isHidden = false
+                if success {
+                    self.activeOrders = activeOrders!
+                    self.completedOrders = completedOrders!
+                    self.collectionView.reloadData()
+                    if self.activeOrders.count + self.completedOrders.count > 0 {
+                        self.noOrderLabel.isHidden = true
+                    } else {
+                        self.noOrderLabel.isHidden = false
+                    }
                 }
             }
         }

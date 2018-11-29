@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var cartItems: [String : [String : String]] = [:] {
         didSet {
+//            print(cartItems)
             //UserDefaults.standard.set(cartItems, forKey: currentUser.emailID)
         }
     }

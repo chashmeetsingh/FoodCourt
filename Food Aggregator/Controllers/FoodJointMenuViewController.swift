@@ -142,6 +142,7 @@ class FoodJointMenuViewController: UITableViewController {
             let item = foodMenuData[indexPath.section].sectionData[indexPath.item - 1]
             let cell = tableView.dequeueReusableCell(withIdentifier: "expandedCell", for: indexPath) as! ExpandedCell
             cell.titleLabel.text = item.name
+            cell.priceLabel.text = "$\(item.cost)"
             cell.selectionStyle = UITableViewCell.SelectionStyle.none
             cell.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1.0)
             cell.stepper.addTarget(self, action: #selector(cartUpdated), for: .valueChanged)
@@ -171,7 +172,11 @@ class FoodJointMenuViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        if indexPath.item == 0 {
+            return 44
+        } else {
+            return 56
+        }
     }
     
     @objc func cartUpdated() {

@@ -51,9 +51,10 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
         getDataForItemsInCart()
     }
     
-    func getDataForItemsInCart(_ indexPath: IndexPath? = nil, _ operation: String? = nil) {
+    func getDataForItemsInCart() {
         collectionViewData = []
         var items = [String : [FoodItem]]()
+        
         if let cart = appDelegate.cartItems[appDelegate.currentFoodCourt.id], cart.count > 0 {
             for (id, count) in cart {
                 if let item = appDelegate.items[id] {
@@ -67,6 +68,7 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
                 }
             }
         }
+        
         for (name, itemList) in items {
             var data = CartCellData()
             data.restaurantName = name
@@ -79,8 +81,6 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
         } else {
             noItemsInCardLabel.isHidden = false
         }
-//        print(collectionViewData)
-        collectionView.reloadData()
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -88,20 +88,15 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        print("called", collectionViewData)
         return collectionViewData[section].foodItems.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CartCollectionViewCell
         let item = collectionViewData[indexPath.section].foodItems[indexPath.item]
-        cell.itemName.text = item.name
-        cell.amountLabel.text = "$\(item.cost)"
-        cell.stepper.value = Double(item.count)
-        cell.totalAmountLabel.text = "$\((item.cost * Double(item.count)).rounded(toPlaces: 2))"
-        cell.stepper.tag = item.id
         cell.item = item
         cell.delegate = self
-        cell.indexPath = indexPath
         return cell
     }
     
