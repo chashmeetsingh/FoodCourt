@@ -149,11 +149,12 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     @objc func placeOrder() {
         
-        let alertController = UIAlertController(title: "Confirm Order", message: "Are you sure you want to confirm the order?", preferredStyle: .alert)
-        
-        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (action:UIAlertAction) in
-            print("You've pressed confirm")
-            if let user = self.appDelegate.currentUser, !user.accessToken.isEmpty {
+        if let user = self.appDelegate.currentUser, !user.accessToken.isEmpty {
+            
+            let alertController = UIAlertController(title: "Confirm Order", message: "Are you sure you want to confirm the order?", preferredStyle: .alert)
+            
+            let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (action:UIAlertAction) in
+                print("You've pressed confirm")
                 var foodItemIds = ""
                 var quantity = ""
                 let ids = self.appDelegate.cartItems[self.appDelegate.currentFoodCourt.id]
@@ -180,19 +181,19 @@ class CartViewController: UICollectionViewController, UICollectionViewDelegateFl
                         }
                     }
                 }
-            } else {
-                let vc = SignupViewController()
-                let nvc = UINavigationController(rootViewController: vc)
-                self.present(nvc, animated: true, completion: nil)
             }
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
+                print("You've pressed cancel")
+            }
+            alertController.addAction(confirmAction)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            let vc = SignupViewController()
+            let nvc = UINavigationController(rootViewController: vc)
+            self.present(nvc, animated: true, completion: nil)
         }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
-            print("You've pressed cancel")
-        }
-        alertController.addAction(confirmAction)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion: nil)
         
     }
 

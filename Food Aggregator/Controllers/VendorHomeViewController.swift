@@ -84,10 +84,10 @@ class VendorHomeViewController: UICollectionViewController, UICollectionViewDele
                 Client.Keys.RestaurantID: user.restaurantId
             ] as [String : AnyObject]
             
-            self.view.makeToastActivity(.center)
+//            self.view.makeToastActivity(.center)
             Client.sharedInstance.getOrders(params) { (activeOrders, completedOrders, results, success, message) in
                 DispatchQueue.main.async {
-                    self.view.hideToastActivity()
+//                    self.view.hideToastActivity()
                     self.completedOrders = completedOrders!
                     self.activeOrders = activeOrders!
                     self.collectionView.reloadData()

@@ -150,7 +150,15 @@ class LoginViewController: UIViewController {
                 self.view.hideToastActivity()
             }
         } else {
-            
+            if appDelegate.currentUser.userRole == "VENDOR" {
+                self.appDelegate.centerContainer?.dismiss(animated: true, completion: {
+                    let vc = VendorHomeViewController(collectionViewLayout: UICollectionViewFlowLayout())
+                    let nvc = UINavigationController(rootViewController: vc)
+                    self.presentingViewController?.present(nvc, animated: true, completion: nil)
+                })
+            } else {
+                self.navigationController?.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
