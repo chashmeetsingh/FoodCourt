@@ -23,8 +23,8 @@
     <td><img src="https://imgur.com/ls4Z0uJ.png" height = "480" width="270"></td>
   </tr>
   <tr>
-    <td><img src="https://imgur.com/5Wdmmqk.png" height = "480" width="270"></td>
-    <td><img src="https://imgur.com/culKDfj.png" height = "480" width="270"></td>
     <td><img src="https://imgur.com/EP2mTWo.png" height = "480" width="270"></td>
+    <td><img src="https://imgur.com/culKDfj.png" height = "480" width="270"></td>
+    <td><img src="https://imgur.com/5Wdmmqk.png" height = "480" width="270"></td>
   </tr>
 </table>
